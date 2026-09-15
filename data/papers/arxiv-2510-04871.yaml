@@ -1,0 +1,19 @@
+id: arxiv-2510-04871
+name: TRM
+title: "Less is More: Recursive Reasoning with Tiny Networks"
+arxiv: "2510.04871"
+published: 2025-10-06
+authors:
+  - Alexia Jolicoeur-Martineau
+group: core
+summary: The tiny recursive model is a looped transformer architecture with an
+  intentionally simple architecture, yet yields strong generalization compared
+  to previous models.
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: https://github.com/SamsungSAILMontreal/TinyRecursiveModels
+weights: https://huggingface.co/QiyaoMa/TRM
+verified: 2026-09-15

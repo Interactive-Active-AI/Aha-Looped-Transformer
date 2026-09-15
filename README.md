@@ -4,7 +4,7 @@
 
 [Explore the live atlas](https://interactive-active-ai.github.io/Aha-Looped-Transformer/) · [Submit a paper](https://github.com/Interactive-Active-AI/Aha-Looped-Transformer/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse 16 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
+Browse 17 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
 
 ## Collection
 
@@ -22,6 +22,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 | [LoopFormer](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/loopformer/) | 2026-02-11 | Adaptive depth | [Paper](https://arxiv.org/abs/2602.11451) · [Code / project](https://github.com/armenjeddi/loopformer) · [Weights](https://huggingface.co/collections/armenjeddi/loopformer) |
 | [Think-at-Hard](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/think-at-hard/) | 2025-11-11 | Adaptive depth | [Paper](https://arxiv.org/abs/2511.08577) · [Code / project](https://github.com/thu-nics/TaH) · [Weights](https://huggingface.co/nics-efc/TaH-plus-1.7B) |
 | [Ouro](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/ouro/) | 2025-10-29 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2510.25741) · [Code / project](https://ouro-llm.github.io/) · [Weights](https://huggingface.co/ByteDance/Ouro-2.6B) |
+| [TRM](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2510-04871/) | 2025-10-06 | Core recurrence | [Paper](https://arxiv.org/abs/2510.04871) · [Code / project](https://github.com/SamsungSAILMontreal/TinyRecursiveModels) · [Weights](https://huggingface.co/QiyaoMa/TRM) |
 | [Mixture-of-Recursions](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/mor/) | 2025-07-14 | Adaptive depth | [Paper](https://arxiv.org/abs/2507.10524) · [Code / project](https://github.com/raymin0223/mixture_of_recursions) |
 | [Huginn](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/huginn/) | 2025-02-07 | Core recurrence | [Paper](https://arxiv.org/abs/2502.05171) · [Code / project](https://github.com/seal-rg/recurrent-pretraining) · [Weights](https://huggingface.co/tomg-group-umd/huginn-0125) |
 | [Relaxed Recursive Transformers](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/relaxed-recursive/) | 2024-10-28 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2410.20672) |

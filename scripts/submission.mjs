@@ -21,7 +21,7 @@ async function run(){
  const repo=process.env.GITHUB_REPOSITORY;
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo||''))throw Error('Missing repository');
  const token=process.env.GH_TOKEN;
- async function api(route,method='GET',body){const r=await fetch(`https://api.github.com/repos/${repo}${route}`,{method,headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});if(!r.ok)throw Error(`GitHub request ${r.status}: ${route}`);return r.status===204?null:r.json();}
+ async function api(route,method='GET',body){const r=await fetch(`https://api.github.com/repos/${repo}${route}`,{method,headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});if(!r.ok){const error=new Error(`GitHub request ${r.status}: ${route}`);error.status=r.status;throw error;}return r.status===204?null:r.json();}
  const number=Number(event.issue?.number||event.inputs?.issue_number);
  if(!Number.isSafeInteger(number)||number<1)throw Error('Invalid issue number');
  const issue=await api('/issues/'+number);
@@ -53,8 +53,17 @@ async function run(){
  const next=await api('/git/commits','POST',{message:`Add paper submission from issue #${number}`,tree:tree.sha,parents:[baseSha]});
  // A failed attempt may have left an unreviewed branch; never overwrite its content.
  try{await api('/git/refs','POST',{ref:'refs/heads/'+branch,sha:next.sha});}catch(error){throw Error('Could not create submission branch. Inspect any existing branch before retrying. '+error.message);}
- const pr=await api('/pulls','POST',{title:'[Paper] '+p.name.slice(0,160),head:branch,base:'main',draft:true,body:`Closes #${number}\n\nAdds a community submission from https://arxiv.org/abs/${p.arxiv}. Bibliographic metadata was fetched from the public Hugging Face paper record. Schema validation, tests and static build passed before this draft was created.\n\n**Maintainer review required:** verify relevance, summaries, category, source ownership, dates and architecture details. Replace unknown fields when supported by the paper, mark ready, then merge to publish.\n\nThe submission bot does not approve or merge pull requests.`});
- await api(`/issues/${number}/comments`,'POST',{body:`The submission passed automated validation and a static build. Draft pull request: ${pr.html_url}\n\nA maintainer will verify the sources before publication.`});
- console.log('Created draft PR '+pr.html_url);
+ const prBody={title:'[Paper] '+p.name.slice(0,160),head:branch,base:'main',draft:true,body:`Closes #${number}\n\nAdds a community submission from https://arxiv.org/abs/${p.arxiv}. Bibliographic metadata was fetched from the public Hugging Face paper record. Schema validation, tests and static build passed before this draft was created.\n\n**Maintainer review required:** verify relevance, summaries, category, source ownership, dates and architecture details. Replace unknown fields when supported by the paper, mark ready, then merge to publish.\n\nThe submission bot does not approve or merge pull requests.`};
+ try {
+  const pr=await api('/pulls','POST',prBody);
+  await api(`/issues/${number}/comments`,'POST',{body:`The submission passed automated validation and a static build. Draft pull request: ${pr.html_url}\n\nA maintainer will verify the sources before publication.`});
+  console.log('Created draft PR '+pr.html_url);
+ } catch(error) {
+  if(error.status!==403)throw error;
+  const compare=`https://github.com/${repo}/compare/main...${branch}?expand=1`;
+  await api(`/issues/${number}/comments`,'POST',{body:`The submission passed automated validation, tests and a static build. The prepared branch is ready for review.\n\nThis organization does not allow automated PR creation. A maintainer can [review the changes and create a pull request](${compare}). Include \`Closes #${number}\` in the PR description, check the sources and merge to publish automatically.\n\nNo organization-wide permission change is required.`});
+  console.log('Prepared review branch '+compare);
+ }
+
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)run().catch(e=>{console.error(e.message);process.exitCode=1;});

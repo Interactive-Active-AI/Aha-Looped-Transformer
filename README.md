@@ -31,7 +31,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 
 ## Contribute
 
-Submit the GitHub Issue Form. Automation checks the fields, enriches bibliographic metadata, and opens a draft pull request. A maintainer verifies the paper and merges it; the site then rebuilds automatically. Alternatively, add one YAML file in a pull request. No account is needed to browse; submitting uses your GitHub account.
+Submit the GitHub Issue Form. Automation checks the fields, enriches bibliographic metadata, and prepares a review branch and a pull-request link (or opens a draft PR where permitted). A maintainer verifies the paper and merges it; the site then rebuilds automatically. Alternatively, add one YAML file in a pull request. No account is needed to browse; submitting uses your GitHub account.
 
 An unreviewed submission is never published directly. Optional source links are reviewed by maintainers. See [CONTRIBUTING.md](CONTRIBUTING.md) for the data schema and editorial checks.
 
@@ -50,7 +50,7 @@ Astro generates static, independently addressable paper pages. Small browser scr
 
 ## Deployment & automation
 
-GitHub Pages deploys from the Actions workflow after a push to `main`. In repository Settings → Pages, choose **GitHub Actions**. Issue-to-PR automation uses only this repository’s temporary `GITHUB_TOKEN`; enable **Allow GitHub Actions to create and approve pull requests** in Settings → Actions → General for draft PR creation (the workflow does not approve or merge PRs).
+GitHub Pages deploys from the Actions workflow after a push to `main`. In repository Settings → Pages, choose **GitHub Actions**. Submission automation uses only this repository’s temporary `GITHUB_TOKEN`. This organization currently restricts automated PR creation, so the bot creates a validated review branch and posts a link for a maintainer to create the PR. If draft PR creation is permitted in the future, it happens automatically. The bot never approves or merges PRs.
 
 The submission workflow validates and builds its generated change before creating the draft PR, because bot-created PRs do not automatically trigger ordinary PR workflows. Fork pull requests run with read-only access. Publication uses a separate, main-only Pages job. Failed builds leave the previous deployment available. README is generated during deployment and synchronized to the repository only when it changes.
 

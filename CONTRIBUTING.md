@@ -34,7 +34,7 @@ The example ID and date above are placeholders, not a research reference. Use â€
 ## Review and publishing
 
 1. For an Issue Form, automation checks the arXiv ID, enriches title/authors/publication date from the public Hugging Face paper API, validates the complete catalog, runs tests and builds the site.
-2. The bot opens a **draft PR**. If metadata is unavailable, it leaves an explanation; use a direct PR with source-backed metadata. After fixing an issue, a maintainer can retry the `Paper submission` workflow with its number. Repeating a submission with an existing PR does not overwrite that PR.
+2. The bot prepares a **review branch** and a link for a maintainer to create the PR. Where organization policy permits, it opens a draft PR automatically. If metadata is unavailable, it leaves an explanation; use a direct PR with source-backed metadata. After fixing an issue, a maintainer can retry the `Paper submission` workflow with its number. Repeating a submission with an existing PR does not overwrite that PR.
 3. A maintainer verifies relevance, bibliographic fields, summary, official source ownership and any performance qualifications; fills technical fields when supported; marks the PR ready; and merges it.
 4. A push to `main` rebuilds and deploys all views to GitHub Pages. The README is generated from the same data. The prior deployment remains available if the build fails.
 

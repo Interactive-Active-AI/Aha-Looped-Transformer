@@ -4,7 +4,7 @@ title: "[Paper] "
 body:
   - type: markdown
     attributes:
-      value: "Share a paper on recurrent computation. Automation prepares a draft PR; a maintainer reviews it before it appears on the site. Use your own words for the summary."
+      value: "Share a paper on recurrent computation. Automation prepares a review branch; a maintainer reviews it before it appears on the site. Use your own words for the summary."
   - type: input
     id: paper
     attributes:

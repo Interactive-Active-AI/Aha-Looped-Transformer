@@ -1,0 +1,22 @@
+id: arxiv-2605-21488
+name: EqR
+title: "Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning"
+arxiv: "2605.21488"
+published: 2026-05-20
+authors:
+  - Benhao Huang
+  - Zhengyang Geng
+  - Zico Kolter
+group: adaptive
+summary: Equilibrium reasoners proposes a new view of recurrence as learning
+  stable attractors as opposed to fixed point convergence. The new framework
+  allows for more sophisticated test time scaling, and ultimately leads to
+  stronger performance compared to the base TRM model.
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: https://github.com/locuslab/EqR
+weights: ""
+verified: 2026-09-15

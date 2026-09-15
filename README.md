@@ -4,7 +4,7 @@
 
 [Explore the live atlas](https://interactive-active-ai.github.io/Aha-Looped-Transformer/) · [Submit a paper](https://github.com/Interactive-Active-AI/Aha-Looped-Transformer/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse 16 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
+Browse 16 curated works, follow their publication timeline, and compare recurrence and depth control. 
 
 ## Collection
 

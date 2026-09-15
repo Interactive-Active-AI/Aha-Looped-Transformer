@@ -1,0 +1,23 @@
+{
+  "id": "moeut",
+  "name": "MoEUT",
+  "title": "MoEUT: Mixture-of-Experts Universal Transformers",
+  "arxiv": "2405.16039",
+  "published": "2024-05-25",
+  "authors": [
+    "Róbert Csordás",
+    "Kazuki Irie",
+    "Jürgen Schmidhuber",
+    "Christopher Potts",
+    "Christopher D. Manning"
+  ],
+  "group": "adaptive",
+  "summary": "Combines the Universal Transformer with mixture-of-experts layers to study shared depth and sparse capacity.",
+  "diagram": "[ Shared attention + MoE ] × R",
+  "depth": "See paper",
+  "kv": "See paper",
+  "notes": "Code and checkpoint availability have not been audited for this entry.",
+  "code": "",
+  "weights": "",
+  "verified": "2026-09-15"
+}

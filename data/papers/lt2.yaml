@@ -1,0 +1,25 @@
+{
+  "id": "lt2",
+  "name": "LT²",
+  "title": "LT2: Linear-Time Looped Transformers",
+  "arxiv": "2605.20670",
+  "published": "2026-05-22",
+  "authors": [
+    "Chunyuan Deng",
+    "Yizhe Zhang",
+    "Rui-Jie Zhu",
+    "Yuanyuan Xu",
+    "Jiarui Liu",
+    "T. S. Eugene Ng",
+    "Hanjie Chen"
+  ],
+  "group": "full",
+  "summary": "Combines looping with linear, sparse and hybrid token mixers to explore more efficient repeated computation.",
+  "diagram": "[ Linear / sparse / hybrid mixer ] × R",
+  "depth": "Iteration budget",
+  "kv": "Mixer-dependent state",
+  "notes": "The Full+GDN variant still includes full attention; not all variants have strictly linear attention complexity.",
+  "code": "https://github.com/chili-lab/LT2",
+  "weights": "",
+  "verified": "2026-09-15"
+}

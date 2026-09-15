@@ -1,0 +1,23 @@
+{
+  "id": "deeploop",
+  "name": "DeepLoop",
+  "title": "DeepLoop: Depth Scaling for Looped Transformers",
+  "arxiv": "2607.13491",
+  "published": "2026-07-15",
+  "authors": [
+    "Shuzhen Li",
+    "Yifan Zhang",
+    "Jiacheng Guo",
+    "Quanquan Gu",
+    "Mengdi Wang"
+  ],
+  "group": "full",
+  "summary": "Revisits residual scaling for repeated parameter use, focusing on stable training of deeper looped networks.",
+  "diagram": "[ Residual-scaled shared layers ] × R",
+  "depth": "Deep recurrence",
+  "kv": "See paper",
+  "notes": "No public weights were confirmed in this review.",
+  "code": "",
+  "weights": "",
+  "verified": "2026-09-15"
+}

@@ -1,0 +1,15 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import YAML from 'yaml';
+import {loadPapers,normalizeArxiv,validatePaper} from '../scripts/catalog.mjs';
+import {parseForm,makePaper} from '../scripts/submission.mjs';
+const papers=loadPapers();
+test('seed data is unique, complete and chronologically ordered',()=>{assert(papers.length>=16);assert(papers.every((p,i)=>!i||papers[i-1].published>=p.published));});
+test('normalizes versioned links and rejects URL tricks',()=>{assert.equal(normalizeArxiv('https://arxiv.org/pdf/2502.05171v3.pdf'),'2502.05171');for(const s of ['https://arxiv.org.evil.test/abs/2502.05171','https://evil.test/2502.05171','2502.05171/../../x','javascript:alert(1)'])assert.throws(()=>normalizeArxiv(s));});
+test('rejects path traversal, invalid dates, executable links and unknown groups',()=>{for(const change of [{id:'../test'},{published:'2026-02-30'},{code:'javascript:alert(1)'},{group:'unknown'},{authors:[]}])assert.throws(()=>validatePaper({...papers[0],...change}));});
+test('duplicate arxiv records fail validation',()=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'aha-test-'));try{for(const id of ['one','two'])fs.writeFileSync(path.join(dir,id+'.yaml'),YAML.stringify({...papers[0],id}));assert.throws(()=>loadPapers(dir),/Duplicate/);}finally{fs.rmSync(dir,{recursive:true,force:true});}});
+test('issue form becomes a valid draft with unknown architecture fields',()=>{const form=`### Paper URL or arXiv ID\n\nhttps://arxiv.org/abs/2502.05171v2\n\n### Short name\n\nHuginn\n\n### Short summary\n\nA recurrent core.\n\n### Primary category\n\nCore recurrence\n\n### Official code or project URL\n\n_No response_\n\n### Official weights URL\n\n_No response_\n`;const fields=parseForm(form);const p=makePaper(fields,{title:'Paper title',authors:[{name:'Author'}],publishedAt:'2025-02-07T00:00:00Z'},'2026-09-15');assert.equal(p.arxiv,'2502.05171');assert.equal(p.group,'core');assert.equal(p.code,'');assert.equal(p.diagram,'See paper for architecture');});
+test('duplicate issue headings are rejected',()=>assert.throws(()=>parseForm('### Short name\n\nFirst\n\n### Short name\n\nSecond\n'),/Duplicate/));

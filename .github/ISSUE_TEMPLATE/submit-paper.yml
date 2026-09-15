@@ -1,0 +1,57 @@
+name: Submit a paper
+description: Add a work to the Aha Looped Transformer atlas.
+title: "[Paper] "
+body:
+  - type: markdown
+    attributes:
+      value: "Share a paper on recurrent computation. Automation prepares a draft PR; a maintainer reviews it before it appears on the site. Use your own words for the summary."
+  - type: input
+    id: paper
+    attributes:
+      label: Paper URL or arXiv ID
+      placeholder: https://arxiv.org/abs/2502.05171
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Short name
+      placeholder: Huginn
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Short summary
+      description: Explain the main idea and its connection to looped Transformers in 1–3 sentences.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Primary category
+      options:
+        - Adaptive depth
+        - Core recurrence
+        - Full-stack recurrence
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Official code or project URL
+      placeholder: https://github.com/author/repository
+  - type: input
+    id: weights
+    attributes:
+      label: Official weights URL
+      placeholder: https://huggingface.co/author/model
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that this paper is not already in the collection.
+          required: true
+        - label: My summary is in my own words and the links support the entry.
+          required: true

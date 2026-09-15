@@ -1,0 +1,24 @@
+{
+  "id": "think-at-hard",
+  "name": "Think-at-Hard",
+  "title": "Think-at-Hard: Selective Latent Iterations to Improve Reasoning Language Models",
+  "arxiv": "2511.08577",
+  "published": "2025-11-11",
+  "authors": [
+    "Tianyu Fu",
+    "Yichen You",
+    "Zekai Chen",
+    "Guohao Dai",
+    "Huazhong Yang",
+    "Yu Wang"
+  ],
+  "group": "adaptive",
+  "summary": "Allocates extra latent iterations to selected tokens, using a decider and duo-causal attention.",
+  "diagram": "Token → Decider → Latent iterations",
+  "depth": "Selective token iteration",
+  "kv": "Duo-causal attention",
+  "notes": "Selective additional iteration and ordinary layer skipping have different computational semantics.",
+  "code": "https://github.com/thu-nics/TaH",
+  "weights": "https://huggingface.co/nics-efc/TaH-plus-1.7B",
+  "verified": "2026-09-15"
+}

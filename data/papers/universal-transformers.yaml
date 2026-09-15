@@ -1,0 +1,23 @@
+{
+  "id": "universal-transformers",
+  "name": "Universal Transformers",
+  "title": "Universal Transformers",
+  "arxiv": "1807.03819",
+  "published": "2018-07-10",
+  "authors": [
+    "Mostafa Dehghani",
+    "Stephan Gouws",
+    "Oriol Vinyals",
+    "Jakob Uszkoreit",
+    "Łukasz Kaiser"
+  ],
+  "group": "adaptive",
+  "summary": "Shares a transformation across depth, with adaptive computation time allowing each position to halt independently.",
+  "diagram": "Shared transformation + ACT",
+  "depth": "Per-position adaptive halting",
+  "kv": "Depth-wise shared self-attention",
+  "notes": "The foundation for recurrent depth and position-wise adaptive computation.",
+  "code": "",
+  "weights": "",
+  "verified": "2026-09-15"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "loopformer",
+  "name": "LoopFormer",
+  "title": "LoopFormer: Elastic-Depth Looped Transformers for Latent Reasoning via Shortcut Modulation",
+  "arxiv": "2602.11451",
+  "published": "2026-02-11",
+  "authors": [
+    "Ahmadreza Jeddi",
+    "Marco Ciccone",
+    "Babak Taati"
+  ],
+  "group": "adaptive",
+  "summary": "Conditions shared computation on time and step size to support elastic inference budgets.",
+  "diagram": "h(t) → F(t, Δt) → h(t+Δt)",
+  "depth": "Budget-conditioned depth",
+  "kv": "See implementation",
+  "notes": "Adjustable budgets are distinct from automatically deciding when every token should stop.",
+  "code": "https://github.com/armenjeddi/loopformer",
+  "weights": "https://huggingface.co/collections/armenjeddi/loopformer",
+  "verified": "2026-09-15"
+}

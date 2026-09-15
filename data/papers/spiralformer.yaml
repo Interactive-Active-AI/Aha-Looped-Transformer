@@ -1,0 +1,29 @@
+{
+  "id": "spiralformer",
+  "name": "SpiralFormer",
+  "title": "SpiralFormer: Looped Transformers Can Learn Hierarchical Dependencies via Multi-Resolution Recursion",
+  "arxiv": "2602.11698",
+  "published": "2026-02-12",
+  "authors": [
+    "Chengting Yu",
+    "Xiaobo Shu",
+    "Yadao Wang",
+    "Yizhen Zhang",
+    "Haoyi Wu",
+    "You Wu",
+    "Rujiao Long",
+    "Ziheng Chen",
+    "Yuchi Xu",
+    "Wenbo Su",
+    "Bo Zheng"
+  ],
+  "group": "full",
+  "summary": "Explores recurrent computation at different sequence resolutions to change the cost of repeated processing.",
+  "diagram": "[ Multi-resolution states ] × R",
+  "depth": "Multi-resolution recurrence",
+  "kv": "See paper",
+  "notes": "No official code or weights were confirmed in this review. This entry is not the similarly named speech model.",
+  "code": "",
+  "weights": "",
+  "verified": "2026-09-15"
+}

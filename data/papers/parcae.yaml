@@ -1,0 +1,22 @@
+{
+  "id": "parcae",
+  "name": "Parcae",
+  "title": "Parcae: Scaling Laws For Stable Looped Language Models",
+  "arxiv": "2604.12946",
+  "published": "2026-04-14",
+  "authors": [
+    "Hayden Prairie",
+    "Zachary Novack",
+    "Taylor Berg-Kirkpatrick",
+    "Daniel Y. Fu"
+  ],
+  "group": "core",
+  "summary": "Uses stable state injection to examine the scaling of looped Transformers with recurrence and training data.",
+  "diagram": "Prelude → [ Stable core ] × R → Coda",
+  "depth": "Variable recurrent depth",
+  "kv": "See implementation",
+  "notes": "The repository provides entry points for 140M, 370M, 770M and 1.3B pretrained models. Availability is not a local reproduction result.",
+  "code": "https://github.com/sandyresearch/parcae",
+  "weights": "",
+  "verified": "2026-09-15"
+}

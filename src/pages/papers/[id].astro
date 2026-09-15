@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {loadPapers,groups,REPO} from '../../../scripts/catalog.mjs';
+export function getStaticPaths(){return loadPapers().map(p=>({params:{id:p.id},props:{paper:p}}));}
+const {paper:p}=Astro.props,base=import.meta.env.BASE_URL.replace(/\/$/,'');
+const bib=`@misc{${p.id.replace(/-/g,'')}${p.published.slice(0,4)},\n  title = {${p.title.replace(/[{}\\]/g,'')}},\n  author = {${p.authors.join(' and ').replace(/[{}\\]/g,'')}},\n  year = {${p.published.slice(0,4)}},\n  eprint = {${p.arxiv}},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/${p.arxiv}}\n}`;
+---
+<Layout title={`${p.name} · Aha Looped Transformer`} description={p.summary}>
+<div class="paper-page"><a href={`${base}/`}>← Back to the collection</a><div class="la-eyebrow">{groups[p.group]} · <time datetime={p.published}>{p.published}</time></div><h1>{p.name}</h1><h2 class="paper-title">{p.title}</h2><p class="authors">{p.authors.join(', ')}</p><p class="paper-summary">{p.summary}</p><div class="paper-links"><a class="button la-submit" href={`https://arxiv.org/abs/${p.arxiv}`}>Read paper ↗</a>{p.code&&<a class="button" href={p.code}>Code / project ↗</a>}{p.weights&&<a class="button" href={p.weights}>Weights ↗</a>}</div>
+<section class="la-detail"><h2>Inside the method</h2><div class="paper-diagram">{p.diagram}</div><p class="small">Simplified conceptual schematic. Consult the paper for the complete architecture.</p><div class="la-details"><dl><dt>Recurrence family</dt><dd>{groups[p.group]}</dd></dl><dl><dt>Depth control</dt><dd>{p.depth}</dd></dl><dl><dt>KV / state strategy</dt><dd>{p.kv}</dd></dl></div></section><section class="paper-note"><h2>Reading note</h2><p>{p.notes}</p><p class="small">Sources checked {p.verified}. This catalog does not imply independent reproduction.</p></section>
+<section class="citation"><div class="la-heading"><h2>Cite this work</h2><button type="button" id="copy-citation">Copy BibTeX</button></div><pre id="bibtex"><code>{bib}</code></pre><p id="copy-status" aria-live="polite"></p></section><a href={`${REPO}/issues/new?title=${encodeURIComponent('Correction: '+p.name)}&body=${encodeURIComponent('Paper: https://arxiv.org/abs/'+p.arxiv+'\n\nSuggested correction and supporting source:\n')}`}>Suggest a correction ↗</a></div>
+<script>
+const button=document.getElementById('copy-citation');
+button?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById('bibtex')?.textContent||'');document.getElementById('copy-status').textContent='BibTeX copied.';}catch{document.getElementById('copy-status').textContent='Select and copy the citation above.';}});
+</script>
+</Layout>

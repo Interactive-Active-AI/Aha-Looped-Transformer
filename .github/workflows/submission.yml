@@ -1,0 +1,36 @@
+name: Paper submission
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Open paper submission issue number to retry'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: submission-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: false
+jobs:
+  draft:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.issue.title, '[Paper]')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
+      - run: node scripts/submission.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

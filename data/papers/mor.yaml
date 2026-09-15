@@ -1,0 +1,29 @@
+{
+  "id": "mor",
+  "name": "Mixture-of-Recursions",
+  "title": "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation",
+  "arxiv": "2507.10524",
+  "published": "2025-07-14",
+  "authors": [
+    "Sangmin Bae",
+    "Yujin Kim",
+    "Reza Bayat",
+    "Sungnyun Kim",
+    "Jiyoun Ha",
+    "Tal Schuster",
+    "Adam Fisch",
+    "Hrayr Harutyunyan",
+    "Ziwei Ji",
+    "Aaron Courville",
+    "Se-Young Yun"
+  ],
+  "group": "adaptive",
+  "summary": "Routes tokens through different numbers of shared recursions and studies recursion-aware caching strategies.",
+  "diagram": "Token → Router → Rᵢ loops",
+  "depth": "Token-level routing",
+  "kv": "Recursion-wise / shared KV",
+  "notes": "Appendix E measures forward time without KV cache maintenance. Do not read its throughput gains as universal end-to-end serving speedups.",
+  "code": "https://github.com/raymin0223/mixture_of_recursions",
+  "weights": "",
+  "verified": "2026-09-15"
+}

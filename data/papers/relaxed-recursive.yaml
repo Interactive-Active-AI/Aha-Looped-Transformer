@@ -1,0 +1,24 @@
+{
+  "id": "relaxed-recursive",
+  "name": "Relaxed Recursive Transformers",
+  "title": "Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA",
+  "arxiv": "2410.20672",
+  "published": "2024-10-28",
+  "authors": [
+    "Sangmin Bae",
+    "Adam Fisch",
+    "Hrayr Harutyunyan",
+    "Ziwei Ji",
+    "Seungyeon Kim",
+    "Tal Schuster"
+  ],
+  "group": "full",
+  "summary": "Converts pretrained Transformers into recursive models, relaxing sharing with depth-specific low-rank adaptations.",
+  "diagram": "[ Shared layers + depth LoRA ] × R",
+  "depth": "Recursion budget",
+  "kv": "Continuous depth-wise batching",
+  "notes": "The reported batching throughput gains are based on analysis and simulation; distinguish them from end-to-end serving measurements.",
+  "code": "",
+  "weights": "",
+  "verified": "2026-09-15"
+}

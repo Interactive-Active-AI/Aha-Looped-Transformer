@@ -1,0 +1,13 @@
+---
+import '../styles/site.css';
+import {REPO,SITE} from '../../scripts/catalog.mjs';
+const {title='Aha Looped Transformer',description='An open visual atlas of looped Transformers, recurrent computation, adaptive depth, and latent reasoning.'}=Astro.props;
+const base=import.meta.env.BASE_URL.replace(/\/$/,'');
+---
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title}</title><meta name="description" content={description}/><meta name="theme-color" content="#ca6f6f"/><link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}/><link rel="canonical" href={new URL(Astro.url.pathname,SITE).href}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={new URL(Astro.url.pathname,SITE).href}/></head>
+<body><a class="skip" href="#main">Skip to content</a><div id="loop-atlas-proposal">
+<header><a class="la-brand" href={`${base}/`}><svg width="27" height="20" viewBox="0 0 32 20" fill="none" aria-hidden="true"><path d="M16 10C12 3 3 1 3 10s9 7 13 0 13-9 13 0-9 7-13 0Z" stroke="currentColor" stroke-width="2"/></svg><span>AHA · LOOPED TRANSFORMER</span></a><nav aria-label="Main navigation"><a href={`${base}/?view=explore`} data-view="explore">Explore</a><a href={`${base}/?view=timeline`} data-view="timeline">Timeline</a><a href={`${base}/?view=compare`} data-view="compare">Compare <span id="la-count">0</span></a></nav><a class="la-submit button" href={`${base}/contribute/`}>Submit a paper ↗</a></header>
+<main id="main"><slot/></main>
+<footer><span>Curated by <a href="https://github.com/Interactive-Active-AI">Interactive &amp; Active AI</a></span><span><a href={REPO}>GitHub ↗</a> · <a href={`${base}/contribute/`}>Contribute</a> · <a href={`${REPO}/blob/main/LICENSE`}>Open source</a></span></footer></div></body></html>

@@ -1,0 +1,27 @@
+{
+  "id": "huginn",
+  "name": "Huginn",
+  "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+  "arxiv": "2502.05171",
+  "published": "2025-02-07",
+  "authors": [
+    "Jonas Geiping",
+    "Sean McLeish",
+    "Neel Jain",
+    "John Kirchenbauer",
+    "Siddharth Singh",
+    "Brian R. Bartoldson",
+    "Bhavya Kailkhura",
+    "Abhinav Bhatele",
+    "Tom Goldstein"
+  ],
+  "group": "core",
+  "summary": "A recurrent core refines hidden states between a prelude and a coda, scaling latent computation at inference time.",
+  "diagram": "Prelude → [ Core ] × R → Coda",
+  "depth": "Variable recurrent depth",
+  "kv": "Recurrence-aware cache",
+  "notes": "Huginn-0125 uses 2 prelude layers, 4 shared core layers and 2 coda layers. At mean recurrence 32, expected effective depth is 132. Independent parameters: about 3.5B.",
+  "code": "https://github.com/seal-rg/recurrent-pretraining",
+  "weights": "https://huggingface.co/tomg-group-umd/huginn-0125",
+  "verified": "2026-09-15"
+}

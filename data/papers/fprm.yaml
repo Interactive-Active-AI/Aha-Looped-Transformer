@@ -1,0 +1,26 @@
+{
+  "id": "fprm",
+  "name": "FPRM",
+  "title": "Fixed-Point Reasoners: Stable and Adaptive Deep Looped Transformers",
+  "arxiv": "2606.18206",
+  "published": "2026-06-16",
+  "authors": [
+    "Sajad Movahedi",
+    "Vera Milovanović",
+    "Shlomo Libo Feigin",
+    "Alexander Theus",
+    "Thomas Hofmann",
+    "Valentina Boeva",
+    "T. Konstantin Rusch",
+    "Antonio Orvieto"
+  ],
+  "group": "adaptive",
+  "summary": "Studies stable deep recurrence and fixed-point convergence as a stopping signal for structured reasoning.",
+  "diagram": "[ State refinement ] → Fixed point",
+  "depth": "Convergence-based halting",
+  "kv": "Task / variant dependent",
+  "notes": "The public checkpoint collection includes convolutional variants. Check the specific architecture before equating it with the paper’s Transformer.",
+  "code": "",
+  "weights": "https://huggingface.co/fixed-point-reasoners/fprm",
+  "verified": "2026-09-15"
+}

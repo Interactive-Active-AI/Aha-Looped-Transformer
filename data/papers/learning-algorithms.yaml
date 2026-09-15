@@ -1,0 +1,22 @@
+{
+  "id": "learning-algorithms",
+  "name": "Learning to Learn with Loops",
+  "title": "Looped Transformers are Better at Learning Learning Algorithms",
+  "arxiv": "2311.12424",
+  "published": "2023-11-21",
+  "authors": [
+    "Liu Yang",
+    "Kangwook Lee",
+    "Robert Nowak",
+    "Dimitris Papailiopoulos"
+  ],
+  "group": "full",
+  "summary": "Studies how looping encourages Transformers to learn iterative learning algorithms in context.",
+  "diagram": "[ Shared Transformer ] × R",
+  "depth": "Iteration budget",
+  "kv": "Task-specific experimental setup",
+  "notes": "A controlled algorithm-learning study, rather than a general-purpose chat model.",
+  "code": "https://github.com/Leiay/looped_transformer",
+  "weights": "",
+  "verified": "2026-09-15"
+}

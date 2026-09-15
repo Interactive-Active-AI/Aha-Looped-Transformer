@@ -1,0 +1,21 @@
+{
+  "id": "lotus",
+  "name": "LOTUS",
+  "title": "Bridging the Gap Between Latent and Explicit Reasoning with Looped Transformers",
+  "arxiv": "2606.31779",
+  "published": "2026-06-30",
+  "authors": [
+    "Ying Fan",
+    "Anej Svete",
+    "Kangwook Lee"
+  ],
+  "group": "full",
+  "summary": "Trains parallel latent blocks with explicit reasoning-step supervision to compress the thought phase.",
+  "diagram": "[ Parallel latent blocks ] × R → Answer",
+  "depth": "Latent iteration budget",
+  "kv": "Fixed prefix context",
+  "notes": "Reported thought-phase latency improvements are not equivalent to end-to-end speedups for all requests.",
+  "code": "https://github.com/yingfan-bot/lotus",
+  "weights": "",
+  "verified": "2026-09-15"
+}

@@ -1,0 +1,22 @@
+id: arxiv-2605-08605
+name: LDT
+title: Lattice Deduction Transformers
+arxiv: "2605.08605"
+published: 2026-05-09
+authors:
+  - Liam Davis
+  - Leopold Haller
+  - Alberto Alfarano
+  - Mark Santolucito
+group: core
+summary: The lattice deduction transformer is a looped transformer that projects
+  the token space through a lattice structure to perform efficient combinatorial
+  reasoning.
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: https://github.com/lcrh/lattice-deduction-transformers
+weights: ""
+verified: 2026-09-15

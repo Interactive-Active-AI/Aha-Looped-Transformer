@@ -4,7 +4,7 @@
 
 [Explore the live atlas](https://interactive-active-ai.github.io/Aha-Looped-Transformer/) · [Submit a paper](https://github.com/Interactive-Active-AI/Aha-Looped-Transformer/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse 19 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
+Browse 20 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
 
 ## Collection
 
@@ -12,6 +12,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 
 | Work | First published | Focus | Sources |
 | --- | --- | --- | --- |
+| [Recurrent Denoiser](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2609-01449/) | 2026-09-01 | Adaptive depth | [Paper](https://arxiv.org/abs/2609.01449) |
 | [Nanbeige4.2-3B](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/nanbeige/) | 2026-07-27 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.22083) · [Weights](https://huggingface.co/Nanbeige/Nanbeige4.2-3B) |
 | [DeepLoop](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/deeploop/) | 2026-07-15 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.13491) |
 | [LOTUS](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/lotus/) | 2026-06-30 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2606.31779) · [Code / project](https://github.com/yingfan-bot/lotus) |

@@ -1,0 +1,19 @@
+id: arxiv-2308-09564
+name: DEQDet
+title: Deep Equilibrium Object Detection
+arxiv: "2308.09564"
+published: 2023-08-18
+authors:
+  - Shuai Wang
+  - Yao Teng
+  - Limin Wang
+group: core
+summary: Deep Equilibrium Model
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: https://github.com/MCG-NJU/DEQDet
+weights: ""
+verified: 2026-09-16

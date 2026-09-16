@@ -1,0 +1,24 @@
+{
+  "id": "residual-scaling",
+  "name": "Residual Scaling",
+  "title": "On the Residual Scaling of Looped Transformers: Stability and Transferability",
+  "arxiv": "2606.18524",
+  "published": "2026-06-16",
+  "authors": [
+    "Shaowen Wang",
+    "Bingrui Li",
+    "Ge Zhang",
+    "Wenhao Huang",
+    "Shen Yan",
+    "Jian Li"
+  ],
+  "group": "full",
+  "summary": "Analyzes how weight sharing correlates residual updates across loop iterations and derives a 1/N residual scale for a block repeated N times. Factoring loop count from unique-layer depth improves training stability and supports learning-rate transfer across loop counts.",
+  "diagram": "[ Residual-scaled shared block ] × N",
+  "depth": "Configurable N loops over L unique layers",
+  "kv": "See paper",
+  "notes": "For L unique layers repeated N times, the parameterization is epsilon = lambda / (N sqrt(L)). The analysis separates correlation across loops from variance across unique layers; Transformer experiments compare loss and learning-rate transfer across loop counts at fixed unique-layer depth.",
+  "code": "",
+  "weights": "",
+  "verified": "2026-09-15"
+}

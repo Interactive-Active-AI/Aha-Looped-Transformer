@@ -1,0 +1,29 @@
+id: arxiv-2111-05297
+name: Sliced-Recursive-Transformer (SReT)
+title: Sliced Recursive Transformer
+arxiv: "2111.05297"
+published: 2021-11-09
+authors:
+  - Zhiqiang Shen
+  - Zechun Liu
+  - Eric Xing
+group: core
+summary: This paper presents a neat yet effective recursive operation on
+  transformers that can improve parameter utilization without involving
+  additional parameters. This is achieved by sharing weights across the depth of
+  transformer networks. The proposed method can obtain a substantial gain (~2%)
+  simply using a naive recursive operation, requires no special or sophisticated
+  knowledge for designing principles of networks, and introduces minimal
+  computational overhead to the training procedure. To reduce the additional
+  computation caused by recursive operation while maintaining the superior
+  accuracy, we propose an approximation method through multiple sliced group
+  self-attentions across recursive layers, which can reduce the cost consumption
+  by 10~30% with minimal performance loss.
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: https://github.com/szq0214/SReT
+weights: https://github.com/szq0214/SReT#pre-trained-model
+verified: 2026-09-15

@@ -33,6 +33,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 | [Relaxed Recursive Transformers](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/relaxed-recursive/) | 2024-10-28 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2410.20672) |
 | [MoEUT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/moeut/) | 2024-05-25 | Adaptive depth | [Paper](https://arxiv.org/abs/2405.16039) |
 | [Learning to Learn with Loops](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/learning-algorithms/) | 2023-11-21 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2311.12424) · [Code / project](https://github.com/Leiay/looped_transformer) |
+| [Sliced-Recursive-Transformer (SReT)](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2111-05297/) | 2021-11-09 | Core recurrence | [Paper](https://arxiv.org/abs/2111.05297) · [Code / project](https://github.com/szq0214/SReT) · [Weights](https://github.com/szq0214/SReT#pre-trained-model) |
 | [Universal Transformers](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/universal-transformers/) | 2018-07-10 | Adaptive depth | [Paper](https://arxiv.org/abs/1807.03819) |
 
 ## Contribute

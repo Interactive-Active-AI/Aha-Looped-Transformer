@@ -4,7 +4,7 @@
 
 [Explore the live atlas](https://interactive-active-ai.github.io/Aha-Looped-Transformer/) · [Submit a paper](https://github.com/Interactive-Active-AI/Aha-Looped-Transformer/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse 21 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
+Browse 22 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
 
 ## Collection
 
@@ -15,6 +15,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 | [SMELT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/smelt/) | 2026-09-01 | Core recurrence | [Paper](https://arxiv.org/abs/2609.01343) |
 | [Nanbeige4.2-3B](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/nanbeige/) | 2026-07-27 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.22083) · [Weights](https://huggingface.co/Nanbeige/Nanbeige4.2-3B) |
 | [DeepLoop](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/deeploop/) | 2026-07-15 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.13491) |
+| [ERM](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2607-10128/) | 2026-07-11 | Adaptive depth | [Paper](https://arxiv.org/abs/2607.10128) · [Code / project](https://github.com/Machine-learning-and-complex-systems/ERM) |
 | [LOTUS](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/lotus/) | 2026-06-30 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2606.31779) · [Code / project](https://github.com/yingfan-bot/lotus) |
 | [FPRM](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/fprm/) | 2026-06-16 | Adaptive depth | [Paper](https://arxiv.org/abs/2606.18206) · [Weights](https://huggingface.co/fixed-point-reasoners/fprm) |
 | [Residual Scaling](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/residual-scaling/) | 2026-06-16 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2606.18524) |

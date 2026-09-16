@@ -4,7 +4,7 @@
 
 [Explore the live atlas](https://interactive-active-ai.github.io/Aha-Looped-Transformer/) · [Submit a paper](https://github.com/Interactive-Active-AI/Aha-Looped-Transformer/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse 25 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
+Browse 26 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
 
 ## Collection
 
@@ -35,6 +35,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 | [Relaxed Recursive Transformers](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/relaxed-recursive/) | 2024-10-28 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2410.20672) |
 | [MoEUT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/moeut/) | 2024-05-25 | Adaptive depth | [Paper](https://arxiv.org/abs/2405.16039) |
 | [Learning to Learn with Loops](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/learning-algorithms/) | 2023-11-21 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2311.12424) · [Code / project](https://github.com/Leiay/looped_transformer) |
+| [DEQDet](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2308-09564/) | 2023-08-18 | Core recurrence | [Paper](https://arxiv.org/abs/2308.09564) · [Code / project](https://github.com/MCG-NJU/DEQDet) |
 | [Sliced-Recursive-Transformer (SReT)](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2111-05297/) | 2021-11-09 | Core recurrence | [Paper](https://arxiv.org/abs/2111.05297) · [Code / project](https://github.com/szq0214/SReT) · [Weights](https://github.com/szq0214/SReT#pre-trained-model) |
 | [Universal Transformers](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/universal-transformers/) | 2018-07-10 | Adaptive depth | [Paper](https://arxiv.org/abs/1807.03819) |
 

@@ -1,0 +1,27 @@
+{
+  "id": "smelt",
+  "name": "SMELT",
+  "title": "SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers",
+  "arxiv": "2609.01343",
+  "published": "2026-09-01",
+  "authors": [
+    "Shaowen Wang",
+    "Ge Zhang",
+    "Kairong Luo",
+    "Yuhao Wu",
+    "Shaofan Liu",
+    "Jiaheng Liu",
+    "Wenhao Huang",
+    "Shen Yan",
+    "Jian Li"
+  ],
+  "group": "core",
+  "summary": "Repeats the middle half of a sparse MoE Transformer's layers twice while closely matching per-token FLOPs, total non-embedding parameters and KV cache to an unlooped baseline. Budget-matched scaling experiments show improved loss and downstream performance from reusing the shared middle layers.",
+  "diagram": "Front layers → [ Middle half ] × 2 → Back layers",
+  "depth": "Fixed: middle half of layers repeated twice",
+  "kv": "Matched to the unlooped baseline",
+  "notes": "Separate fitted Chinchilla-style scaling laws estimate 6.8–18.0% training-FLOP savings on the compute-optimal frontier. Experiments cover four sizes up to 54B non-embedding parameters, with the largest domain gains on Code and stronger gains for longer samples and more in-context examples.",
+  "code": "",
+  "weights": "",
+  "verified": "2026-09-15"
+}

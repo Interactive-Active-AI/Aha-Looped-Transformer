@@ -1,0 +1,24 @@
+id: arxiv-2609-01449
+name: Recurrent Denoiser
+title: Diffusion as a Training Curriculum for Timestep-Free Iterative Reasoning
+arxiv: "2609.01449"
+published: 2026-09-01
+authors:
+  - Mariia Drozdova
+  - Aidan Sirbu
+  - Pietro Miotti
+  - Robert Obryk
+  - Mayalen Etcheverry
+  - Eyvind Niklasson
+  - Blake Richards
+group: adaptive
+summary: Diffusion model with recurrent memory that does more than state-based
+  self-correction
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: ""
+weights: ""
+verified: 2026-09-15

@@ -4,7 +4,7 @@
 
 [Explore the live atlas](https://interactive-active-ai.github.io/Aha-Looped-Transformer/) · [Submit a paper](https://github.com/Interactive-Active-AI/Aha-Looped-Transformer/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse 20 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
+Browse 24 curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
 
 ## Collection
 
@@ -12,11 +12,15 @@ This table and the website are generated from the same files in `data/papers/`. 
 
 | Work | First published | Focus | Sources |
 | --- | --- | --- | --- |
+| [Recurrent Denoiser](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2609-01449/) | 2026-09-01 | Adaptive depth | [Paper](https://arxiv.org/abs/2609.01449) |
+| [SMELT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/smelt/) | 2026-09-01 | Core recurrence | [Paper](https://arxiv.org/abs/2609.01343) |
 | [Nanbeige4.2-3B](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/nanbeige/) | 2026-07-27 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.22083) · [Weights](https://huggingface.co/Nanbeige/Nanbeige4.2-3B) |
 | [DeepLoop](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/deeploop/) | 2026-07-15 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.13491) |
+| [ERM](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2607-10128/) | 2026-07-11 | Adaptive depth | [Paper](https://arxiv.org/abs/2607.10128) · [Code / project](https://github.com/Machine-learning-and-complex-systems/ERM) |
 | [LOTUS](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/lotus/) | 2026-06-30 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2606.31779) · [Code / project](https://github.com/yingfan-bot/lotus) |
 | [FPRM](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/fprm/) | 2026-06-16 | Adaptive depth | [Paper](https://arxiv.org/abs/2606.18206) · [Weights](https://huggingface.co/fixed-point-reasoners/fprm) |
 | [dvlt](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2605-30215/) | 2026-05-28 | Adaptive depth | [Paper](https://arxiv.org/abs/2605.30215) · [Code / project](https://github.com/nv-tlabs/dvlt) |
+| [Residual Scaling](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/residual-scaling/) | 2026-06-16 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2606.18524) |
 | [LT²](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/lt2/) | 2026-05-22 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2605.20670) · [Code / project](https://github.com/chili-lab/LT2) |
 | [EqR](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2605-21488/) | 2026-05-20 | Adaptive depth | [Paper](https://arxiv.org/abs/2605.21488) · [Code / project](https://github.com/locuslab/EqR) |
 | [LDT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2605-08605/) | 2026-05-09 | Core recurrence | [Paper](https://arxiv.org/abs/2605.08605) · [Code / project](https://github.com/lcrh/lattice-deduction-transformers) |
@@ -31,6 +35,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 | [Relaxed Recursive Transformers](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/relaxed-recursive/) | 2024-10-28 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2410.20672) |
 | [MoEUT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/moeut/) | 2024-05-25 | Adaptive depth | [Paper](https://arxiv.org/abs/2405.16039) |
 | [Learning to Learn with Loops](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/learning-algorithms/) | 2023-11-21 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2311.12424) · [Code / project](https://github.com/Leiay/looped_transformer) |
+| [Sliced-Recursive-Transformer (SReT)](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2111-05297/) | 2021-11-09 | Core recurrence | [Paper](https://arxiv.org/abs/2111.05297) · [Code / project](https://github.com/szq0214/SReT) · [Weights](https://github.com/szq0214/SReT#pre-trained-model) |
 | [Universal Transformers](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/universal-transformers/) | 2018-07-10 | Adaptive depth | [Paper](https://arxiv.org/abs/1807.03819) |
 
 ## Contribute

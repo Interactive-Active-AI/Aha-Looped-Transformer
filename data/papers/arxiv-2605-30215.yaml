@@ -1,0 +1,28 @@
+id: arxiv-2605-30215
+name: dvlt
+title: "Déjà View: Looping Transformers for Multi-View 3D Reconstruction"
+arxiv: "2605.30215"
+published: 2026-05-28
+authors:
+  - Alessandro Burzio
+  - Tobias Fischer
+  - Sven Elflein
+  - Qunjie Zhou
+  - Riccardo de Lutio
+  - Jiawei Ren
+  - Jiahui Huang
+  - Shengyu Huang
+  - Marc Pollefeys
+  - Laura Leal-Taixé
+  - Zan Gojcic
+  - Haithem Turki
+group: adaptive
+summary: The Loop transformer in 3D
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: https://github.com/nv-tlabs/dvlt
+weights: ""
+verified: 2026-09-16

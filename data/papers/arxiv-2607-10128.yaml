@@ -1,0 +1,35 @@
+id: arxiv-2607-10128
+name: ERM
+title: "Energy-guided Recursive Model"
+arxiv: "2607.10128"
+published: 2026-07-11
+authors:
+  - Yifei Zhao
+  - Ying Tang
+group: adaptive
+
+summary: >-
+  Energy-guided Recursive Model (ERM) augments recurrent reasoning with an
+  explicit energy-based mechanism for selecting among candidate trajectories.
+  It constructs task-structured Hopfield energies over valid local or global
+  patterns, using them to rank recurrent outputs and to support
+  energy-guided sampling such as parallel tempering.
+
+diagram: "EqR-style recurrent reasoner × D → K candidate trajectories → Hopfield-energy selector → selected answer"
+
+depth: "D=64 recurrent steps in the main experiments; test-time computation scales through recurrent depth and candidate breadth"
+
+kv: "See paper"
+
+notes: >-
+  ERM primarily changes the inference-time selection mechanism rather than
+  replacing the recurrent reasoning backbone. The main experiments use
+  EqR-style recurrent rollouts with D=64 and K=128 candidates. The energy is
+  task-structured: Sudoku uses row, column, and box permutation memories,
+  PPBench uses puzzle-specific local memories and global distance potentials,
+  and the reported Maze global-memory setting uses an input-conditioned
+  shortest-path memory.
+
+code: "https://github.com/Machine-learning-and-complex-systems/ERM"
+weights: ""
+verified: 2026-09-16

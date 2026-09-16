@@ -12,6 +12,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 
 | Work | First published | Focus | Sources |
 | --- | --- | --- | --- |
+| [Recurrent Denoiser](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2609-01449/) | 2026-09-01 | Adaptive depth | [Paper](https://arxiv.org/abs/2609.01449) |
 | [SMELT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/smelt/) | 2026-09-01 | Core recurrence | [Paper](https://arxiv.org/abs/2609.01343) |
 | [Nanbeige4.2-3B](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/nanbeige/) | 2026-07-27 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.22083) · [Weights](https://huggingface.co/Nanbeige/Nanbeige4.2-3B) |
 | [DeepLoop](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/deeploop/) | 2026-07-15 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.13491) |

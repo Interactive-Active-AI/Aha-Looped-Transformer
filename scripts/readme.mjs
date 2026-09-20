@@ -8,7 +8,7 @@ fs.writeFileSync(ROOT+'/README.md',`# Aha Looped Transformer
 
 [Explore the live atlas](${SITE}/) · [Submit a paper](${REPO}/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse ${papers.length} curated works, follow their publication timeline, and compare recurrence and depth control. The site uses the rose, blue and lavender palette of [Yue Su’s homepage](https://selen-suyue.github.io/), with a motion-aware recurrent particle animation.
+Browse ${papers.length} curated works, follow their publication timeline, and compare recurrence and depth control.
 
 ## Collection
 

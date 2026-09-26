@@ -4,7 +4,7 @@
 
 [Explore the live atlas](https://interactive-active-ai.github.io/Aha-Looped-Transformer/) · [Submit a paper](https://github.com/Interactive-Active-AI/Aha-Looped-Transformer/issues/new?template=submit-paper.yml) · [Contribution guide](CONTRIBUTING.md)
 
-Browse 26 curated works, follow their publication timeline, and compare recurrence and depth control.
+Browse 27 curated works, follow their publication timeline, and compare recurrence and depth control.
 
 ## Collection
 
@@ -12,6 +12,7 @@ This table and the website are generated from the same files in `data/papers/`. 
 
 | Work | First published | Focus | Sources |
 | --- | --- | --- | --- |
+| [FRM](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2606-29150/) | 2026-09-01 | Core recurrence | [Paper](https://arxiv.org/abs/2606.29150) · [Code / project](https://github.com/helblazer811/Flow-Reasoning-Models) |
 | [Recurrent Denoiser](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/arxiv-2609-01449/) | 2026-09-01 | Adaptive depth | [Paper](https://arxiv.org/abs/2609.01449) |
 | [SMELT](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/smelt/) | 2026-09-01 | Core recurrence | [Paper](https://arxiv.org/abs/2609.01343) |
 | [Nanbeige4.2-3B](https://interactive-active-ai.github.io/Aha-Looped-Transformer/papers/nanbeige/) | 2026-07-27 | Full-stack recurrence | [Paper](https://arxiv.org/abs/2607.22083) · [Weights](https://huggingface.co/Nanbeige/Nanbeige4.2-3B) |

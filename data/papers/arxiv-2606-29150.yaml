@@ -1,0 +1,26 @@
+id: arxiv-2606-29150
+name: FRM
+title: "Flow Reasoning Models: Turning Flows Into Efficient Recurrent Reasoners"
+arxiv: "2606.29150"
+published: 2026-09-01
+authors:
+  - Alec Helbling
+  - Andrey Bryutkin
+  - Mauro Martino
+  - Duen Horng Chau
+  - Nima Dehmamy
+  - Hendrik Strobelt
+group: core
+summary: Flow Reasoning Models turn a non-causal flow denoiser into a recurrent
+  reasoner by feeding its clean-solution prediction back as a conditioning
+  state. Fixed-Point Forcing trains the model on states produced by its own
+  recurrent rollouts, enabling deeper iterative refinement while retaining the
+  standard flow-matching objective.
+diagram: See paper for architecture
+depth: See paper
+kv: See paper
+notes: Community-submitted work. Consult the linked paper for architecture
+  details and experimental conditions.
+code: https://github.com/helblazer811/Flow-Reasoning-Models
+weights: ""
+verified: 2026-09-26

@@ -11,6 +11,8 @@ authors:
   - Nima Dehmamy
   - Hendrik Strobelt
 group: core
+topics:
+  - reasoning
 summary: Flow Reasoning Models turn a non-causal flow denoiser into a recurrent
   reasoner by feeding its clean-solution prediction back as a conditioning
   state. Fixed-Point Forcing trains the model on states produced by its own

@@ -9,6 +9,9 @@ authors:
   - Yuxuan Zhang
   - Lichao Sun
 group: adaptive
+topics:
+  - reasoning
+  - efficiency
 summary: A decision model that answers typed multiple-option questions in one pass but can think deeper by rerunning its layers in a loop instead of generating text. It reads the options after every loop step, so one checkpoint answers at any depth, and a small stopper sets depth per question.
 diagram: Input + options → [ Looped LM layers ] × r (read options each step) → probabilities
 depth: On-demand depth via a learned stopper

@@ -12,6 +12,8 @@ authors:
   - Weiyao Lin
   - Jianguo Li
 group: core
+topics:
+  - post-training
 summary: A post-training recipe that upcycles a pretrained LLM into a looped one by looping selected layers locally rather than the whole stack, with hidden-wise gates on attention and MLP residuals so later loops refine instead of rewrite.
 diagram: "Selected layer: [ gated attention + gated MLP ] × R"
 depth: R = 3 main setting; native and extrapolated R = 4

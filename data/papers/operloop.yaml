@@ -13,6 +13,9 @@ authors:
   - Xiangyu Zhang
   - Bojun Cheng
 group: core
+topics:
+  - architecture
+  - theory
 summary: Views the looped hidden state as a fast weight and derives loop transitions in closed form from a projection, a local objective and an optimizer update rule. This exposes mismatches in existing transitions and yields OperLoop, with explicit weight decay, adaptive step size and a delta objective.
 diagram: "[ Block ] × R  where each step = local gradient update on an implicit target"
 depth: Fixed loops

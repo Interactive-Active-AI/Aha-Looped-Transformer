@@ -10,6 +10,8 @@ authors:
   - Glory Bagai
   - Virginia Smith
 group: core
+topics:
+  - efficiency
 summary: Tests the common claim that compressed looped models collapse because rounding error accumulates across loops. Across more than 30 models from five families, this holds only for loops that never settle; for settling loops, error shifts the fixed point instead of accumulating.
 diagram: Low-bit [ Block ] × r → halting head fires → 8-bit [ Block ] × few
 depth: Halting-head controller plus final high-precision loops

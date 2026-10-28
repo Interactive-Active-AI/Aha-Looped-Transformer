@@ -11,6 +11,8 @@ authors:
   - Insu Han
   - Sehoon Kim
 group: full
+topics:
+  - efficiency
 summary: "Exploits the high similarity of KV states across loops: it stores the final-loop KV as a reference and encodes other loops as low-precision residuals with least-squares scaling, rotations and loop-wise mixed precision."
 diagram: KV(loop R) as reference + 2-bit residuals for loops 1…R−1
 depth: Fixed loops of the base model

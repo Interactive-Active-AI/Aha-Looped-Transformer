@@ -10,6 +10,8 @@ authors:
   - Georg Groh
   - Kristian Kersting
 group: core
+topics:
+  - architecture
 summary: Depth-recurrent attention mixtures combine sequence attention, attention along depth and sparse expert attention, relieving the fixed hidden-size bottleneck of many-step latent reasoning and decoupling scaling dimensions in depth-recurrent models.
 diagram: "[ Sequence attention + depth attention + sparse expert attention ] × r"
 depth: Depth recurrence with attention over earlier depths

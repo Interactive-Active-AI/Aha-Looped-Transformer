@@ -9,6 +9,9 @@ authors:
   - Yuki Mitsufuji
   - Praneeth Vepakomma
 group: core
+topics:
+  - architecture
+  - training
 summary: Applies selective looping, which repeats a few early layers inside each denoising step, to uniform diffusion language models without changing their objective or sampler.
 diagram: "Each denoising step: [ Early layers ] × k → remaining layers"
 depth: Loop count sampled during training; chosen at inference

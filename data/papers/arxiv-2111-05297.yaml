@@ -8,6 +8,9 @@ authors:
   - Zechun Liu
   - Eric Xing
 group: core
+topics:
+  - multimodal
+  - architecture
 summary: This paper presents a neat yet effective recursive operation on
   transformers that can improve parameter utilization without involving
   additional parameters. This is achieved by sharing weights across the depth of

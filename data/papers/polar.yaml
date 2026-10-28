@@ -8,6 +8,9 @@ authors:
   - Yang Li
   - Tianyi Zhou
 group: adaptive
+topics:
+  - post-training
+  - efficiency
 summary: Finds that pretrained LLM layers can be skipped or repeated to form a per-input program-of-layers without training, and learns a lightweight network that predicts such execution programs for each input.
 diagram: Input → program predictor → sequence of skipped / repeated pretrained layers
 depth: Per-input layer program (skip or loop)

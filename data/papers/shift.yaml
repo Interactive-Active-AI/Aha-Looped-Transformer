@@ -8,6 +8,9 @@ authors:
   - Yong Liu
   - Jiaye Teng
 group: full
+topics:
+  - training
+  - theory
 summary: "Explains why looped transformers beat non-recursive ones on complex reasoning through loss-landscape geometry: recursion biases training toward steep V-shaped river valleys, where valley hopping speeds convergence along the river. This motivates SHIFT, a staged progressive training schedule."
 diagram: "[ Shared attention block ] × L  — staged hierarchical training"
 depth: Fixed loops

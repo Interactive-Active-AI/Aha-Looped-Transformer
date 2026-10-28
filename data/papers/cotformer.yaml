@@ -8,6 +8,8 @@ authors:
   - Matteo Pagliardini
   - Martin Jaggi
 group: adaptive
+topics:
+  - architecture
 summary: Observes that chain-of-thought resembles reapplying a model several times, except that later passes attend to earlier passes' tokens. CoTFormer mimics this at the token level and pairs it with token-wise variable depth chosen by a compute-adaptive router.
 diagram: "[ Model ] × r with attention to earlier passes' tokens; router picks rᵢ"
 depth: Budget-adaptive per-token depth

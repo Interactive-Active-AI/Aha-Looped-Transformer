@@ -9,6 +9,8 @@ authors:
   - Kannan Ramchandran
   - Kangwook Lee
 group: adaptive
+topics:
+  - reasoning
 summary: Shows that looped transformers with an adaptive number of steps generalize to unseen input lengths on tasks with known iterative solutions built from repeated RASP-L operations, using a dedicated training algorithm.
 diagram: "[ Looped block ] × n(input length)"
 depth: Steps scale with input length

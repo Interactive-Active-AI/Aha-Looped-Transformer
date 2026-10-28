@@ -7,6 +7,8 @@ authors:
   - Jonathan Williams
   - Esin Tureci
 group: full
+topics:
+  - post-training
 summary: Reward Latent Thought Trajectories distributes RL reward across the full latent reasoning trajectory of a looped model instead of only the final latent state, as a drop-in replacement for GRPO.
 diagram: "[ Shared stack ] × R → reward assigned across all latent steps"
 depth: Fixed loops of the base model

@@ -8,6 +8,8 @@ authors:
   - Jan Balaguer
   - Charles Blundell
 group: adaptive
+topics:
+  - architecture
 summary: Learns end-to-end how many computational steps to take, modeling halting as a probabilistic process and trading off prediction accuracy, computational cost and generalization.
 diagram: "[ Step function ] × n,  halt with learned probability λₙ"
 depth: Learned probabilistic halting

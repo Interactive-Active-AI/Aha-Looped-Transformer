@@ -9,6 +9,8 @@ authors:
   - Dohee Kim
   - Hyerim Bae
 group: core
+topics:
+  - post-training
 summary: Looped Depth Up-Scaling converts a pretrained LLM into an encoder, a looped reasoning block and a decoder, using representation-guided block decomposition, an input-dependent selective gate against drift, random deep supervision, and a confidence head for early exit.
 diagram: Encoder layers → [ Looped reasoning block + selective gate ] × r (confidence exit) → Decoder layers
 depth: Adaptive early exit via confidence head

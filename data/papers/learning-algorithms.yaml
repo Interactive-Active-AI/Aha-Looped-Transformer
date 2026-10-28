@@ -11,6 +11,10 @@
     "Dimitris Papailiopoulos"
   ],
   "group": "full",
+  "topics": [
+    "theory",
+    "reasoning"
+  ],
   "summary": "Studies how looping encourages Transformers to learn iterative learning algorithms in context.",
   "diagram": "[ Shared Transformer ] × R",
   "depth": "Iteration budget",

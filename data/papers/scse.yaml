@@ -11,6 +11,8 @@ authors:
   - Yusuke Iwasawa
   - Yutaka Matsuo
 group: core
+topics:
+  - architecture
 summary: "Source-Centered State Evolution reconciles input conditioning with shared recurrence: inputs enter through a learned anchor and initial deviation, zero deviation maps to zero, and the anchor is an exact fixed point, removing the forcing bias of additive input injection."
 diagram: state = anchor(x) + deviation;  [ Block ] × R on deviation (zero ↦ zero)
 depth: Trained and extrapolated recurrent depth

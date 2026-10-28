@@ -10,6 +10,8 @@ authors:
   - Yanshu Li
   - Enqi Liu
 group: core
+topics:
+  - interpretability
 summary: Probes Huginn-3.5B on arithmetic with the Logit Lens and Coda Lens to see whether interpretable latent chain-of-thought emerges across recurrent blocks.
 diagram: Prelude → [ Core ] × r (probed each step) → Coda
 depth: Analysis

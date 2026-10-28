@@ -7,6 +7,9 @@ authors:
   - Jacob Fein-Ashley
   - Paria Rashidinejad
 group: adaptive
+topics:
+  - architecture
+  - reasoning
 summary: A backbone proposes output embeddings and an attractor module refines them by solving for a fixed point, with gradients from implicit differentiation, so training memory stays constant in effective depth and iterations stop at convergence.
 diagram: Backbone → proposal → [ Attractor module ] solved to fixed point (implicit gradients)
 depth: Adaptive iterations until convergence

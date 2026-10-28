@@ -6,6 +6,9 @@ published: 2026-10-20
 authors:
   - Aur Shalev Merin
 group: core
+topics:
+  - training
+  - interpretability
 summary: Measures exactly how much weight gradient truncated backprop discards for every truncation length, across nine looped language models including Parcae and Ouro.
 diagram: Backprop through the last k of R loops → measure discarded gradient
 depth: Analysis of truncated BPTT

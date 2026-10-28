@@ -11,6 +11,8 @@ authors:
   - Guangyu Sun
   - Dawei Yang
 group: full
+topics:
+  - efficiency
 summary: A loop-aware post-training quantization framework for looped language models. It canonicalizes activation distributions across loops while keeping weights shared, allocates activation precision per loop under a fixed bit budget, and calibrates the quantized model along its own low-bit recursive trajectory.
 diagram: "[ Shared block ] × R  with per-loop activation precision"
 depth: Fixed loops of the base model

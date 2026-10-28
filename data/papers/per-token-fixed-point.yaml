@@ -6,6 +6,9 @@ published: 2026-07-15
 authors:
   - Joe Logan
 group: adaptive
+topics:
+  - efficiency
+  - interpretability
 summary: "Measures what a depth-recurrent model trained with randomized recursion counts computes per token: states converge to per-token fixed points at very different speeds, and a training-free rule that halts each token once its output stabilizes beats a learned router."
 diagram: "[ Weight-tied core ] × r until output stabilizes (per token)"
 depth: Training-free per-token halting

@@ -18,6 +18,10 @@
     "Bo Zheng"
   ],
   "group": "full",
+  "topics": [
+    "architecture",
+    "efficiency"
+  ],
   "summary": "Explores recurrent computation at different sequence resolutions to change the cost of repeated processing.",
   "diagram": "[ Multi-resolution states ] × R",
   "depth": "Multi-resolution recurrence",

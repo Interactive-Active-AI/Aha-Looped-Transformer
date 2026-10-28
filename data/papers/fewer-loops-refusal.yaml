@@ -10,6 +10,8 @@ authors:
   - Saeid Shokoufa
   - Massoud Pedram
 group: full
+topics:
+  - safety
 summary: "Shows that running a recurrent-depth model with fewer loops than trained, a tempting deployment shortcut, erodes safety much faster than capability: harmfulness is still detected internally, but the refusal that should follow is missing."
 diagram: "[ Shared block ] × r  with r < trained depth"
 depth: Inference-time loop reduction

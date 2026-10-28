@@ -10,6 +10,9 @@ authors:
   - Sanjiv Kumar
   - Sashank J. Reddi
 group: full
+topics:
+  - theory
+  - reasoning
 summary: "Argues that many reasoning problems need depth rather than parameters: a k-layer transformer looped L times nearly matches a kL-layer model on synthetic reasoning, backed by theory that iterative algorithms map onto looped models."
 diagram: "[ k layers ] × L  ≈  kL-layer model"
 depth: Fixed loops L

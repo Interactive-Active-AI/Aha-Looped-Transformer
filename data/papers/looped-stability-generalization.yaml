@@ -6,6 +6,9 @@ published: 2026-04-16
 authors:
   - Asher Labovich
 group: core
+topics:
+  - theory
+  - reasoning
 summary: A fixed-point framework that analyzes looped architectures along reachability, input-dependence and geometry, proving that looped networks without recall cannot achieve strong input dependence, while recall with outer normalization gives reachable, smooth, trainable fixed points.
 diagram: "[ Single layer + recall + outer norm ] × r → fixed point"
 depth: Test-time iterations on harder problems

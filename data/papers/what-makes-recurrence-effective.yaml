@@ -9,6 +9,9 @@ authors:
   - Imran Razzak
   - Weiyang Liu
 group: core
+topics:
+  - architecture
+  - interpretability
 summary: Controlled experiments on when recurrence helps, where to place it, and how to condition it, across inference budgets below, within and beyond the training horizon. It proposes channel-wise history-state injection with timestep conditioning as a cheap, more robust alternative to initial-state injection.
 diagram: Input layers → [ Recurrent block ] × r (history-state injection + timestep) → output layers
 depth: Variable inference budget

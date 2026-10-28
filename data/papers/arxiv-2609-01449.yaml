@@ -12,6 +12,9 @@ authors:
   - Eyvind Niklasson
   - Blake Richards
 group: adaptive
+topics:
+  - reasoning
+  - training
 summary: Diffusion model with recurrent memory that does more than state-based
   self-correction
 diagram: See paper for architecture

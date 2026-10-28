@@ -6,6 +6,8 @@ published: 2025-10-06
 authors:
   - Alexia Jolicoeur-Martineau
 group: core
+topics:
+  - reasoning
 summary: The tiny recursive model is a looped transformer architecture with an
   intentionally simple architecture, yet yields strong generalization compared
   to previous models.

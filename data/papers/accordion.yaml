@@ -10,6 +10,9 @@ authors:
   - Yuchen Ding
   - Zhenyu Zhang
 group: adaptive
+topics:
+  - architecture
+  - training
 summary: A mixture-of-experts model that serves five inference budgets through fixed-prefix layer looping, with the smallest budget equal to the unlooped model. Pretraining samples one budget per micro-batch, and SFT and RL with budget-matched multi-teacher distillation preserve every budget.
 diagram: Unlooped path → fixed-prefix layer looping for budgets 1…5
 depth: Five predefined execution paths chosen at inference

@@ -13,6 +13,9 @@ authors:
   - Maria Tikhonova
   - Valerii Ternovskii
 group: full
+topics:
+  - training
+  - post-training
 summary: "Practical recipes for looped language models: a from-scratch pipeline that cuts Ouro's 7.7T-token budget to 310B tokens, controlled comparisons against dense models, and a minimal conversion of pretrained dense models using one learned input-mixing scalar and a smoothed exit loss."
 diagram: "[ Shared block ] × R  + exit gate; dense → looped conversion via input-mixing scalar"
 depth: Learned exit gate

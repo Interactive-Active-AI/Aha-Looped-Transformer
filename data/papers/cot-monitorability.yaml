@@ -8,6 +8,8 @@ authors:
   - Ishwar B Balappanawar
   - Huan Zhang
 group: full
+topics:
+  - safety
 summary: The first systematic evaluation of whether looped language models remain chain-of-thought monitorable, varying loop depth within a family and comparing against non-looped models matched by size, layer count or effective depth.
 diagram: "[ Shared layers ] × R → visible CoT → monitor"
 depth: Varied loop depth

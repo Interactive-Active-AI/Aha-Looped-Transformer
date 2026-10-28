@@ -16,6 +16,10 @@
     "Jian Li"
   ],
   "group": "core",
+  "topics": [
+    "training",
+    "architecture"
+  ],
   "summary": "Repeats the middle half of a sparse MoE Transformer's layers twice while closely matching per-token FLOPs, total non-embedding parameters and KV cache to an unlooped baseline. Budget-matched scaling experiments show improved loss and downstream performance from reusing the shared middle layers.",
   "diagram": "Front layers → [ Middle half ] × 2 → Back layers",
   "depth": "Fixed: middle half of layers repeated twice",

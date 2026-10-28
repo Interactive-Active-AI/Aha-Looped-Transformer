@@ -13,6 +13,9 @@ authors:
   - Yuyang Wang
   - Ruixiang Zhang
 group: full
+topics:
+  - efficiency
+  - reasoning
 summary: Training-free contrastive decoding that contrasts a looped model's final prediction with an earlier recurrent pass, which serves as a built-in weak model. It works in logit space with one extra output pass or in hidden-state space with no extra output cost.
 diagram: Final-loop prediction − λ · earlier-loop prediction → token
 depth: Full depth, or about half the loops with guidance

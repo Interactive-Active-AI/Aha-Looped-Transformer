@@ -21,6 +21,8 @@ authors:
   - Junchi Yan
   - Jungong Han
 group: full
+topics:
+  - multimodal
 summary: Extends looped transformers to vision-language models trained from scratch, combining Module-Loop and Model-Loop computation to iteratively update a unified vision-language state through shared modules.
 diagram: "[ Shared modules (Module-Loop) ] within [ Model-Loop ] × r  over a vision-language state"
 depth: Fixed loops

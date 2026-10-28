@@ -9,6 +9,9 @@ authors:
   - Shaobo Cui
   - Peilin Zhao
 group: adaptive
+topics:
+  - architecture
+  - efficiency
 summary: "Token-level elastic depth for looped transformers: a token-choice router lets each token pick its number of loop iterations from its hidden state, and a recursion-wise KV cache keeps a separate cache per loop for active tokens."
 diagram: Token → router → [ Shared block ] × rᵢ  (per-token depth)
 depth: Token-choice routing

@@ -16,6 +16,9 @@ authors:
   - Yang Yang
   - Heng Tao Shen
 group: adaptive
+topics:
+  - multimodal
+  - efficiency
 summary: Applies Mixture-of-Recursions to multimodal LLMs so each token picks its recursion depth, spending more on visually or linguistically hard tokens. A three-stage tuning schedule and entropy-regularized routing loss stabilize recursive sparsity.
 diagram: Visual + text tokens → router → [ Shared block ] × rᵢ
 depth: Per-token recursion depth

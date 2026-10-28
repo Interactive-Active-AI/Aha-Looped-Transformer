@@ -12,6 +12,8 @@ authors:
   - Athanasios V. Vasilakos
   - Qingsong Wen
 group: core
+topics:
+  - interpretability
 summary: Separates whether an extra loop's update direction is unhelpful or its full step simply moves too far. Along the model's own update direction, many failures are locally improving directions with harmful full displacement, analyzed with a pathwise curvature decomposition.
 diagram: state + α · update,  α ∈ (0, 1]  → reference utility
 depth: Analysis of extra iterations

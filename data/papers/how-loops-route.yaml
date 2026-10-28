@@ -8,6 +8,8 @@ authors:
   - Yi Hu
   - Muhan Zhang
 group: core
+topics:
+  - interpretability
 summary: Asks whether each loop of a looped transformer repeats the same operation. On graph walks, loops can advance by varying steps, and a learned linear map on the entering hidden state can steer a frozen loop toward different transitions, with attention routing as the causal pathway.
 diagram: Hidden state → J (learned linear) → frozen [ Shared layers ] → selected transition
 depth: Fixed loops; analysis

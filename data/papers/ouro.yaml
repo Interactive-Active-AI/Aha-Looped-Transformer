@@ -40,6 +40,10 @@
     "Jason Eshraghian"
   ],
   "group": "full",
+  "topics": [
+    "architecture",
+    "training"
+  ],
   "summary": "Revisits hidden states with a shared decoder stack over multiple latent computation passes.",
   "diagram": "[ Decoder stack ] × R",
   "depth": "Loop count + exit policy",

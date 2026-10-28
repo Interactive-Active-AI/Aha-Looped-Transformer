@@ -11,6 +11,9 @@ authors:
   - Lu Yin
   - Shiwei Liu
 group: core
+topics:
+  - architecture
+  - reasoning
 summary: Identifies latent overthinking, where noisy updates overwrite correct intermediate deductions, and introduces a loop-native residual connection that keeps a constant-memory running summary of past recurrent states using content-based weighting and learned temporal decay.
 diagram: "[ Recursive block ] × N  + loop-native residual aggregation"
 depth: Test-time looping up to tens of thousands of steps

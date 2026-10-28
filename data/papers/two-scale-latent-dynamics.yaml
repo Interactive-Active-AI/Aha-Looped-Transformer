@@ -8,6 +8,9 @@ authors:
   - Donato Crisostomi
   - Emanuele Rodolà
 group: adaptive
+topics:
+  - interpretability
+  - efficiency
 summary: Describes recurrent-depth iterates as small refinements within a looped block and larger drift across blocks; loop steps grow smaller and more mutually orthogonal over training. This motivates an early exit based on the second-order difference of step size.
 diagram: "[ Looped block ] × r → exit when second-order step-size difference is small"
 depth: Early exit from latent geometry

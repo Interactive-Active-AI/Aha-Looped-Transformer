@@ -9,6 +9,8 @@ authors:
   - Alberto Alfarano
   - Mark Santolucito
 group: core
+topics:
+  - reasoning
 summary: The lattice deduction transformer is a looped transformer that projects
   the token space through a lattice structure to perform efficient combinatorial
   reasoning.

@@ -9,6 +9,8 @@ authors:
   - Yuchen Song
   - Zhengjun Yue
 group: core
+topics:
+  - multimodal
 summary: Studies how to organize depth through recurrence in flow-matching text-to-speech by varying the amount, order and placement of weight reuse across seven layouts with the same number of block calls.
 diagram: "18 block calls: e.g. each of 9 blocks × 2 consecutively, or 6 blocks cycled × 3"
 depth: Fixed executed depth

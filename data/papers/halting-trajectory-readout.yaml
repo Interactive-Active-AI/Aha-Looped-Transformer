@@ -8,6 +8,8 @@ authors:
   - Haitz Sáez de Ocáriz Borde
   - Pietro Liò
 group: adaptive
+topics:
+  - interpretability
 summary: Separates the two jobs of a learned halting distribution, choosing which state to read and weighting per-depth losses, on synthetic tasks and Ouro checkpoints. Fixed-prior depth supervision yields difficulty-aware trajectories, and simple post-hoc confidence readouts often match learned gates.
 diagram: "[ Block ] × R → trajectory → readout (gate or confidence)"
 depth: Learned or post-hoc halting

@@ -7,6 +7,9 @@ authors:
   - Huzi Cheng
   - Zhewei Zhang
 group: core
+topics:
+  - interpretability
+  - reasoning
 summary: Compares vanilla, chain-of-thought, pause-token and two latent-reasoning variants of one backbone trained on extended multi-hop reasoning. Only the latent variants generalize to longer hops, and circuit analysis finds a sparse recurrent forward-search circuit propagating reachability across steps.
 diagram: Retrieve relations (attention) → update reachability (MLP + residual) × steps → match
 depth: Recurrent latent steps beyond the training depth

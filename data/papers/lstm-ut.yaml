@@ -7,6 +7,9 @@ authors:
   - Aras Kavuncu
   - Muhammad Burhan Hafez
 group: core
+topics:
+  - architecture
+  - reasoning
 summary: "Shows on cellular-automaton tasks that keeping more history is not the same as making it usable: CoTFormer's full cache can pull corrected trajectories back toward failure. LSTM-UT adds a small, bounded, gated cell state to the shared block instead."
 diagram: "[ Shared block + gated cell state ] × N"
 depth: Depth extrapolation far beyond training

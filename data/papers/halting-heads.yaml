@@ -8,6 +8,9 @@ authors:
   - Minsuk Heo
   - Kenny Tan
 group: adaptive
+topics:
+  - efficiency
+  - interpretability
 summary: Pretrains looped models up to 1.3B parameters to test learned halting heads. Heads trained on a mix of iterations predict early stops yet tokens run almost every iteration under the usual rule, and the commonly reported average-iterations metric overstates savings in batched generation.
 diagram: "[ Shared layers ] → halting head after each iteration"
 depth: Learned per-token halting (evaluated critically)

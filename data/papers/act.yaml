@@ -6,6 +6,8 @@ published: 2016-03-29
 authors:
   - Alex Graves
 group: adaptive
+topics:
+  - architecture
 summary: The original algorithm that lets a recurrent network learn how many steps to take per input with a deterministic, differentiable halting mechanism and a ponder cost.
 diagram: "[ RNN step ] × N(t),  halt when cumulative probability ≥ 1 − ε"
 depth: Learned halting per input step

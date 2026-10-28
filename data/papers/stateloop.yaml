@@ -15,6 +15,8 @@ authors:
   - Ziwei He
   - Zhouhan Lin
 group: full
+topics:
+  - architecture
 summary: Adds one persistent state per token that survives across loop iterations. A learned gate decides how much of the old state to keep and how much of the new backbone output to absorb, and the state is projected back into the stream for later iterations and the final prediction.
 diagram: "[ Backbone ] × R  +  gated persistent state per token"
 depth: Fixed trained loop count

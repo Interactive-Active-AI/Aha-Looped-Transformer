@@ -18,6 +18,10 @@
     "Se-Young Yun"
   ],
   "group": "adaptive",
+  "topics": [
+    "architecture",
+    "efficiency"
+  ],
   "summary": "Routes tokens through different numbers of shared recursions and studies recursion-aware caching strategies.",
   "diagram": "Token → Router → Rᵢ loops",
   "depth": "Token-level routing",

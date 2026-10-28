@@ -7,6 +7,8 @@ authors:
   - Rituraj Sharma
   - Tu Vu
 group: full
+topics:
+  - training
 summary: Shows that dense per-loop cross-entropy only controls state variables visible to the readout. Scale-invariant readouts such as RMSNorm hide radial scale from the loss while pre-norm residual recurrence keeps growing it, so early exits work but recurrent scale goes unchecked.
 diagram: "[ Block ] × R → RMSNorm readout (scale hidden) per loop"
 depth: Variable inference depth

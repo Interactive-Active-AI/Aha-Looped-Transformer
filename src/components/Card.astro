@@ -1,7 +1,15 @@
 ---
-import {groups} from '../../scripts/catalog.mjs';
+import {groups,topics} from '../../scripts/catalog.mjs';
 const {paper:p}=Astro.props;
 const base=import.meta.env.BASE_URL.replace(/\/$/,'');
+const tags=p.topics||[];
+const month=new Date(p.published+'T00:00:00Z').toLocaleString('en',{month:'short',year:'numeric',timeZone:'UTC'});
 ---
-<article data-paper={p.id} data-group={p.group} data-search={`${p.name} ${p.title} ${p.summary} ${p.authors.join(' ')} ${groups[p.group]}`.toLowerCase()}>
-<div class="la-meta"><time datetime={p.published}>{p.published.slice(0,4)}</time><span>Research paper</span></div><h3><a href={`${base}/papers/${p.id}/`}>{p.name}</a></h3><p>{p.summary}</p><div class="la-schema" aria-label="Simplified recurrence schematic">{p.diagram}</div><div class="la-tag">{groups[p.group]}</div><div class="la-foot"><a href={`${base}/papers/${p.id}/`}>View method →</a><label><input type="checkbox" data-compare={p.id} aria-label={`Compare ${p.name}`}/>Compare</label></div></article>
+<article class="paper" data-family={p.group} data-paper={p.id} data-topics={tags.join(' ')} data-published={p.published} data-name={p.name.toLowerCase()} data-code={p.code?'1':''} data-weights={p.weights?'1':''} data-search={`${p.name} ${p.title} ${p.summary} ${p.authors.join(' ')} ${groups[p.group]} ${tags.map(t=>topics[t]).join(' ')}`.toLowerCase()}>
+<div class="paper-top"><span class="fam">{groups[p.group]}</span><time datetime={p.published}>{month}</time></div>
+<h3><a href={`${base}/papers/${p.id}/`}>{p.name}</a></h3>
+<p class="title-line">{p.title}</p>
+<p class="summary">{p.summary}</p>
+{tags.length>0&&<ul class="topics">{tags.map(t=><li>{topics[t]}</li>)}</ul>}
+<div class="paper-foot"><div class="links"><a href={`https://arxiv.org/abs/${p.arxiv}`}>Paper</a>{p.code&&<a href={p.code}>Code</a>}{p.weights&&<a href={p.weights}>Weights</a>}</div><label class="compare-box"><input type="checkbox" data-compare={p.id} aria-label={`Compare ${p.name}`}/>Compare</label></div>
+</article>

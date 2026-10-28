@@ -15,6 +15,8 @@ authors:
   - Ming Liu
   - Bing Qin
 group: full
+topics:
+  - training
 summary: Reinforcement pre-training for looped language models that reframes next-token prediction as next-token reasoning and assigns rewards directly to latent steps using an EMA teacher reference and noisy latent rollouts.
 diagram: "[ Shared stack ] × R  with RL signals on latent steps"
 depth: Compresses reasoning into fewer iterations

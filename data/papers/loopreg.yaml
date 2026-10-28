@@ -25,6 +25,8 @@ authors:
   - Bo Shen
   - Yuren You
 group: core
+topics:
+  - multimodal
 summary: A recurrent diffusion Transformer that repeatedly applies a shared block at a state aligned to a pretrained visual encoder after the final recurrent visit, so inference can extend the same operator to additional visits.
 diagram: "[ Shared DiT block ] × visits → representation alignment (training)"
 depth: Extra inference visits beyond training

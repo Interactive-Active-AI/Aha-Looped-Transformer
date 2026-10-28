@@ -16,6 +16,9 @@ authors:
   - Yong Jae Lee
   - Yelong Shen
 group: core
+topics:
+  - architecture
+  - training
 summary: Reuses a high-level hidden state from the previous token as recurrent memory for the next token, adding a cross-token, cross-layer pathway while keeping standard attention, KV cache and one forward per token. Interleaved parallel training avoids sequential unrolling during pretraining.
 diagram: "token t−1: high-level state → input of token t (one forward per token)"
 depth: Recurrence across tokens

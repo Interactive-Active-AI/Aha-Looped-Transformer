@@ -9,6 +9,9 @@ authors:
   - Zixuan Wang
   - Baharan Mirzasoleiman
 group: core
+topics:
+  - theory
+  - reasoning
 summary: A theoretical and empirical study of how far a looped block trained at depth K can be run deeper, using all-pairs graph connectivity. Training converges to an update governed by one effective parameter, which yields a finite extrapolation window with explicit endpoints.
 diagram: "[ Block ] × K at training → × K′ at test (within a certified window)"
 depth: Test depth chosen from the training distribution

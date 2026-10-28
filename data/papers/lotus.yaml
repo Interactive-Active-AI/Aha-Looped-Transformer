@@ -10,6 +10,10 @@
     "Kangwook Lee"
   ],
   "group": "full",
+  "topics": [
+    "reasoning",
+    "architecture"
+  ],
   "summary": "Trains parallel latent blocks with explicit reasoning-step supervision to compress the thought phase.",
   "diagram": "[ Parallel latent blocks ] × R → Answer",
   "depth": "Latent iteration budget",

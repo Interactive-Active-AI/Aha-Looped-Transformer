@@ -11,6 +11,8 @@ authors:
   - Joachim Koehler
   - Mehdi Ali
 group: adaptive
+topics:
+  - architecture
 summary: Combines adaptive per-layer looping, where each block learns to iterate with a halting mechanism, with gated memory banks that add learned storage, to test whether models should think harder or know more.
 diagram: "Layer ℓ: [ Block ] × rℓ (halting) + gated memory bank"
 depth: Per-layer learned halting

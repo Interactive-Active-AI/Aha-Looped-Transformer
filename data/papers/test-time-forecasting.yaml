@@ -9,6 +9,9 @@ authors:
   - Anthony Bao
   - William Gilpin
 group: core
+topics:
+  - multimodal
+  - theory
 summary: Links linear attention to dynamic mode decomposition to show that looped transformers can emulate propagators of dynamical systems in context, and builds a framework in which a one-step forecaster uses gradient-descent iterations as recurrent depth.
 diagram: Context trajectory → [ Looped block ≈ GD step ] × r → one-step forecast → rollout
 depth: Recurrent depth as optimization iterations

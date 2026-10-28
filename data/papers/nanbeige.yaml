@@ -32,6 +32,9 @@
     "Zongqiang Li"
   ],
   "group": "full",
+  "topics": [
+    "architecture"
+  ],
   "summary": "A released language model that applies recurrent computation across a shared decoder stack.",
   "diagram": "[ 22-layer decoder stack ] × 2",
   "depth": "Two passes in released config",

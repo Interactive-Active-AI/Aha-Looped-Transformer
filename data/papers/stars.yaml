@@ -12,6 +12,9 @@ authors:
   - Lan-Zhe Guo
   - Yu-Feng Li
 group: core
+topics:
+  - training
+  - reasoning
 summary: Addresses the peak-then-collapse behavior of looped language models under deeper recurrence by constraining latent states to approach asymptotically stable fixed points, using efficient Jacobian spectral-radius regularization with random loop sampling.
 diagram: "[ Block ] × r  with Jacobian spectral-radius penalty"
 depth: Test-time scalable recurrence

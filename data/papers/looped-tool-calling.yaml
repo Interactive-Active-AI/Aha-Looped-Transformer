@@ -8,6 +8,8 @@ authors:
   - Haitz Sáez de Ocáriz Borde
   - Pietro Liò
 group: full
+topics:
+  - reasoning
 summary: Evaluates native and retrofitted looped language models on compositional tool use, where models must coordinate several API calls and keep dependencies, comparing looped and non-looped models under matched fine-tuning while varying recurrent depth at inference.
 diagram: "[ Shared layers ] × r → multi-step API calls"
 depth: Varied inference depth; adaptive inference compared

@@ -9,6 +9,9 @@ authors:
   - Taylor Berg-Kirkpatrick
   - Daniel Y. Fu
 group: core
+topics:
+  - efficiency
+  - post-training
 summary: Makes looped models KV-shareable so earlier recurrences can reuse the final recurrence's cache. Stochastic depth during pretraining induces contractive dynamics, and the BeNice! post-training step broadcasts the final KV cache into the first recurrence while preserving quality.
 diagram: "Pretrain with stochastic depth → post-train: final-recurrence KV broadcast to earlier recurrences"
 depth: Fixed recurrence

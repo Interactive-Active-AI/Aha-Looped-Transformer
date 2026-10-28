@@ -10,6 +10,9 @@ authors:
   - Dongsheng Li
   - Wenjie Wang
 group: full
+topics:
+  - safety
+  - post-training
 summary: Evaluates jailbreak robustness of looped language models at different recurrent depths and finds that safety can differ by depth and attacks transfer across depths. SafeBridge aligns safety across depths with depth-specific control of shared layers, selective state bridging and joint supervision.
 diagram: "[ Shared layers + depth-specific control ] × R  with safety supervision at every depth"
 depth: Multiple readout depths

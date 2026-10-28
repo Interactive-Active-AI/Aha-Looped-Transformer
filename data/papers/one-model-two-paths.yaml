@@ -8,6 +8,8 @@ authors:
   - Lei Zhao
   - Xiao Li
 group: core
+topics:
+  - post-training
 summary: Adapts a pretrained model so it can run either a single pass or a looped pass that reuses its middle layers. Joint weighted losses on both outputs, plus guidance from the frozen original model, stop looped training from degrading single-pass quality.
 diagram: "Pretrained stack: single pass ‖ [ Middle layers ] × 2"
 depth: "Two inference modes: single-pass or looped"

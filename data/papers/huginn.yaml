@@ -16,6 +16,10 @@
     "Tom Goldstein"
   ],
   "group": "core",
+  "topics": [
+    "architecture",
+    "training"
+  ],
   "summary": "A recurrent core refines hidden states between a prelude and a coda, scaling latent computation at inference time.",
   "diagram": "Prelude → [ Core ] × R → Coda",
   "depth": "Variable recurrent depth",

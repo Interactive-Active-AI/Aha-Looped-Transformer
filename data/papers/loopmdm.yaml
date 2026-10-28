@@ -11,6 +11,9 @@ authors:
   - Jongho Park
   - Dongmin Park
 group: core
+topics:
+  - architecture
+  - training
 summary: Shows that selectively looping the early-middle layers of masked diffusion language models improves both training efficiency and final quality, and that varying the loop count at inference gives flexible compute scaling.
 diagram: "Each denoising step: early layers → [ Early-middle layers ] × k → remaining layers"
 depth: Loop count adjustable during sampling

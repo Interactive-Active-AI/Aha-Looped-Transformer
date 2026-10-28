@@ -12,6 +12,9 @@ authors:
   - Nathan Godey
   - Ramón Fernandez Astudillo
 group: full
+topics:
+  - architecture
+  - efficiency
 summary: Pretrains looped models in which only the first recursion writes a KV cache and later recursions read it while keeping a short local window, so memory does not grow with loops. Sharing memory improves rather than hurts quality.
 diagram: Recursion 1 writes shared KV → recursions 2…R read it + short local window
 depth: Fixed recursions (five in the main results)

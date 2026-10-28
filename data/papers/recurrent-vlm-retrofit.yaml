@@ -8,6 +8,9 @@ authors:
   - Andreas Geiger
   - Hilde Kühne
 group: core
+topics:
+  - multimodal
+  - post-training
 summary: Retrofits depth recurrence into a pretrained vision-language model by pruning language-backbone layers and looping a subset of the rest, with a linear adapter merging each loop's output with earlier token representations. A three-stage recovery with distillation from the original model restores quality.
 diagram: Early layers → [ Looped subset + linear adapter ] × r → late layers
 depth: Fixed recurrence

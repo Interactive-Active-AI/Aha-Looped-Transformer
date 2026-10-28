@@ -13,6 +13,8 @@ authors:
   - Vladislav Kurenkov
   - Alexander Nikulin
 group: core
+topics:
+  - architecture
 summary: Treats whether a loop can track state as a geometric question about the linear map applied to the residual between steps. Blockwise conformal injections split the residual into groups and rotate within each, giving each group its own timescale while keeping exact geometry.
 diagram: "[ Block ] × R  with residual → blockwise rotations between steps"
 depth: Runtime-adjustable recurrent steps

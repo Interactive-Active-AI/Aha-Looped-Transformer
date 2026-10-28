@@ -9,6 +9,9 @@ authors:
   - Yun Peng
   - Tao Xie
 group: core
+topics:
+  - interpretability
+  - theory
 summary: Studies when a weight-tied looped transformer implements a real algorithm on group word problems. Training installs a linear computation frontier whose speed is set by the training contract, and weight tying, not expressivity, makes the model choose a serial algorithm over a parallel scan.
 diagram: "[ One block ] × T  → frontier solving v positions per loop"
 depth: Principled halting rule T* = ⌈n / v⌉

@@ -13,6 +13,9 @@ authors:
   - Yafu Li
   - Yu Cheng
 group: full
+topics:
+  - architecture
+  - training
 summary: Finds that in a looped MoE that applies a shared block twice, the first visit can be scaled down without harm while the second cannot. LatentLoop compresses the sequence on the first visit, keeps full resolution on the second, and spends the savings on a larger hidden size.
 diagram: "Visit 1: [ Block ] on compressed sequence → Visit 2: [ Block ] at full resolution"
 depth: Two visits with asymmetric compute

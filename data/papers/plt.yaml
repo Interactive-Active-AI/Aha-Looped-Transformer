@@ -17,6 +17,9 @@ authors:
   - Siyuan Qiao
   - Xingyan Bin
 group: full
+topics:
+  - efficiency
+  - architecture
 summary: Removes the sequential latency of looping with Cross-Loop Parallelism, which computes different loops for different tokens in the same pass, and controls memory by sharing the first loop's KV cache with later loops combined through gated sliding-window attention.
 diagram: "Token t: loop 1 ‖ token t−1: loop 2 ‖ … in one pass; shared KV + gated SWA"
 depth: Fixed loops executed in parallel across tokens

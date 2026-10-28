@@ -11,6 +11,9 @@ authors:
   - Lifeng Shang
   - Chengwei Qin
 group: full
+topics:
+  - architecture
+  - training
 summary: A looped mixture-of-experts language model with IterAdaLN, a modulation conditioned on iteration index and per-token state to break weight-sharing symmetry, and a capacity-balancing strategy that restores the attention-to-FFN active-parameter ratio of tuned non-looped models.
 diagram: "[ MoE block + IterAdaLN(iteration, state) ] × R"
 depth: Fixed iterations

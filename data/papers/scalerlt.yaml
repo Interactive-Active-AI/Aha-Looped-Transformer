@@ -8,6 +8,9 @@ authors:
   - Zixiang Ni
   - Runguo Li
 group: full
+topics:
+  - post-training
+  - efficiency
 summary: Makes on-policy RL practical for looped language models such as Ouro. Rollouts defer and batch the deeper loops, and the learner uses a hybrid log-probability whose value replays the rollout schedule exactly while its gradient comes from a dense pass, removing the floating-point mismatch between sampler and learner.
 diagram: "Rollout: deferred deep loops → Learner: dense gradient + exact scheduled replay"
 depth: Ouro-style fixed loops; mixed-depth or native readout

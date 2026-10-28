@@ -15,6 +15,9 @@
     "Antonio Orvieto"
   ],
   "group": "adaptive",
+  "topics": [
+    "reasoning"
+  ],
   "summary": "Studies stable deep recurrence and fixed-point convergence as a stopping signal for structured reasoning.",
   "diagram": "[ State refinement ] → Fixed point",
   "depth": "Convergence-based halting",

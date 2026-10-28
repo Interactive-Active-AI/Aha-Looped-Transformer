@@ -12,6 +12,8 @@ authors:
   - Kyuhong Shim
   - Sungeun Hong
 group: full
+topics:
+  - architecture
 summary: Argues that how shared layers are organized matters. BRT splits the stack into contiguous blocks and recurses each block before moving to the next, an intermediate topology between per-layer repetition and looping the entire stack.
 diagram: "[ Block 1 ] × r → [ Block 2 ] × r → … → [ Block n ] × r"
 depth: Static per-block recursion

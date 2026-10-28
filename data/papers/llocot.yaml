@@ -11,6 +11,9 @@ authors:
   - Arash Behboodi
   - Victor Conchello Vendrell
 group: core
+topics:
+  - reasoning
+  - efficiency
 summary: Replaces left-to-right latent thought generation with iterative refinement of a compact latent workspace by a shared transformer. A probabilistic head then samples latent tokens in parallel to condition an autoregressive answer decoder.
 diagram: Prompt + latent slots → [ Shared transformer ] × k → sampled latents → AR decoder
 depth: Small fixed number of refinement iterations

@@ -7,6 +7,8 @@ authors:
   - Ziyu Mu
   - Zehua Wang
 group: full
+topics:
+  - interpretability
 summary: A mechanistic study of how later loops in Ouro repair two-hop retrieval. Transplanting loop-3 attention queries into loop 1 rescues most questions that loop 1 got wrong, while late keys and values help far less, pointing to queries as the carrier of the later-loop correction.
 diagram: Loop-3 queries → transplanted into Loop 1 (same layer, head, position)
 depth: Analysis of released Ouro-1.4B and Ouro-2.6B

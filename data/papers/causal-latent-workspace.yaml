@@ -6,6 +6,8 @@ published: 2026-10-16
 authors:
   - Ilia Zaznov
 group: full
+topics:
+  - architecture
 summary: "Gives a shared-depth Transformer a dedicated causal workspace: at each of four rounds, positions write gated vectors into prefix-specific latent slots and read back a content-addressed summary before the next application of the shared block, while the input embedding stays accessible."
 diagram: "[ Shared block + causal latent workspace ] × 4  (input anchored)"
 depth: Four fixed rounds

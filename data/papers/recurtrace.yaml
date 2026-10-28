@@ -11,6 +11,9 @@ authors:
   - Junyu Wang
   - Zhizheng Wu
 group: adaptive
+topics:
+  - architecture
+  - reasoning
 summary: "Improves middle-layer latent recurrence in two ways: Loop Memory Attention lets each looped layer attend to its own states from earlier iterations along the loop-time axis, and a halting head trained with oracle labels decides when extra depth still reduces loss."
 diagram: Lower layers → [ Middle block + loop-memory attention ] × r (halting head) → upper layers
 depth: Learned halting from oracle supervision

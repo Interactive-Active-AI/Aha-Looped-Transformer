@@ -8,6 +8,9 @@ authors:
   - Aldo Lipani
   - Nicola Cancedda
 group: core
+topics:
+  - post-training
+  - reasoning
 summary: Mid-trains a base model to iterate over a small subset of reasoning-relevant layers, chosen from interpretability evidence, while keeping architecture, parameter count, hyperparameters and data unchanged.
 diagram: Encode layers → [ Think layers ] × k → Decode layers
 depth: Fixed iterations; adaptive per-token depth explored

@@ -11,6 +11,8 @@ authors:
   - Sujoy Paul
   - Aditya Kusupati
 group: adaptive
+topics:
+  - multimodal
 summary: Elastic Looped Transformers for image and video generation use weight-shared blocks and Intra-Loop Self Distillation, distilling intermediate-loop students from the maximum-loop teacher in one training step, to obtain a family of any-time models from a single run.
 diagram: "[ Shared generative block ] × r,  r ∈ {1 … R} distilled from r = R"
 depth: Any-time inference at chosen loop count

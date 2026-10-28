@@ -16,6 +16,8 @@ authors:
   - Wenbo Su
   - Bo Zheng
 group: core
+topics:
+  - architecture
 summary: Memory-as-State-Highways externalizes state management of recursive transformers into an explicit memory buffer with lightweight routers, addressing undifferentiated computation across iterations and overload of a single hidden state.
 diagram: "[ Recursive core ] × r  ↔ memory buffer (read / write routers)"
 depth: Fixed iterations

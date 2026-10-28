@@ -6,6 +6,8 @@ published: 2026-03-23
 authors:
   - Hung-Hsuan Chen
 group: core
+topics:
+  - reasoning
 summary: A depth-recurrent Transformer that reasons by iterating a shared block instead of generating tokens, stabilized for 20+ steps by a final-output-only thinking objective, LayerScale initialization and an identity-biased gate.
 diagram: "[ Shared block + identity-biased gate ] × steps → answer"
 depth: Thinking steps matched to task complexity

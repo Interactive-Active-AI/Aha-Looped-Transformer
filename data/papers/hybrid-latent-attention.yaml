@@ -10,6 +10,8 @@ authors:
   - Feiyang Kang
   - Ruoxi Jia
 group: full
+topics:
+  - efficiency
 summary: Shrinks the T-fold KV cache of looped models by keeping exact keys and values only for a sliding window of recent tokens and storing older tokens as compact latents that every loop's query reads directly. It is uptrained on frozen Ouro models, training only the added parameters.
 diagram: "Recent W tokens: exact KV ‖ older tokens: shared latent read by each loop"
 depth: Ouro T = 4 loops

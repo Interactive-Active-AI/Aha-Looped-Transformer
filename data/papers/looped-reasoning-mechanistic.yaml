@@ -12,6 +12,8 @@ authors:
   - Michael M. Bronstein
   - Xiaowen Dong
 group: core
+topics:
+  - interpretability
 summary: Analyzes latent states of looped reasoning language models and finds that each layer in the cycle often converges to its own fixed point, so the recurrent block follows a consistent cyclic trajectory and repeats feedforward-like stages of inference at every iteration.
 diagram: "[ Layer 1 → … → Layer k ] × R  → cyclic fixed points"
 depth: Analysis

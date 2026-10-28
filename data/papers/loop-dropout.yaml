@@ -13,6 +13,8 @@ authors:
   - Kun Xu
   - Yang You
 group: full
+topics:
+  - post-training
 summary: Finds that standard LoRA on looped models mostly adapts late loops. Loop Dropout randomly masks adapter applications per loop during training and rescales by inverse survival probability, so the shared update stays strong and effective at every loop.
 diagram: "[ Block + LoRA (randomly masked, rescaled) ] × R"
 depth: All loops active at inference

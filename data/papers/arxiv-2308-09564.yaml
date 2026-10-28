@@ -8,6 +8,8 @@ authors:
   - Yao Teng
   - Limin Wang
 group: core
+topics:
+  - multimodal
 summary: Deep Equilibrium Model
 diagram: See paper for architecture
 depth: See paper

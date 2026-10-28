@@ -8,6 +8,9 @@ authors:
   - J. Zico Kolter
   - Vladlen Koltun
 group: full
+topics:
+  - architecture
+  - efficiency
 summary: Directly solves for the fixed point that a weight-tied layer would reach if iterated infinitely, using root-finding forward and implicit differentiation backward, so memory is constant in effective depth.
 diagram: z* = f(z*, x) solved by root-finding; implicit backward
 depth: Iterate to equilibrium

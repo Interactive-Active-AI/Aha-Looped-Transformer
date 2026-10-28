@@ -12,6 +12,9 @@ authors:
   - Ivan Oseledets
   - Valerii Ternovskii
 group: core
+topics:
+  - reasoning
+  - training
 summary: "Puts HRM, TRM and URM-style recursive reasoners into one experimental pipeline across six algorithmic domains to separate the effects of architecture, gradient propagation and training procedure. A simple recipe emerges: an intermediate gradient horizon, large physical batches and controlled recurrent-state updates, with no explicit hierarchy needed."
 diagram: "[ Small shared block ] × N  refining a latent state"
 depth: Many recurrent steps with an intermediate gradient horizon

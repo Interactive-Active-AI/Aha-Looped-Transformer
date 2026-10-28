@@ -13,6 +13,10 @@
     "Tal Schuster"
   ],
   "group": "full",
+  "topics": [
+    "post-training",
+    "efficiency"
+  ],
   "summary": "Converts pretrained Transformers into recursive models, relaxing sharing with depth-specific low-rank adaptations.",
   "diagram": "[ Shared layers + depth LoRA ] × R",
   "depth": "Recursion budget",

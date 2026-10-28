@@ -7,6 +7,8 @@ authors:
   - Kevin Xu
   - Issei Sato
 group: full
+topics:
+  - theory
 summary: "A formal comparison of chain-of-thought and looped transformers: looped models efficiently simulate parallel deterministic computation over DAGs, while stochastic CoT excels at approximate inference for self-reducible compositional problems."
 diagram: "Looped: depth over a DAG  vs  CoT: sequential stochastic tokens"
 depth: Theory

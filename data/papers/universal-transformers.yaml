@@ -12,6 +12,10 @@
     "Łukasz Kaiser"
   ],
   "group": "adaptive",
+  "topics": [
+    "architecture",
+    "reasoning"
+  ],
   "summary": "Shares a transformation across depth, with adaptive computation time allowing each position to halt independently.",
   "diagram": "Shared transformation + ACT",
   "depth": "Per-position adaptive halting",

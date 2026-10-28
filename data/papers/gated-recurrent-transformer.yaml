@@ -8,6 +8,8 @@ authors:
   - Amr Alanwar
   - Mostafa Elhoushi
 group: core
+topics:
+  - architecture
 summary: A prelude–core–coda recurrent-depth transformer whose shared core update is modulated by a lightweight projection and an elementwise update gate conditioned on the hidden state, the prelude output and per-step noise, letting a few layers specialize across recurrences.
 diagram: Prelude → [ Core + GRU-style update gate ] × R → Coda
 depth: Recurrence count R with resampled noise

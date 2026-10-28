@@ -12,6 +12,9 @@
     "Christopher D. Manning"
   ],
   "group": "adaptive",
+  "topics": [
+    "architecture"
+  ],
   "summary": "Combines the Universal Transformer with mixture-of-experts layers to study shared depth and sparse capacity.",
   "diagram": "[ Shared attention + MoE ] × R",
   "depth": "See paper",

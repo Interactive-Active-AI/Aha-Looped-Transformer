@@ -7,6 +7,9 @@ authors:
   - Xinyue Luo
   - Fei Yu
 group: core
+topics:
+  - interpretability
+  - theory
 summary: Explains why intermediate answers of depth-recurrent models can already match the endpoint while scores keep changing, with a margin characterization that separates common translation, direction relative to the winner, and pairing of competitor updates with score gaps.
 diagram: Latent update per step → score changes decomposed (common vs contrast)
 depth: Analysis of finite-depth answer preservation

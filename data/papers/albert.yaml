@@ -11,6 +11,8 @@ authors:
   - Piyush Sharma
   - Radu Soricut
 group: full
+topics:
+  - architecture
 summary: Reduces BERT's parameters with factorized embeddings and cross-layer parameter sharing, so every layer reuses the same weights, plus an inter-sentence coherence loss.
 diagram: Embedding (factorized) → [ Shared encoder layer ] × L
 depth: Fixed depth with all layers shared

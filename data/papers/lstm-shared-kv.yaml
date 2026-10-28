@@ -6,6 +6,9 @@ published: 2026-10-23
 authors:
   - Andreas Kirsch
 group: core
+topics:
+  - architecture
+  - efficiency
 summary: Studies an LSTM-style gated recurrent transformer whose recurrent core also shares a single KV cache. A consistency loss late in training aligns the cache entries seen in parallel training with those produced recursively at generation time.
 diagram: "[ LSTM-style gated core ] × R  (one shared KV cache)"
 depth: Fixed recurrence

@@ -15,6 +15,9 @@ authors:
   - Bryan Dai
   - Zhouhan Lin
 group: full
+topics:
+  - efficiency
+  - architecture
 summary: Reorganizes serial looped computation into parallel latent and prediction slots. The prediction slot uses the previous token's deep latent state, while the latent slot prepares the state for the next step, replacing two sequential invocations with one paired call.
 diagram: "Token t: prediction slot (deep latent of t−1) ‖ latent slot (state for t+1)"
 depth: One paired invocation per token

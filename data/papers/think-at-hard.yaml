@@ -13,6 +13,10 @@
     "Yu Wang"
   ],
   "group": "adaptive",
+  "topics": [
+    "post-training",
+    "reasoning"
+  ],
   "summary": "Allocates extra latent iterations to selected tokens, using a decider and duo-causal attention.",
   "diagram": "Token → Decider → Latent iterations",
   "depth": "Selective token iteration",

@@ -8,6 +8,8 @@ authors:
   - Xinyu Yang
   - Guinan Su
 group: core
+topics:
+  - efficiency
 summary: Connects recurrent-depth models to diffusion language models and builds a diffusion-forcing sampler that decodes a new token every forward pass while earlier tokens' latents keep being refined in parallel through recurrence.
 diagram: "Each pass: new token at depth 1 ‖ earlier tokens refined further"
 depth: Recurrence spread across positions in parallel

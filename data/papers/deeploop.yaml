@@ -12,6 +12,9 @@
     "Mengdi Wang"
   ],
   "group": "full",
+  "topics": [
+    "training"
+  ],
   "summary": "Revisits residual scaling for repeated parameter use, focusing on stable training of deeper looped networks.",
   "diagram": "[ Residual-scaled shared layers ] × R",
   "depth": "Deep recurrence",

@@ -11,6 +11,9 @@ authors:
   - Jianyong Wang
   - Furu Wei
 group: core
+topics:
+  - architecture
+  - efficiency
 summary: "Combines the YOCO decoder-decoder design with recursion: a Universal Self-Decoder iterates with shared parameters, but only over shallow efficient-attention layers, while YOCO's constant global KV cache and linear prefill stay intact."
 diagram: "[ Self-decoder (efficient attention) ] × r → cross-decoder over one global KV cache"
 depth: Partial recursion in the self-decoder

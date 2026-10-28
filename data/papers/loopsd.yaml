@@ -14,6 +14,8 @@ authors:
   - Weiming Zhang
   - Nenghai Yu
 group: core
+topics:
+  - post-training
 summary: Builds a stronger teacher from the same frozen weights by searching which layers to repeat, then distills that looped teacher's predictions on student-generated prefixes back into the student, alternating search and distillation over several rounds.
 diagram: Search repeated layers → looped teacher → on-policy distillation → repeat
 depth: Teacher repeats searched layers; student runs a single pass

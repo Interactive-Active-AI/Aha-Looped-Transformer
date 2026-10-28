@@ -12,6 +12,9 @@ authors:
   - Ning Ding
   - Yu Wang
 group: adaptive
+topics:
+  - post-training
+  - efficiency
 summary: Studies whether looping improves test-time scaling as outputs grow longer and finds fixed-depth looping wastes iterations on tokens that do not benefit. TaH2 post-trains the backbone with an iteration decider supervised by online lookahead labels indicating whether another iteration improves the prediction.
 diagram: "Token → [ Shared layers ] → decider: iterate again? → … → output"
 depth: Token-level adaptive iterations up to a maximum depth

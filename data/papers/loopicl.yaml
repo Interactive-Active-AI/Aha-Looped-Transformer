@@ -7,6 +7,8 @@ authors:
   - Amir Rezaei Balef
   - Katharina Eggensperger
 group: full
+topics:
+  - multimodal
 summary: A tabular foundation model built from a single looped block with coupled cell and row streams refined by within-column and cross-column attention. Varying loop counts in pretraining and a learned exit gate let users trade inference cost for accuracy.
 diagram: "Table → [ Single block: cell stream ↔ row stream ] × r (exit gate) → predictions"
 depth: Variable loops with a learned exit gate

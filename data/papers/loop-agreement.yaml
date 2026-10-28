@@ -9,6 +9,8 @@ authors:
   - Maxim Abramov
   - Grach Mkrtchian
 group: full
+topics:
+  - interpretability
 summary: Asks what keeps extra loop steps usable beyond the trained budget. Removing Ouro's loop-boundary normalisation breaks the released models without norm blow-up, yet small models trained without it extrapolate better, suggesting that agreement between the training and inference loop is what matters.
 diagram: "[ Block ] × R  with or without loop-boundary normalisation"
 depth: Extrapolation beyond the trained loop budget

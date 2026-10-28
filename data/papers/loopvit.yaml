@@ -11,6 +11,9 @@ authors:
   - Yexin Liu
   - Harry Yang
 group: adaptive
+topics:
+  - multimodal
+  - reasoning
 summary: A recursive vision architecture for ARC-AGI that iterates a weight-tied hybrid block of local convolutions and global attention as a latent chain of thought, with a parameter-free dynamic exit when predictive entropy shows the state has settled.
 diagram: Grid → [ Weight-tied conv + attention block ] × r (entropy exit) → output grid
 depth: Parameter-free entropy-based dynamic exit

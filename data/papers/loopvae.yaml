@@ -6,6 +6,8 @@ published: 2026-09-10
 authors:
   - Zhiying Lu
 group: core
+topics:
+  - multimodal
 summary: Reuses a scale- and loop-conditioned core within and across spatial scales of a hierarchical visual tokenizer, keeping only resolution-changing transitions independent.
 diagram: "[ 4-block core (scale, loop conditioned) ] × 28 applications, transitions untied"
 depth: Fixed recurrence across scales

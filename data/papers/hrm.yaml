@@ -14,6 +14,9 @@ authors:
   - Sen Song
   - Yasin Abbasi Yadkori
 group: core
+topics:
+  - reasoning
+  - architecture
 summary: "A brain-inspired recurrent architecture with two interdependent modules: a slow high-level module for abstract planning and a fast low-level module for detailed computation, solving sequential reasoning tasks in one forward pass without intermediate supervision."
 diagram: "[ L-module × T → H-module update ] × N"
 depth: Nested two-timescale recurrence

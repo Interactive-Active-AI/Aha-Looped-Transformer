@@ -3,11 +3,28 @@ import '../styles/site.css';
 import {REPO,SITE} from '../../scripts/catalog.mjs';
 const {title='Aha Looped Transformer',description='An open visual atlas of looped Transformers, recurrent computation, adaptive depth, and latent reasoning.'}=Astro.props;
 const base=import.meta.env.BASE_URL.replace(/\/$/,'');
+const repoPath=new URL(REPO).pathname.slice(1);
+const gh='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z';
 ---
 <!doctype html>
 <html lang="en">
 <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title}</title><meta name="description" content={description}/><meta name="theme-color" content="#ca6f6f"/><link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}/><link rel="canonical" href={new URL(Astro.url.pathname,SITE).href}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={new URL(Astro.url.pathname,SITE).href}/></head>
-<body><a class="skip" href="#main">Skip to content</a><div id="loop-atlas-proposal">
-<header><a class="la-brand" href={`${base}/`}><svg width="27" height="20" viewBox="0 0 32 20" fill="none" aria-hidden="true"><path d="M16 10C12 3 3 1 3 10s9 7 13 0 13-9 13 0-9 7-13 0Z" stroke="currentColor" stroke-width="2"/></svg><span>AHA · LOOPED TRANSFORMER</span></a><nav aria-label="Main navigation"><a href={`${base}/?view=explore`} data-view="explore">Explore</a><a href={`${base}/?view=timeline`} data-view="timeline">Timeline</a><a href={`${base}/?view=compare`} data-view="compare">Compare <span id="la-count">0</span></a></nav><a class="la-submit button" href={`${base}/contribute/`}>Submit a paper ↗</a></header>
+<body><a class="skip" href="#main">Skip to content</a>
+<div class="atlas" id="atlas">
+<header class="site-header">
+<a class="brand" href={`${base}/`}><svg width="30" height="20" viewBox="0 0 32 20" fill="none" aria-hidden="true"><path d="M16 10C12 3 3 1 3 10s9 7 13 0 13-9 13 0-9 7-13 0Z" stroke="currentColor" stroke-width="2.2"/></svg><span>Aha <b>Looped Transformer</b></span></a>
+<nav class="site-nav" aria-label="Main navigation"><a href={`${base}/`} data-view="explore">Explore</a><a href={`${base}/?view=timeline`} data-view="timeline">Timeline</a><a href={`${base}/?view=compare`} data-view="compare">Compare <span class="count" id="compare-count">0</span></a></nav>
+<div class="header-actions"><a class="gh-button" href={REPO} aria-label={`GitHub repository ${repoPath}`}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg><span class="gh-label">GitHub</span><span class="gh-stars" data-stars hidden>★ <b></b></span></a><a class="btn btn-primary" href={`${base}/contribute/`}>Submit a paper</a></div>
+</header>
 <main id="main"><slot/></main>
-<footer><span>Curated by <a href="https://github.com/Interactive-Active-AI">Interactive &amp; Active AI</a></span><span><a href={REPO}>GitHub ↗</a> · <a href={`${base}/contribute/`}>Contribute</a> · <a href={`${REPO}/blob/main/LICENSE`}>Open source</a></span></footer></div></body></html>
+<footer class="site-footer">
+<div class="repo-band"><svg width="42" height="42" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg><div><div class="eyebrow">Open source on GitHub</div><a class="repo-name" href={REPO}>{repoPath}</a><p>Every entry is a YAML file reviewed in public. Star the repository to follow new works, or open an issue to add one.</p></div><div class="repo-actions"><a class="gh-button" href={REPO}><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg>Star on GitHub<span class="gh-stars" data-stars hidden>★ <b></b></span></a><a class="btn" href={`${REPO}/issues/new?template=submit-paper.yml`}>Submit via issue</a><a class="btn" href={`${REPO}/blob/main/CONTRIBUTING.md`}>Contribute a PR</a></div></div>
+<div class="footer-meta"><span>Curated by <a href="https://github.com/Interactive-Active-AI">Interactive &amp; Active AI</a></span><span>Code <a href={`${REPO}/blob/main/LICENSE`}>MIT</a> · Descriptions CC BY 4.0</span></div>
+</footer>
+</div>
+<script define:vars={{repoPath}}>
+const key='aha-stars',show=n=>document.querySelectorAll('[data-stars]').forEach(el=>{el.querySelector('b').textContent=n;el.hidden=false;});
+const fmt=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,'')+'k':String(n);
+try{const cached=JSON.parse(sessionStorage.getItem(key)||'null');if(cached&&Date.now()-cached.t<3600000)show(cached.n);else fetch('https://api.github.com/repos/'+repoPath).then(r=>r.ok?r.json():null).then(d=>{if(d&&Number.isFinite(d.stargazers_count)){const n=fmt(d.stargazers_count);sessionStorage.setItem(key,JSON.stringify({n,t:Date.now()}));show(n);}}).catch(()=>{});}catch{}
+</script>
+</body></html>

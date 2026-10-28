@@ -13,6 +13,8 @@ authors:
   - Zhuoran Yang
   - Xihui Liu
 group: core
+topics:
+  - training
 summary: A scaling study of truncated backpropagation through time in prelude–recurrent–coda looped transformers. Nearly 600 runs jointly vary model size, tokens and forward/backward loop counts, and a unified law expresses looping and truncation through effective parameters.
 diagram: Prelude → [ Recurrent block ] × T (backprop through last B) → Coda
 depth: Fixed forward loops T with B backward loops

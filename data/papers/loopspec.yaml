@@ -10,6 +10,8 @@ authors:
   - Dongsu Han
   - Insu Han
 group: full
+topics:
+  - efficiency
 summary: "Training-free pipelined self-speculative decoding for looped transformers: drafts from early recurrent states overlap with verification of the current token, and a selective second proposal from a deeper depth improves draft accuracy while keeping decoding lossless."
 diagram: Early-depth draft (t+1) ‖ full-depth verify (t); optional deeper second proposal
 depth: Closed-form optimal proposal depths

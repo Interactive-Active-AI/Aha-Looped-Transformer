@@ -10,6 +10,9 @@ authors:
   - Zhuoran Li
   - Longbo Huang
 group: adaptive
+topics:
+  - multimodal
+  - efficiency
 summary: Finds that pretrained looped RL policies specialize to their full trained depth. FlexLoop post-trains them with the original RL objective plus adjacent-depth policy distillation, making shallower depths reliable and enabling state-wise adaptive inference.
 diagram: "[ Shared block ] × R  → distill depth d+1 into depth d"
 depth: Depth-elastic, state-wise adaptive

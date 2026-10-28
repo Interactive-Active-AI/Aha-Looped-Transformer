@@ -7,6 +7,8 @@ authors:
   - Lee Seung-woo
   - Bowen Qi
 group: adaptive
+topics:
+  - multimodal
 summary: "A lightweight plug-in for audio language models: a shared transformer block iterates over the audio representation under question guidance, and a learned halting mechanism exits once the representation is ready, so perception-heavy questions get more steps."
 diagram: Audio encoder → [ Shared block + question ] × r (halting) → LLM
 depth: Learned halting per audio–question pair

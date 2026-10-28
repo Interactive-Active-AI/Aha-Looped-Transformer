@@ -10,6 +10,8 @@ authors:
   - Ni Lao
   - Qiang Liu
 group: core
+topics:
+  - post-training
 summary: Loops a contiguous mid-stack block of a frozen checkpoint at inference with no training. Viewing a pre-norm block as a forward Euler step, it replaces one large update with smaller damped sub-steps, since naive block repetition usually hurts.
 diagram: Lower layers → [ Mid block, damped sub-steps ] × k → upper layers  (frozen weights)
 depth: Inference-time wrapper

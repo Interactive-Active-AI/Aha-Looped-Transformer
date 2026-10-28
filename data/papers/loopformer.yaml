@@ -10,6 +10,10 @@
     "Babak Taati"
   ],
   "group": "adaptive",
+  "topics": [
+    "architecture",
+    "training"
+  ],
   "summary": "Conditions shared computation on time and step size to support elastic inference budgets.",
   "diagram": "h(t) → F(t, Δt) → h(t+Δt)",
   "depth": "Budget-conditioned depth",

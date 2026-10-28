@@ -1,16 +1,86 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import {loadPapers,groups} from '../../scripts/catalog.mjs';
+import {loadPapers,groups,topics,REPO} from '../../scripts/catalog.mjs';
 const papers=loadPapers(),base=import.meta.env.BASE_URL.replace(/\/$/,'');
-const years=[...new Set(papers.map(p=>p.published.slice(0,4)))].sort();
+const families=['core','adaptive','full'];
+const short={core:'Core recurrence',adaptive:'Adaptive depth',full:'Full stack'};
+const names=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const monthOf=d=>names[+d.slice(5,7)-1];
+const fmtMonth=d=>`${monthOf(d)} ${d.slice(0,4)}`,fmtDay=d=>`${monthOf(d)} ${+d.slice(8,10)}`;
+const newest=papers[0].published,latest=papers.slice(0,8);
+const recent=papers.filter(p=>Date.parse(p.published)>=Date.parse(newest)-60*864e5).length;
+const count=(f)=>papers.filter(f).length;
+const topicKeys=Object.keys(topics).filter(t=>count(p=>p.topics?.includes(t)));
+const gh='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z';
+
+const months=[];
+for(let y=2025,m=1;;m++){if(m>12){m=1;y++;}const k=`${y}-${String(m).padStart(2,'0')}`;months.push(k);if(k===newest.slice(0,7))break;}
+const tally=list=>({total:list.length,...Object.fromEntries(families.map(f=>[f,list.filter(p=>p.group===f).length]))});
+const bars=[{label:'Earlier',year:'',...tally(papers.filter(p=>p.published<months[0]))},...months.map(k=>({label:monthOf(k),year:k.endsWith('-01')?k.slice(0,4):'',...tally(papers.filter(p=>p.published.startsWith(k)))}))];
+const BW=24,GAP=9,PT=22,PH=150,PB=40,SPLIT=18,PL=14,max=Math.max(...bars.map(b=>b.total));
+const W=PL*2+bars.length*(BW+GAP)-GAP+SPLIT,H=PT+PH+PB;
+const bx=i=>PL+i*(BW+GAP)+(i?SPLIT:0);
+const segments=bars.flatMap((b,i)=>{let y=PT+PH;return families.map(f=>{const h=b[f]/max*PH;y-=h;return h?{x:bx(i),y,h,f,title:`${b.label} ${b.year}: ${b[f]} ${groups[f]}`}:null;}).filter(Boolean);});
+
+const tlYears=[...new Set(papers.map(p=>p.published.slice(0,4)))].filter(y=>y>='2025').sort().reverse();
+const monthGroups=y=>[...new Set(papers.filter(p=>p.published.startsWith(y)).map(p=>p.published.slice(0,7)))].sort().reverse().map(k=>({key:k,items:papers.filter(p=>p.published.startsWith(k))}));
+const openMonths=new Set(months.slice(-2));
+const older=papers.filter(p=>p.published<'2025');
 ---
 <Layout>
-<section class="la-hero"><div><div class="la-eyebrow"><span class="la-dot"></span>AHA LOOPED TRANSFORMER</div><h1>Think deeper.<br/><em>Find your Aha.</em></h1><p>An open atlas of recurrent computation,<br/>adaptive depth, and latent reasoning.</p></div><div class="la-feature"><div class="la-feature-top"><span>RECURRENT COMPUTATION</span><span>Shared weights · More depth</span></div><div class="la-art"><canvas id="la-orbit" role="img" aria-label="Conceptual animation of particles revisiting shared computation; not measured model data."></canvas><div class="la-center"><span>REPEAT. REFINE.</span></div><span class="la-art-label">One more pass. A new perspective.</span><button type="button" id="la-motion-toggle" aria-pressed="false">Pause motion</button></div><div class="la-feature-bottom"><span>Explore recurrent architectures</span><a class="button" href={`${base}/papers/huginn/`}>Inside Huginn →</a></div></div></section>
-<section id="la-explore"><div class="la-heading"><h2>The collection</h2><span class="la-quiet" id="la-results" aria-live="polite">{papers.length} works</span></div><div class="la-tools"><input type="search" id="la-search" aria-label="Search papers" placeholder="Search a paper or idea…"/><button type="button" data-filter="all" aria-pressed="true">All works</button><button type="button" data-filter="adaptive" aria-pressed="false">Adaptive depth</button><button type="button" data-filter="core" aria-pressed="false">Core recurrence</button><button type="button" data-filter="full" aria-pressed="false">Full stack</button></div><div id="la-cards" class="la-grid">{papers.map(p=><Card paper={p}/>)}</div><p id="la-empty" hidden>No works match this search. Try another idea or choose All works.</p></section>
-<section id="la-timeline" hidden><div class="la-heading"><h2>A timeline of ideas</h2><span class="la-quiet">First publication · earliest to latest</span></div>{years.map(year=><div class="la-year"><h2>{year}</h2><div class="la-timeline-items">{papers.filter(p=>p.published.startsWith(year)).reverse().map(p=><a class="la-time-item" href={`${base}/papers/${p.id}/`}><span>{p.name}</span><span class="la-quiet">{p.published.slice(5)} · {groups[p.group]}</span></a>)}</div></div>)}</section>
-<section id="la-compare" hidden><div class="la-heading"><h2>Methods, side by side</h2><button type="button" id="la-clear">Clear selection</button></div><p id="la-comparison-help">Select up to 3 works in Explore to compare their architecture and depth control.</p><div id="la-comparison" class="la-grid">{papers.map(p=><article data-comparison={p.id} hidden><h3><a href={`${base}/papers/${p.id}/`}>{p.name}</a></h3><dl><dt>Recurrence</dt><dd>{p.diagram}</dd></dl><dl><dt>Depth control</dt><dd>{p.depth}</dd></dl><dl><dt>KV / state strategy</dt><dd>{p.kv}</dd></dl><dl><dt>Reading note</dt><dd>{p.notes}</dd></dl><a href={`https://arxiv.org/abs/${p.arxiv}`}>Paper ↗</a><button type="button" data-remove={p.id}>Remove {p.name}</button></article>)}</div></section>
-<div class="la-selection" id="la-selection" hidden><span id="la-selected-text" aria-live="polite"></span><a href="?view=compare" id="la-open-compare">Compare selected →</a></div>
-<noscript><p>All papers are listed above. Enable JavaScript for search, comparison, and the animated illustration.</p></noscript>
+<div data-intro>
+<section class="hero">
+<div>
+<div class="eyebrow"><span class="dot"></span>Open atlas · updated {fmtMonth(newest)}</div>
+<h1>Think deeper.<br/><em>Find your Aha.</em></h1>
+<p class="lede">An open, community-reviewed atlas of looped Transformers, recurrent depth, adaptive computation and latent reasoning.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#explore">Browse {papers.length} works ↓</a><a class="gh-button" href={REPO}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg>Star on GitHub<span class="gh-stars" data-stars hidden>★ <b></b></span></a><a class="btn" href={`${base}/contribute/`}>Submit a paper</a></div>
+<dl class="stats"><div><dt>Works</dt><dd>{papers.length}</dd></div><div><dt>Last 60 days</dt><dd>+{recent}</dd></div><div><dt>With code</dt><dd>{count(p=>p.code)}</dd></div><div><dt>Topics</dt><dd>{topicKeys.length}</dd></div></dl>
+</div>
+<figure class="hero-art"><canvas id="orbit" role="img" aria-label="Conceptual animation of three loops revisiting shared computation; not measured model data."></canvas><span class="orbit-label">REPEAT · REFINE</span><button type="button" class="motion-toggle" id="motion-toggle" aria-pressed="false">Pause motion</button>
+<figcaption class="legend">{families.map(f=><a href={`${base}/?filter=${f}#explore`} data-family={f} data-family-link={f}><i class="fam-dot"></i>{groups[f]}<span>{count(p=>p.group===f)}</span></a>)}</figcaption></figure>
+</section>
+<section class="latest" aria-labelledby="latest-title">
+<div class="section-head"><h2 id="latest-title"><span class="new-pill">New</span>Just published</h2><a href="#explore">See all works →</a></div>
+<div class="latest-track">{latest.map(p=><a class="latest-card" data-family={p.group} href={`${base}/papers/${p.id}/`}><time datetime={p.published}>{fmtDay(p.published)}, {p.published.slice(0,4)}</time><strong>{p.name}</strong><span>{groups[p.group]}</span></a>)}</div>
+</section>
+</div>
+
+<section id="explore" class="explore" data-panel="explore">
+<div class="toolbar">
+<div class="toolbar-row">
+<label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="q" aria-label="Search papers" placeholder="Search by name, idea or author…"/></label>
+<div class="families" role="group" aria-label="Recurrence family"><button type="button" class="seg" data-family-btn="all" aria-pressed="true">All<span>{papers.length}</span></button>{families.map(f=><button type="button" class="seg" data-family={f} data-family-btn={f} aria-pressed="false"><i class="fam-dot"></i>{short[f]}<span>{count(p=>p.group===f)}</span></button>)}</div>
+<div class="toolbar-end"><select id="sort" class="select" aria-label="Sort works"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="name">Name A–Z</option></select><div class="layout-toggle" role="group" aria-label="Layout"><button type="button" data-layout="grid" aria-pressed="true" aria-label="Card layout"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></button><button type="button" data-layout="list" aria-pressed="false" aria-label="List layout"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="2" width="14" height="2.4" rx="1.2"/><rect x="1" y="6.8" width="14" height="2.4" rx="1.2"/><rect x="1" y="11.6" width="14" height="2.4" rx="1.2"/></svg></button></div></div>
+</div>
+<div class="toolbar-row chips" role="group" aria-label="Topics and resources"><span class="chips-label">Topics</span>{topicKeys.map(t=><button type="button" class="chip" data-topic={t} aria-pressed="false">{topics[t]}<span>{count(p=>p.topics?.includes(t))}</span></button>)}<span class="chip-sep" aria-hidden="true"></span><button type="button" class="chip" data-has="code" aria-pressed="false">Has code<span>{count(p=>p.code)}</span></button><button type="button" class="chip" data-has="weights" aria-pressed="false">Has weights<span>{count(p=>p.weights)}</span></button><select id="year" class="select" aria-label="Publication year"><option value="">All years</option><option value="2026">2026</option><option value="2025">2025</option><option value="older">2024 &amp; earlier</option></select></div>
+</div>
+<div class="results-bar"><span id="results" aria-live="polite">{papers.length} works</span><button type="button" class="link-button" id="clear" hidden>Clear all filters</button></div>
+<div id="cards" class="cards">{papers.map(p=><Card paper={p}/>)}</div>
+<p id="empty" class="empty" hidden>No works match these filters. Try fewer topics or clear the search.</p>
+<div class="more"><button type="button" class="btn" id="more" hidden>Show more</button></div>
+</section>
+
+<section data-panel="timeline" hidden>
+<div class="view-head"><div class="eyebrow"><span class="dot"></span>Timeline</div><h1>A timeline of ideas</h1><p class="muted">First publications per month, colored by recurrence family. {count(p=>p.published>=months.at(-2))} works appeared in the last two months alone.</p></div>
+<figure class="chart"><svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Monthly first publications by recurrence family">
+<line x1="0" x2={W} y1={PT+PH} y2={PT+PH} stroke="var(--line-strong)"/>
+{segments.map(s=><rect class={`bar-${s.f}`} x={s.x} y={s.y} width={BW} height={s.h} rx="3"><title>{s.title}</title></rect>)}
+{bars.map((b,i)=>b.total>0&&<text class="count-label" x={bx(i)+BW/2} y={PT+PH-b.total/max*PH-6} text-anchor="middle">{b.total}</text>)}
+{bars.map((b,i)=><text x={bx(i)+BW/2} y={PT+PH+16} text-anchor="middle">{b.label}</text>)}
+{bars.map((b,i)=>b.year&&<text x={bx(i)} y={PT+PH+33} style="font-weight:600">{b.year}</text>)}
+</svg><figcaption class="chart-legend">{families.map(f=><span data-family={f}><i class="fam-dot"></i>{groups[f]}</span>)}<span>“Earlier” groups all works before 2025.</span></figcaption></figure>
+{tlYears.map(y=><section class="tl-year"><h2>{y}<span>{count(p=>p.published.startsWith(y))} works</span></h2><div>{monthGroups(y).map(g=><details class="tl-month" open={openMonths.has(g.key)}><summary><span>{names[+g.key.slice(5)-1]}</span><span class="mini-bar" aria-hidden="true">{families.map(f=>{const n=g.items.filter(p=>p.group===f).length;return n>0&&<i style={`width:${n/max*100}%;background:var(--${f})`}></i>;})}</span><span class="n">{g.items.length}</span></summary><ul class="tl-list">{g.items.map(p=><li><a href={`${base}/papers/${p.id}/`} data-family={p.group}><span class="name"><i class="fam-dot"></i><b>{p.name}</b></span><span class="tl-topics">{(p.topics||[]).map(t=>topics[t]).join(' · ')}</span><time datetime={p.published}>{fmtDay(p.published)}</time></a></li>)}</ul></details>)}</div></section>)}
+<section class="tl-year"><h2>Earlier<span>{older.length} works · 2016–2024</span></h2><div><details class="tl-month" open><summary><span>Foundations</span><span class="mini-bar" aria-hidden="true">{families.map(f=>{const n=older.filter(p=>p.group===f).length;return n>0&&<i style={`width:${n/max*100}%;background:var(--${f})`}></i>;})}</span><span class="n">{older.length}</span></summary><ul class="tl-list">{older.map(p=><li><a href={`${base}/papers/${p.id}/`} data-family={p.group}><span class="name"><i class="fam-dot"></i><b>{p.name}</b></span><span class="tl-topics">{(p.topics||[]).map(t=>topics[t]).join(' · ')}</span><time datetime={p.published}>{p.published.slice(0,4)}</time></a></li>)}</ul></details></div></section>
+</section>
+
+<section data-panel="compare" hidden>
+<div class="view-head"><div class="eyebrow"><span class="dot"></span>Compare</div><h1>Methods, side by side</h1><div class="section-head"><p class="muted" style="margin:0">Pick up to three works with the Compare box in Explore.</p><button type="button" class="link-button" id="clear-compare">Clear selection</button></div></div>
+<p id="compare-help" class="help">Nothing selected yet. Tick “Compare” on up to three works in Explore to see their recurrence, depth control and KV strategy here.</p>
+<div class="compare-grid">{papers.map(p=><article class="compare-card" data-family={p.group} data-comparison={p.id} hidden><div class="paper-top"><span class="fam">{groups[p.group]}</span><time class="muted small" datetime={p.published}>{fmtMonth(p.published)}</time></div><h2><a href={`${base}/papers/${p.id}/`}>{p.name}</a></h2><dl><div><dt>Recurrence</dt><dd class="diagram-inline">{p.diagram}</dd></div><div><dt>Depth control</dt><dd>{p.depth}</dd></div><div><dt>KV / state strategy</dt><dd>{p.kv}</dd></div><div><dt>Reading note</dt><dd>{p.notes}</dd></div></dl><div class="compare-actions"><a href={`https://arxiv.org/abs/${p.arxiv}`}>Paper ↗</a><button type="button" class="link-button" data-remove={p.id}>Remove</button></div></article>)}</div>
+</section>
+<div class="selection" id="selection" hidden><span id="selected-text" aria-live="polite"></span><a class="btn btn-primary" href="?view=compare" id="open-compare">Compare selected →</a></div>
+<noscript><p class="muted">All works are listed above. Enable JavaScript for filters, comparison and the animated illustration.</p></noscript>
 <script>import '../scripts/collection.js'; import '../scripts/motion.js';</script>
 </Layout>

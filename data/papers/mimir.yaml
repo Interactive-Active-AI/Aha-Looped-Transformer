@@ -12,6 +12,9 @@ authors:
   - Kenneth Enevoldsen
   - Lukas Galke Poech
 group: full
+topics:
+  - architecture
+  - training
 summary: A 1.78B language model built on the HRM-Text architecture, whose layers form a low-level and a high-level stack applied repeatedly in an interleaved schedule, trained from scratch only on permissibly licensed data.
 diagram: "[ L-stack × n ↔ H-stack ] × m  (interleaved)"
 depth: Fixed schedule; L-stack applications adjustable at inference

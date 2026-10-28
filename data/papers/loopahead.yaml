@@ -12,6 +12,8 @@ authors:
   - Jiangchao Yao
   - Zhiyong Chen
 group: full
+topics:
+  - efficiency
 summary: "A speculative decoding framework for looped transformers that gives different recurrent depths complementary roles: a lightweight lookahead drafter predicts several future tokens from early-loop states, deeper-loop feedback decides which draft branches to continue, and the full-depth model makes final decisions."
 diagram: Early-loop state → lookahead drafter → deeper-loop branch control → full-depth verify
 depth: Early loops draft; full depth decides

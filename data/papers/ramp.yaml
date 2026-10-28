@@ -7,6 +7,8 @@ authors:
   - Ke Wan
   - Chen Chen
 group: core
+topics:
+  - efficiency
 summary: Shows that quantization errors injected early in recurrent depth are attenuated by later steps. RAMP therefore runs early refinement in low-precision weights and activations and restores high precision for the terminal steps, speeding up long-context prefill.
 diagram: "[ Core ] × r low precision → [ Core ] × r′ high precision"
 depth: Fixed recurrence; precision varies with depth

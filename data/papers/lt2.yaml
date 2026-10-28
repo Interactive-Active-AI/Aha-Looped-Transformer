@@ -14,6 +14,10 @@
     "Hanjie Chen"
   ],
   "group": "full",
+  "topics": [
+    "architecture",
+    "efficiency"
+  ],
   "summary": "Combines looping with linear, sparse and hybrid token mixers to explore more efficient repeated computation.",
   "diagram": "[ Linear / sparse / hybrid mixer ] × R",
   "depth": "Iteration budget",

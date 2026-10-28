@@ -15,6 +15,8 @@ authors:
   - Hua Wu
   - Haifeng Wang
 group: adaptive
+topics:
+  - architecture
 summary: "Treats layer computation as implicit thinking steps: Adaptive Token Routing sends critical tokens through extra iterations, Residual Thinking Connections refine them, and Thinking Step Encoding marks each phase."
 diagram: Token → router → [ Layer ] × rᵢ with residual thinking connections
 depth: Adaptive token routing; elastic at inference

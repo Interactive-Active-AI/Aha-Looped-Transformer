@@ -9,6 +9,8 @@ authors:
   - Dhruv Pai
   - Benjamin Keigwin
 group: adaptive
+topics:
+  - training
 summary: "Introduces fixed-first training: train a looped model at one fixed depth for most of the run and vary depth only in a short final phase, instead of training across depths from the start."
 diagram: Fixed depth (most of training) → mixed depths (finishing phase)
 depth: Adaptive inference depth learned late in training

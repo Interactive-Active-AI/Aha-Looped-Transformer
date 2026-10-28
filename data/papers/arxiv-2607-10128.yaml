@@ -7,6 +7,8 @@ authors:
   - Yifei Zhao
   - Ying Tang
 group: adaptive
+topics:
+  - reasoning
 
 summary: >-
   Energy-guided Recursive Model (ERM) augments recurrent reasoning with an

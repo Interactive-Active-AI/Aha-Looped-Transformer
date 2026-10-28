@@ -10,6 +10,9 @@ authors:
   - Michal Byra
   - Neo Christopher Chung
 group: full
+topics:
+  - safety
+  - interpretability
 summary: An interpretability-based inspection protocol with five lenses applied to eight looped language models from four families, asking whether iterations actually improve capability and whether models stay stable under prompt perturbation.
 diagram: Carry loop (prompt only in state) ‖ Re-read loop (prompt re-supplied each iteration)
 depth: Analysis of released models

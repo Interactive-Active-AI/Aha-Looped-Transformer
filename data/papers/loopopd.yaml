@@ -10,6 +10,8 @@ authors:
   - Haoyang Yao
   - Wenjie Wang
 group: full
+topics:
+  - post-training
 summary: Uses a looped model's own terminal loop as a compute-privileged teacher for an intermediate-loop student on student-generated rollouts. The dynamic variant keeps refreshing the teacher as shared weights update, giving recurrent self-improvement without an external teacher.
 diagram: Terminal-loop policy (teacher) → intermediate-loop policy (student), on-policy
 depth: Supervision flows from deeper to shallower loops

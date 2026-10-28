@@ -1,14 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import {loadPapers,groups,REPO} from '../../../scripts/catalog.mjs';
-export function getStaticPaths(){return loadPapers().map(p=>({params:{id:p.id},props:{paper:p}}));}
-const {paper:p}=Astro.props,base=import.meta.env.BASE_URL.replace(/\/$/,'');
+import {loadPapers,groups,topics,REPO} from '../../../scripts/catalog.mjs';
+export function getStaticPaths(){const all=loadPapers();return all.map(p=>({params:{id:p.id},props:{paper:p,all}}));}
+const {paper:p,all}=Astro.props,base=import.meta.env.BASE_URL.replace(/\/$/,'');
+const tags=p.topics||[];
+const date=new Date(p.published+'T00:00:00Z').toLocaleString('en',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+const related=all.filter(o=>o.id!==p.id).map(o=>({o,score:2*(o.topics||[]).filter(t=>tags.includes(t)).length+(o.group===p.group?1:0),gap:Math.abs(Date.parse(o.published)-Date.parse(p.published))})).filter(r=>r.score>1).sort((a,b)=>b.score-a.score||a.gap-b.gap).slice(0,4).map(r=>r.o);
 const bib=`@misc{${p.id.replace(/-/g,'')}${p.published.slice(0,4)},\n  title = {${p.title.replace(/[{}\\]/g,'')}},\n  author = {${p.authors.join(' and ').replace(/[{}\\]/g,'')}},\n  year = {${p.published.slice(0,4)}},\n  eprint = {${p.arxiv}},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/${p.arxiv}}\n}`;
+const gh='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z';
 ---
 <Layout title={`${p.name} · Aha Looped Transformer`} description={p.summary}>
-<div class="paper-page"><a href={`${base}/`}>← Back to the collection</a><div class="la-eyebrow">{groups[p.group]} · <time datetime={p.published}>{p.published}</time></div><h1>{p.name}</h1><h2 class="paper-title">{p.title}</h2><p class="authors">{p.authors.join(', ')}</p><p class="paper-summary">{p.summary}</p><div class="paper-links"><a class="button la-submit" href={`https://arxiv.org/abs/${p.arxiv}`}>Read paper ↗</a>{p.code&&<a class="button" href={p.code}>Code / project ↗</a>}{p.weights&&<a class="button" href={p.weights}>Weights ↗</a>}</div>
-<section class="la-detail"><h2>Inside the method</h2><div class="paper-diagram">{p.diagram}</div><p class="small">Simplified conceptual schematic. Consult the paper for the complete architecture.</p><div class="la-details"><dl><dt>Recurrence family</dt><dd>{groups[p.group]}</dd></dl><dl><dt>Depth control</dt><dd>{p.depth}</dd></dl><dl><dt>KV / state strategy</dt><dd>{p.kv}</dd></dl></div></section><section class="paper-note"><h2>Reading note</h2><p>{p.notes}</p><p class="small">Sources checked {p.verified}. This catalog does not imply independent reproduction.</p></section>
-<section class="citation"><div class="la-heading"><h2>Cite this work</h2><button type="button" id="copy-citation">Copy BibTeX</button></div><pre id="bibtex"><code>{bib}</code></pre><p id="copy-status" aria-live="polite"></p></section><a href={`${REPO}/issues/new?title=${encodeURIComponent('Correction: '+p.name)}&body=${encodeURIComponent('Paper: https://arxiv.org/abs/'+p.arxiv+'\n\nSuggested correction and supporting source:\n')}`}>Suggest a correction ↗</a></div>
+<article class="paper-page" data-family={p.group}>
+<a class="back" href={`${base}/`}>← All works</a>
+<div class="paper-meta"><span class="fam">{groups[p.group]}</span><time datetime={p.published}>{date}</time>{tags.length>0&&<ul class="topics">{tags.map(t=><li><a href={`${base}/?topic=${t}#explore`}>{topics[t]}</a></li>)}</ul>}</div>
+<h1>{p.name}</h1>
+<p class="full-title">{p.title}</p>
+<p class="authors">{p.authors.join(', ')}</p>
+<p class="paper-lede">{p.summary}</p>
+<div class="actions"><a class="btn btn-primary" href={`https://arxiv.org/abs/${p.arxiv}`}>Read paper ↗</a>{p.code&&<a class="btn" href={p.code}>Code / project ↗</a>}{p.weights&&<a class="btn" href={p.weights}>Weights ↗</a>}<a class="gh-button" href={`${REPO}/blob/main/data/papers/${p.id}.yaml`}><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg>Edit on GitHub</a></div>
+<section class="block"><h2>Inside the method</h2><div class="diagram">{p.diagram}</div><p class="small muted">Simplified conceptual schematic. Consult the paper for the complete architecture.</p><dl class="facts"><div><dt>Recurrence family</dt><dd>{groups[p.group]}</dd></div><div><dt>Depth control</dt><dd>{p.depth}</dd></div><div><dt>KV / state strategy</dt><dd>{p.kv}</dd></div></dl></section>
+<section class="block note"><h2>Reading note</h2><p>{p.notes}</p><p class="small muted">Sources checked {p.verified}. This catalog does not imply independent reproduction.</p></section>
+{related.length>0&&<section class="block"><h2>Related works</h2><div class="related-grid">{related.map(r=><a class="related-card" data-family={r.group} href={`${base}/papers/${r.id}/`}><strong>{r.name}</strong><span>{groups[r.group]} · {r.published.slice(0,7)}</span></a>)}</div></section>}
+<section class="block"><div class="cite-head"><h2>Cite this work</h2><button type="button" class="btn" id="copy-citation">Copy BibTeX</button></div><pre id="bibtex"><code>{bib}</code></pre><p id="copy-status" class="small muted" aria-live="polite"></p></section>
+<a href={`${REPO}/issues/new?title=${encodeURIComponent('Correction: '+p.name)}&body=${encodeURIComponent('Paper: https://arxiv.org/abs/'+p.arxiv+'\n\nSuggested correction and supporting source:\n')}`}>Suggest a correction on GitHub ↗</a>
+</article>
 <script>
 const button=document.getElementById('copy-citation');
 button?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById('bibtex')?.textContent||'');document.getElementById('copy-status').textContent='BibTeX copied.';}catch{document.getElementById('copy-status').textContent='Select and copy the citation above.';}});

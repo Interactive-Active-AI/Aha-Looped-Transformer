@@ -7,6 +7,9 @@ authors:
   - Sumin Park
   - T. Konstantin Rusch
 group: adaptive
+topics:
+  - reasoning
+  - architecture
 summary: The Quotient Recurrent Reasoner adds an exact per-token phase-rotation symmetry so that slow oscillatory motion lives along directions that do not change the reasoning-relevant quotient state, avoiding an oscillation bottleneck in dynamic-depth looped reasoning.
 diagram: "[ Gauge-equivariant recurrent block ] × r → quotient-space readout"
 depth: Dynamic depth until convergence in quotient space

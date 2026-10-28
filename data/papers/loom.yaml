@@ -11,6 +11,9 @@ authors:
   - Lu Yin
   - Shiwei Liu
 group: full
+topics:
+  - architecture
+  - training
 summary: "Diagnoses why looped MoE models stop improving after two loops: variance growth across iterations and expert-selection collapse. LOOM scales residual updates, re-injects the input embedding every loop, gives each loop its own router, and adds a looping residual that carries earlier outputs forward."
 diagram: "[ MoE block, per-loop router ] × R  + input re-injection + looping residual"
 depth: Stable scaling to 9–12 loops

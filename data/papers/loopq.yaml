@@ -9,6 +9,8 @@ authors:
   - Chia-Ming Cheng
   - Ming-Syan Chen
 group: full
+topics:
+  - efficiency
 summary: A loop-aware post-training quantization framework that keeps one shared quantized backbone while adding loop-aware activation scaling, selective transformations, cross-loop state alignment and trajectory-aware calibration to limit recursive error.
 diagram: Shared W4A4 backbone × R  + loop-aware scaling and cross-loop alignment
 depth: Fixed loops of the base model

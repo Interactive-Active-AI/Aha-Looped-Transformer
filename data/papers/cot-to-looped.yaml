@@ -7,6 +7,8 @@ authors:
   - Kehang Zhou
   - Pinyan Lu
 group: full
+topics:
+  - theory
 summary: A theoretical construction of constant-bit-size looped transformers that interpolates between chain-of-thought and latent recurrence, trading generated tokens for loop iterations when simulating Turing machines.
 diagram: Looped transformer with L loops + reduced CoT tokens
 depth: Prescribed loop count L(n)

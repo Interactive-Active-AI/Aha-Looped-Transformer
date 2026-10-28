@@ -7,6 +7,8 @@ authors:
   - Hyeongju Ha
   - Jae-Joon Kim
 group: full
+topics:
+  - efficiency
 summary: Training-free self-speculative decoding that arranges token states at different positions and depths into a diagonal wavefront, so drafting new positions at shallow depth and verifying earlier ones at full depth happen in the same batched call of the shared block.
 diagram: "Diagonal wavefront: shallow drafts ‖ mid-depth ‖ full-depth verification, one batched call"
 depth: Mixed depths per call; full depth for acceptance

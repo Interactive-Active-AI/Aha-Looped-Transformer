@@ -1,4 +1,4 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Page not found · Aha Looped Transformer"><div class="paper-page"><div class="la-eyebrow">404</div><h1>A loop with no exit?</h1><p>This page could not be found.</p><a class="button" href={`${import.meta.env.BASE_URL}/`}>Back to the collection →</a></div></Layout>
+<Layout title="Page not found · Aha Looped Transformer"><div class="paper-page"><div class="eyebrow"><span class="dot"></span>404</div><h1 style="margin-top:14px">A loop with no exit?</h1><p class="paper-lede">This page could not be found.</p><a class="btn" href={`${import.meta.env.BASE_URL.replace(/\/$/,'')}/`}>Back to the collection →</a></div></Layout>

@@ -10,6 +10,8 @@ authors:
   - Tianyi Wang
   - Junchi Yan
 group: adaptive
+topics:
+  - multimodal
 summary: Adds adaptive recurrent perception to pretrained vision-language models by revisiting a middle-to-late window of the vision encoder with the question injected at each loop. A learned stopper sets the depth and a token-wise Mixture-of-Looks blends features from different loops.
 diagram: "Vision encoder: [ mid-late window + question ] × r (learned stop) → Mixture-of-Looks → LLM"
 depth: Learned stopping per input

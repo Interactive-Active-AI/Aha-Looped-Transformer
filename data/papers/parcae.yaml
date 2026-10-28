@@ -11,6 +11,9 @@
     "Daniel Y. Fu"
   ],
   "group": "core",
+  "topics": [
+    "training"
+  ],
   "summary": "Uses stable state injection to examine the scaling of looped Transformers with recurrence and training data.",
   "diagram": "Prelude → [ Stable core ] × R → Coda",
   "depth": "Variable recurrent depth",

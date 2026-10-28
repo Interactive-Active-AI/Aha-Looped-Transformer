@@ -8,6 +8,8 @@ authors:
   - Yassine Ouali
   - Georgios Tzimiropoulos
 group: full
+topics:
+  - multimodal
 summary: Shows a single Transformer block applied recurrently can match a full-depth vision encoder at comparable FLOPs. Depth-specific behavior comes from expressing each depth's FFN as a convex combination of a small shared expert bank, programmed by a continuous normalized-depth coordinate.
 diagram: "[ One block, FFN = mix(experts; depth coordinate) ] × L"
 depth: Elastic depth by resampling the depth coordinate

@@ -8,6 +8,8 @@ authors:
   - Junhyuk So
   - Eunhyeok Park
 group: full
+topics:
+  - reasoning
 summary: Links reasoning errors in looped language models to loop instability that produces uncertain hard tokens, and contrasts logits from earlier iterations with the final iteration at decoding time to refine them, with no training and negligible overhead.
 diagram: logits(final loop) contrasted with logits(earlier loop) → sampling distribution
 depth: Fixed loops of the base model

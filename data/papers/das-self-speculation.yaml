@@ -14,6 +14,8 @@ authors:
   - Ming Tang
   - Chun Yuan
 group: core
+topics:
+  - efficiency
 summary: Observes that queries and keys reach their final-depth form earlier than values. DAS lets shallow draft queries read full-depth prefix values without extra recurrence, and DAS-Wave adds parallel refinement, progressive block growth and an independent full-depth verifier.
 diagram: Shallow draft queries → mature full-depth prefix values → full-depth verifier
 depth: Draft at early depth, verify at full depth

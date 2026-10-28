@@ -11,6 +11,8 @@ authors:
   - Jason D. Lee
   - Dimitris Papailiopoulos
 group: full
+topics:
+  - theory
 summary: Programs a fixed-weight transformer and places it in a loop so the input sequence acts as a punchcard of instructions and memory, emulating a small instruction-set computer with a 13-layer looped encoder.
 diagram: Punchcard input → [ 13-layer programmed transformer ] × steps
 depth: Loop until the program halts

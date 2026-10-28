@@ -19,6 +19,7 @@ published: '2026-01-01' # First publication, not the date added to the atlas
 authors:
   - Author Name
 group: core # adaptive | core | full
+topics: [architecture, training] # Optional, up to four; see the list below
 summary: A short original explanation of the main idea.
 diagram: 'Prelude → [ Core ] × R → Coda'
 depth: Variable recurrent depth
@@ -28,6 +29,8 @@ code: '' # Optional official https URL; project site is also allowed
 weights: '' # Optional official https URL
 verified: '2026-09-15' # Last source check
 ```
+
+Topics power the website filters. Allowed values: `architecture`, `training` (training & scaling), `efficiency` (inference efficiency), `reasoning` (reasoning & generalization), `interpretability` (analysis & interpretability), `theory`, `post-training` (post-training & retrofit), `safety`, and `multimodal` (beyond text: vision, audio, robotics, RL, science). Issue Form submissions leave topics empty for the reviewing maintainer to fill.
 
 The example ID and date above are placeholders, not a research reference. Use “See paper” for unknown technical details. A schema must describe the actual method; do not infer it from a name. Existing entries include reading notes for claims that require context.
 

@@ -13,6 +13,8 @@ authors:
   - Ming Yang
   - Shiliang Zhang
 group: full
+topics:
+  - multimodal
 summary: A recursive Transformer for large multimodal models with a Recursive Connector that fuses intermediate hidden states with modality-specific projections across steps, and a Monotonic Recursion Loss that makes quality improve with recursion depth.
 diagram: "[ LMM backbone ] × r  via Recursive Connector (vision / language projections)"
 depth: On-demand recursion depth

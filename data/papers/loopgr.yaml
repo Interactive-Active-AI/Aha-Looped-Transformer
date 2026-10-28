@@ -10,6 +10,8 @@ authors:
   - Chengxiang Zhuo
   - Zang Li
 group: core
+topics:
+  - multimodal
 summary: Brings recurrent depth to generative recommendation with a hierarchical mechanism that alternates a shared generative decoder and a lightweight context updater, plus recurrent trajectory self-distillation from a high-budget teacher to a low-budget student.
 diagram: "[ Shared generative decoder ↔ context updater ] × r → next item"
 depth: Configurable recurrent budget; distilled low-budget student

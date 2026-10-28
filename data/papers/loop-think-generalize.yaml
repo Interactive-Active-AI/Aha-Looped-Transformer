@@ -9,6 +9,8 @@ authors:
   - Huan Sun
   - Yuekun Yao
 group: core
+topics:
+  - reasoning
 summary: Studies implicit multi-hop reasoning in recurrent-depth transformers trained from scratch, covering systematic generalization over never-composed facts and depth extrapolation from up to 5-hop training to deeper compositions.
 diagram: "[ Shared layers ] × r  — more iterations for more hops"
 depth: Scaling inference-time recurrence for deeper reasoning

@@ -8,6 +8,8 @@ authors:
   - Zhengyang Geng
   - Zico Kolter
 group: adaptive
+topics:
+  - reasoning
 summary: Equilibrium reasoners proposes a new view of recurrence as learning
   stable attractors as opposed to fixed point convergence. The new framework
   allows for more sophisticated test time scaling, and ultimately leads to

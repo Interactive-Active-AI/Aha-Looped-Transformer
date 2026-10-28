@@ -11,6 +11,9 @@ authors:
   - Didier Chételat
   - Yingxue Zhang
 group: core
+topics:
+  - reasoning
+  - training
 summary: Corrupts target solutions with noise like diffusion models but trains a looped refiner to undo the corruption over multiple recursive steps rather than one, giving a curriculum of intermediate states that better matches test-time refinement.
 diagram: Noisy solution → [ Shared block ] × K steps → clean solution
 depth: Multi-step recursive denoising

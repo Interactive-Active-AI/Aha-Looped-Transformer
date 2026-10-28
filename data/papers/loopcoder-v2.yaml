@@ -24,6 +24,8 @@ authors:
   - Ming Zhou
   - Bryan Dai
 group: full
+topics:
+  - training
 summary: Trains a family of 7B Parallel Loop Transformer coders with different loop counts from scratch on 18T tokens to study loop-count selection as a gain–cost trade-off between extra refinement and the positional mismatch introduced by cross-loop position offsets.
 diagram: "PLT: [ Stack ] × 2 with cross-loop position offsets + shared-KV gated sliding window"
 depth: Two loops best; three or more regress

@@ -11,6 +11,9 @@ authors:
   - Boris Ginsburg
   - Krishna C Puvvada
 group: adaptive
+topics:
+  - training
+  - architecture
 summary: A training recipe that removes the one-loop tax of looped language models, so one checkpoint at one loop matches a non-recurrent model of the same size and gains accuracy with each additional loop. It uses gated state updates with learned step size, mixed loop counts per update, and loop-index and budget conditioning.
 diagram: "[ Shared block, gated update ] × r  conditioned on (loop index, budget)"
 depth: "Elastic: 1 to several loops from one checkpoint"

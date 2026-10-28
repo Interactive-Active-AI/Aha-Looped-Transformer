@@ -6,6 +6,9 @@ published: 2026-04-23
 authors:
   - Grigory Sapunov
 group: adaptive
+topics:
+  - reasoning
+  - architecture
 summary: Studies learned memory tokens as a scratchpad for a single-block Universal Transformer with ACT on Sudoku-Extreme, finding them necessary and showing that memory size and ponder depth substitute for each other at fixed accuracy.
 diagram: "[ Single block + memory tokens ] × r (ACT halting)"
 depth: Adaptive Computation Time

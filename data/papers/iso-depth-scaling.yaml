@@ -8,6 +8,8 @@ authors:
   - Daniel Rueckert
   - Georgios Kaissis
 group: core
+topics:
+  - training
 summary: Measures how much one recurrence is worth in equivalent unique parameters via a joint scaling law fitted on an iso-depth sweep over recurrence counts 1–8, yielding a recurrence-equivalence exponent φ = 0.46.
 diagram: Prelude → [ Recurrent block ] × r → Coda,  N_eff = N_once + r^φ · N_rec
 depth: Recurrence r ∈ {1, 2, 4, 8}

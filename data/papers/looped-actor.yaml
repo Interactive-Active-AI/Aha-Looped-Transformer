@@ -10,6 +10,9 @@ authors:
   - Zach J. Patterson
   - Daniela Rus
 group: adaptive
+topics:
+  - multimodal
+  - reasoning
 summary: "Brings dynamic looping to reinforcement learning: a transformer policy refines a latent toward a fixed point with a shared block and loops more in states that need planning. A complexity argument shows state-adaptive policies can need less expected computation than any fixed-runtime optimal policy."
 diagram: State → [ Shared block ] × r(state) → fixed point → action
 depth: State-dependent loop count

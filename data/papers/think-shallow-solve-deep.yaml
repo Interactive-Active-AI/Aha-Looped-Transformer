@@ -11,6 +11,9 @@ authors:
   - Maxim Abramov
   - Grach Mkrtchian
 group: core
+topics:
+  - reasoning
+  - theory
 summary: Shows that a trained recurrent operator's finite-time dynamical regime, estimated as settling, marginal or drifting, predicts whether extra test-time iterations help, preserve or hurt answers, and gives a sufficient condition for depth safety.
 diagram: "[ Operator ] × r  → regime: settling / marginal / drifting"
 depth: Test-time depth beyond training

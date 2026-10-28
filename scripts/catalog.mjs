@@ -5,6 +5,7 @@ export const ROOT = process.cwd();
 export const REPO = 'https://github.com/Interactive-Active-AI/Aha-Looped-Transformer';
 export const SITE = 'https://interactive-active-ai.github.io/Aha-Looped-Transformer';
 export const groups = {adaptive:'Adaptive depth',core:'Core recurrence',full:'Full-stack recurrence'};
+export const topics = {architecture:'Architecture',training:'Training & scaling',efficiency:'Inference efficiency',reasoning:'Reasoning & generalization',interpretability:'Analysis & interpretability',theory:'Theory','post-training':'Post-training & retrofit',safety:'Safety',multimodal:'Beyond text'};
 export function normalizeArxiv(value) {
  const m=String(value).trim().match(/^(?:https:\/\/(?:www\.)?arxiv\.org\/(?:abs|pdf)\/)?(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?$/);
  if(!m) throw Error('Use an arXiv ID or https://arxiv.org/abs/… URL.');
@@ -17,6 +18,7 @@ export function validatePaper(p) {
  }
  if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(p.id)||p.id.length>90) throw Error('Invalid id');
  if(!Object.hasOwn(groups,p.group)) throw Error('Invalid group');
+ if(p.topics!==undefined&&(!Array.isArray(p.topics)||p.topics.length>4||new Set(p.topics).size!==p.topics.length||p.topics.some(t=>!Object.hasOwn(topics,t)))) throw Error('Invalid topics');
  if(normalizeArxiv(p.arxiv)!==p.arxiv) throw Error('Use a canonical arXiv ID');
  for(const k of ['published','verified']) if(!/^\d{4}-\d{2}-\d{2}$/.test(p[k])||Number.isNaN(Date.parse(p[k]))||new Date(p[k]).toISOString().slice(0,10)!==p[k]) throw Error(`Invalid date: ${k}`);
  if(!Array.isArray(p.authors)||!p.authors.length||p.authors.some(a=>typeof a!=='string'||!a.trim()||a.length>200)) throw Error('Invalid authors');

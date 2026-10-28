@@ -13,6 +13,8 @@ authors:
   - Teddy Sun
   - Zhiyong Wu
 group: core
+topics:
+  - multimodal
 summary: A spoken dialogue model that reuses a decoder block for latent reasoning with acoustic grounding at every pass, trained in two stages that separate learning to reason from learning to respond so it can reply directly without chain-of-thought.
 diagram: Speech features → [ Decoder block + acoustic grounding ] × r → reply
 depth: Fixed latent passes

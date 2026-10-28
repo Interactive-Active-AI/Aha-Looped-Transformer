@@ -6,6 +6,8 @@ published: 2026-08-27
 authors:
   - Gunn Kim
 group: core
+topics:
+  - theory
 summary: Shows that looped networks with the same architecture, objective and accuracy can land in different dynamical phases depending on initialization, and that the bifurcation type of each phase, such as a saddle-node fold or a Neimark–Sacker transition, sets how test-time compute scales.
 diagram: Weight-tied map iterated → fold phase vs Neimark–Sacker phase
 depth: Test-time iterations governed by critical slowing down

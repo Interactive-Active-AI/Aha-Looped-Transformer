@@ -10,6 +10,9 @@ authors:
   - Sun-Yuan Kung
   - Mengdi Wang
 group: core
+topics:
+  - architecture
+  - reasoning
 summary: Splits the layers into a parallel causal encoder and a recurrent decoder that merges each token's encoder output with the previous token's final decoder state, so the computation path grows with sequence length at a fixed per-token cost.
 diagram: Causal encoder (parallel) → recurrent decoder fed by previous token's state
 depth: Grows with sequence length; fixed per token

@@ -9,6 +9,8 @@ authors:
   - Anastasia Razdaibiedina
   - N. Apurva Ratan Murty
 group: core
+topics:
+  - multimodal
 summary: The Looped Audio Spectrogram Transformer processes all tokens once and then reuses the same blocks to refine only the class token over fixed audio features, making later passes cheap.
 diagram: "[ Blocks ] on all tokens → [ Same blocks ] × passes on class token only"
 depth: Fixed number of passes

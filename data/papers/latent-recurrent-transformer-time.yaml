@@ -9,6 +9,8 @@ authors:
   - Yelong Shen
   - Yong Jae Lee
 group: full
+topics:
+  - architecture
 summary: Compares spending extra compute on temporal recurrence versus physical depth. Latent Recurrent Transformers feed each token's high-level hidden state into the next, and inserting one latent thought token between vocabulary tokens adds a refinement pass through the shared backbone.
 diagram: token t → [ Backbone ] → thought step → [ Backbone ] → token t+1 (state fed forward)
 depth: One extra latent step per vocabulary token

@@ -13,6 +13,10 @@
     "Jian Li"
   ],
   "group": "full",
+  "topics": [
+    "training",
+    "theory"
+  ],
   "summary": "Analyzes how weight sharing correlates residual updates across loop iterations and derives a 1/N residual scale for a block repeated N times. Factoring loop count from unique-layer depth improves training stability and supports learning-rate transfer across loop counts.",
   "diagram": "[ Residual-scaled shared block ] × N",
   "depth": "Configurable N loops over L unique layers",

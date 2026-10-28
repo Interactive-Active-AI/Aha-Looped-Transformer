@@ -7,6 +7,8 @@ authors:
   - Wenlong Wang
   - Fergal Reid
 group: full
+topics:
+  - interpretability
 summary: Extends the Jacobian lens to iterated architectures to test whether a global-workspace-like band of verbalisable, causally potent representations survives recurrence, comparing Ouro-2.6B, Huginn-0125 and an untied Qwen baseline.
 diagram: Virtual unrolling adapter → Jacobian lens over iterated layers
 depth: Analysis of released models

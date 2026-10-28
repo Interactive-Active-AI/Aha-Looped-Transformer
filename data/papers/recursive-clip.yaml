@@ -8,6 +8,8 @@ authors:
   - Alberto Presta
   - Michał Byra
 group: full
+topics:
+  - multimodal
 summary: Asks how much block reuse CLIP tolerates. Recursive backbones apply N blocks M times with N·M fixed at ViT-B depth, either in the vision encoder only or in both encoders, trained contrastively or by distillation from a strong ViT-B/16 teacher.
 diagram: "[ N blocks ] × M  (N · M = ViT-B depth), vision and optionally text encoder"
 depth: Fixed recursion

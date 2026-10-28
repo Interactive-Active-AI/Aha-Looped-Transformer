@@ -14,6 +14,9 @@ authors:
   - Xiaotian Han
   - Vipin Chaudhary
 group: full
+topics:
+  - architecture
+  - training
 summary: "Answers how to loop a mixture-of-experts model at fixed expert parameters and compute: flatten the experts by halving expert layers, doubling experts per layer and doubling passes, and untie attention so each pass has its own attention while experts and routers stay shared."
 diagram: "[ Untied attention + shared wide MoE ] × 2k  (flattened from k layers)"
 depth: More passes over fewer, wider expert layers

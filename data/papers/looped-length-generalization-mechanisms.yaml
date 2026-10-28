@@ -8,6 +8,9 @@ authors:
   - Xi Jin
   - Liangming Pan
 group: core
+topics:
+  - interpretability
+  - reasoning
 summary: A mechanistic comparison of two recurrence-training schemes for looped transformers on polynomial iteration, finite-state composition and knowledge-graph traversal, revealing distinct mechanisms and why both fail at greater depths.
 diagram: "[ Block ] × R  — matched vs decoupled recurrence training"
 depth: Length generalization beyond trained depth

@@ -7,6 +7,8 @@ authors:
   - Leo Raphael Rodrigues
   - Jian Kang
 group: core
+topics:
+  - interpretability
 summary: A mechanistic study of the Hierarchical Reasoning Model on Sudoku, Maze and ARC-AGI-2 using baselines with and without recurrence, state interventions, probes and sparse autoencoders.
 diagram: "[ L-module × n → H-module ] × m  on a puzzle state"
 depth: Analysis

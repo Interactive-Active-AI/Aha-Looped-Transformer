@@ -9,6 +9,9 @@ authors:
   - Yutaka Matsuo
   - Yusuke Iwasawa
 group: adaptive
+topics:
+  - architecture
+  - efficiency
 summary: Extends looping to state-space language models with Looped Mamba and looped hybrid Mamba-Transformer blocks, and adapts Ouro-style exit gates. Because early exits leave the recurrent SSM state without deeper updates, a cache-hole adaptation aligns continued training with skipped-state inference.
 diagram: "[ Shared Mamba / hybrid block ] × R  + exit gate (cache-hole adapted)"
 depth: Threshold-controlled early exit

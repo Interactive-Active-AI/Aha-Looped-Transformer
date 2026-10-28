@@ -11,6 +11,9 @@ authors:
   - Valentyn Boreiko
   - Volkan Cevher
 group: adaptive
+topics:
+  - reasoning
+  - theory
 summary: Spherical Fixed-Point Reasoners move fixed-point looped reasoning onto the unit hypersphere of normalized transformers, turning input injection, damping and halting into geodesic operations that are bounded by construction.
 diagram: "nGPT block on the hypersphere: geodesic injection → damping → halting"
 depth: Adaptive halting at a fixed point

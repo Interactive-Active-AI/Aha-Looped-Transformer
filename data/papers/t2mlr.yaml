@@ -10,6 +10,9 @@ authors:
   - Yinghui He
   - Sanjeev Arora
 group: core
+topics:
+  - architecture
+  - reasoning
 summary: Temporal Middle-Layer Recurrence fuses a cached middle-layer representation from the previous token into an earlier layer at the current position, letting intermediate computation persist across decoding steps with little overhead and without looping all layers.
 diagram: "token t−1: middle layer → fused into early layer of token t"
 depth: One forward per token; recurrence across time

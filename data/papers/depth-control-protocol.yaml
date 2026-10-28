@@ -8,6 +8,8 @@ authors:
   - Thanh Tung Khuat
   - Nguyen Thanh Dung
 group: core
+topics:
+  - interpretability
 summary: Argues that the standard depth-truncation curve conflates fewer block applications, less distinct computation and an out-of-distribution readout. The Depth Control Protocol adds positive and negative controls, including running the full budget while executing only one distinct iteration, to measure whether a recurrent model really uses its depth.
 diagram: "Truncation vs controls: same applications / fewer distinct iterations / readout shift"
 depth: Evaluation methodology

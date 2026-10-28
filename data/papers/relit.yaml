@@ -8,6 +8,9 @@ authors:
   - Maheep Singh
   - Saksham Bansal
 group: core
+topics:
+  - reasoning
+  - post-training
 summary: Augments a frozen TinyLlama-1.1B with a small trainable recursive block that iteratively refines a latent thought before answering, aiming to combine TRM-style recursive reasoning with the semantics of a pretrained language model.
 diagram: Frozen LLM → [ Trainable recursive block on z ] × r → answer
 depth: Fixed gradient-isolated recurrent loops

@@ -7,6 +7,8 @@ authors:
   - Ke Wan
   - Chen Chen
 group: core
+topics:
+  - efficiency
 summary: Finds that attention routing in recurrent-depth models stabilizes well before hidden states do. WISE uses full attention in early recurrent steps to discover a block-structured working set, then reuses that support in later steps while keeping attention weights and refinement dynamic; no training is needed.
 diagram: "Early steps: full attention → working set; later steps: [ Core ] on reused sparse support"
 depth: Fixed recurrence in two stages

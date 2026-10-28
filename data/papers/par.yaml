@@ -16,6 +16,9 @@ authors:
   - Wei Wu
   - Yongqi Tong
 group: adaptive
+topics:
+  - reasoning
+  - training
 summary: Progress-Aligned Recurrence makes extra iterations useful for longer state-tracking problems by supervising the prediction at iteration k to match the state after k operations and anchoring recurrent state norms to the first iteration. A learned completion readout decides when to answer.
 diagram: Iteration k ≈ state after k operations; norm anchoring; completion readout
 depth: Iterations scale with problem length; learned stopping

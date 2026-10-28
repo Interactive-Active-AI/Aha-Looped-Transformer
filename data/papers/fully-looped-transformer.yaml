@@ -12,6 +12,9 @@ authors:
   - Yu Li
   - Yi Chang
 group: full
+topics:
+  - training
+  - architecture
 summary: "Traces training instability of deep looping to gradient oscillation and residual explosion, and fixes them with two parameter-free changes: distributing inter-loop signals across all layers, and attention injection that reuses the existing attention block."
 diagram: "[ All layers, inter-loop signal at every layer ] × R  + attention injection"
 depth: Stable up to 12 loops; adjustable at inference

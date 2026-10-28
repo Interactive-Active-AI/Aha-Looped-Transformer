@@ -6,6 +6,9 @@ published: 2026-07-31
 authors:
   - Mark Shapiro
 group: core
+topics:
+  - post-training
+  - reasoning
 summary: Retrofits Qwen2.5-0.5B-Instruct into prelude, weight-tied recurrent block and coda with an identity-preserving one-loop path and a re-entry bridge, and shows it learns a reusable iterative latent procedure, either as a 6M adapter over frozen weights or a 180M full block.
 diagram: Prelude → [ Weight-tied block + re-entry bridge ] × r → Coda
 depth: One task step per loop; extrapolates to about 1.5× supervised depth

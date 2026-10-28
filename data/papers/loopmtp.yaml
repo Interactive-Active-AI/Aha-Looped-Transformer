@@ -10,6 +10,8 @@ authors:
   - Joachim Koehler
   - Mehdi Ali
 group: full
+topics:
+  - training
 summary: "Links looping to multi-token prediction: a model that loops T times should anticipate T future tokens, so the hidden state at loop t is softly aligned with the embedding of the token t steps ahead, with a gate preserving useful information across iterations."
 diagram: "[ Stack ] × T,  loop t ↔ embedding of token t steps ahead"
 depth: Fixed loops (stable up to 15)

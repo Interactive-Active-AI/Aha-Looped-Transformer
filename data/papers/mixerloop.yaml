@@ -10,6 +10,8 @@ authors:
   - Hao Ye
   - Jason K. Eshraghian
 group: core
+topics:
+  - architecture
 summary: Asks what should loop. Using Iterative Transport Rank to measure the new cross-position influence each application adds, it repeats each Gated DeltaNet mixer while applying the dense FFN only once.
 diagram: "[ Mixer × r → FFN × 1 ] per layer"
 depth: Mixer-only recurrence

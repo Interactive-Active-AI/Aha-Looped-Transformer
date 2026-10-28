@@ -12,6 +12,8 @@ authors:
   - Dieter Fox
   - Ranjay Krishna
 group: adaptive
+topics:
+  - multimodal
 summary: Recurrent-Depth VLA gives vision-language-action models a weight-tied recurrent action head that refines a latent for any number of steps at constant memory, trained with truncated BPTT and stopped adaptively when the latent converges.
 diagram: VLM features → [ Weight-tied action head ] × r (stop on convergence) → actions
 depth: Adaptive stopping based on latent convergence

@@ -10,6 +10,8 @@ authors:
   - Xin Li
   - Wei Zhnag
 group: full
+topics:
+  - efficiency
 summary: A post-training quantization framework that selects shared-core low-bit representations by their final prediction loss at the target deployment depth, because the ranking of quantization configurations changes with recurrent depth. Calibration windows are allocated progressively to promising candidates using forward passes only.
 diagram: Candidate rotations / scalings → evaluate at target depth R → shared low-bit core
 depth: Quantization tuned for a target deployment depth

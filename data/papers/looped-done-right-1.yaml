@@ -12,6 +12,9 @@ authors:
   - Eric Xing
   - Xuezhe Ma
 group: core
+topics:
+  - architecture
+  - training
 summary: "Disentangles three design axes of looped language models trained from scratch at matched parameters, logical depth and tokens: where recurrence sits, how input is injected, and how recurrent state is organized. The prelude–recurrent–coda sandwich and input injection come out ahead, favoring the Huginn-style design over Ouro."
 diagram: Prelude → [ Recurrent block ] × R (input injection) → Coda
 depth: Fixed, matched logical depth

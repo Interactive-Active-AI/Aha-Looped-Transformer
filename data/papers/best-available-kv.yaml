@@ -11,6 +11,8 @@ authors:
   - Arash Behboodi
   - Fabio Valerio Massoli
 group: adaptive
+topics:
+  - efficiency
 summary: Points out that Ouro's early exit does not save compute in practice because every depth needs its own KV level. A training-free best-available KV caching strategy lets exited tokens reuse the deepest cache they have, and a fix to the early-exit prior makes tokens exit at genuinely different depths.
 diagram: Token exits at depth d → later loops read its best-available KV
 depth: Per-token early exit with heterogeneous depths

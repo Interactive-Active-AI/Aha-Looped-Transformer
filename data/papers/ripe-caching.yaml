@@ -8,6 +8,8 @@ authors:
   - Runguo Li
   - Zixiang Ni
 group: core
+topics:
+  - efficiency
 summary: Shows that in recurrent-depth models the KV planes of late loops matter far more than early ones and converge geometrically. RIPE therefore stores only the deepest KV plane for most positions and keeps full depth only for a recent window, which suits self-speculative decoding with few-loop drafts and full-depth verification.
 diagram: "Draft: few loops → Verify: all R loops; cache = deepest plane + recent full-depth window"
 depth: "Self-speculative: draft with few loops, verify with R"

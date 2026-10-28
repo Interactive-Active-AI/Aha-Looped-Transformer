@@ -9,6 +9,8 @@ authors:
   - Edward J. Hu
   - Jonathan May
 group: full
+topics:
+  - training
 summary: Compares dense and MoE transformers with and without looping and finds that looped MoE models scale better than the standard baseline while dense looped models do not, because different experts fire on each pass through the shared layers.
 diagram: "[ Shared MoE layers ] × R  (routing diverges across loops) + exits at loop boundaries"
 depth: Early exits at loop boundaries

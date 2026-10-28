@@ -14,6 +14,9 @@ authors:
   - Zhiyu Li
   - Zhouhan Lin
 group: full
+topics:
+  - architecture
+  - training
 summary: "Teaches language models to ponder in continuous space: within one token step, the model feeds back the probability-weighted sum of token embeddings and runs another forward pass, learned through ordinary self-supervised pretraining."
 diagram: Forward → expected embedding Σ pᵢ eᵢ → Forward … → token
 depth: Fixed pondering steps per token

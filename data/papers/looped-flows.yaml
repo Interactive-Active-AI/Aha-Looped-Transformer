@@ -11,6 +11,9 @@ authors:
   - İsmail İlkan Ceylan
   - Jinwoo Kim
 group: core
+topics:
+  - reasoning
+  - architecture
 summary: Trains the recurrence of a looped model with local denoising objectives at progressively decreasing noise levels with shared noise, so states learn to carry useful computation forward even though gradients cover only a few updates. Inference integrates a probability flow, and finer time grids spend more compute.
 diagram: Noise → [ Denoiser + recurrent state ] × steps (decreasing noise) → solution
 depth: More compute through a finer temporal grid

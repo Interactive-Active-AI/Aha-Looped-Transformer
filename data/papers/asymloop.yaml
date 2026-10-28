@@ -14,6 +14,8 @@ authors:
   - Yanfeng Wang
   - Zhouhan Lin
 group: core
+topics:
+  - architecture
 summary: "Separates context building from iterative refinement: a single-pass causal encoder writes fixed per-layer global KV caches, and a weight-tied recurrent decoder attends jointly to them and to local KV from its evolving state."
 diagram: Causal encoder (once, Global KV) → [ Weight-tied decoder, Local KV ] × R
 depth: Fixed recurrence at matched effective depth

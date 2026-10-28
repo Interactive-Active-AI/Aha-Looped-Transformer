@@ -17,6 +17,8 @@ authors:
   - Zan Gojcic
   - Haithem Turki
 group: adaptive
+topics:
+  - multimodal
 summary: The Loop transformer in 3D
 diagram: See paper for architecture
 depth: See paper

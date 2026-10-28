@@ -10,6 +10,9 @@ authors:
   - Wieland Brendel
   - Martin Jaggi
 group: adaptive
+topics:
+  - reasoning
+  - training
 summary: Traces the brittle length generalization of looped transformers to a spurious correlation between sequence length and loop count, and shows that randomizing loop counts in training, or learning a stochastic schedule with RL-Halting, stabilizes predictions across inference-time loop counts.
 diagram: "[ Shared block ] × r,  r sampled (heuristic or RL-Halting) during training"
 depth: Stochastic stopping at training time

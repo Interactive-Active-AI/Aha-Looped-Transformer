@@ -11,6 +11,9 @@ authors:
   - Mingyu Chen
   - Ying Wang
 group: core
+topics:
+  - interpretability
+  - reasoning
 summary: "Separates three causes of overthinking in looped transformers on in-context Mealy-machine execution: failed computation, lost retention and non-reusable states. The computation itself is exact, but answers decay with extra loops unless training asks for retention."
 diagram: "[ Block ] × L : position k computed at loop k"
 depth: Trained to answer at loop 32; probed up to loop 64

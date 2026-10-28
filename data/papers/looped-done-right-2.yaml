@@ -12,6 +12,9 @@ authors:
   - Eric Xing
   - Xuezhe Ma
 group: core
+topics:
+  - training
+  - efficiency
 summary: Argues that states near fixed points make the path to them matter less, enabling truncated backprop, terminal KV sharing, faster distilled prefill and cheaper RL updates. It then improves the depth prior, learned from prediction feedback with an entropy term, and introduces orthogonal input injection.
 diagram: Prelude → [ Core + orthogonal injection ] × r (learned depth prior) → Coda
 depth: Learned depth prior during training

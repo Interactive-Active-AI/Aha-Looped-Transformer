@@ -10,6 +10,8 @@ authors:
   - Sarath Chandar
   - Quentin Fournier
 group: core
+topics:
+  - multimodal
 summary: "Adapts recursive pretraining to masked protein language models: a weight-tied core refines residue-aligned states over an adjustable number of cycles. Gated Mixture Recurrence then decodes from a probability-weighted mixture of visited states with a learned residual gate, unifying halting and gating."
 diagram: Embed → [ Weight-tied core ] × cycles (gated) → mixture of visited states → decode
 depth: Adjustable cycles; learned halting via GMR

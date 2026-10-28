@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import {loadPapers,groups,topics,REPO} from '../../scripts/catalog.mjs';
+import {niceScale} from '../scripts/chart-scale.js';
 const papers=loadPapers(),base=import.meta.env.BASE_URL.replace(/\/$/,'');
 const families=['core','adaptive','full'];
 const short={core:'Core recurrence',adaptive:'Adaptive depth',full:'Full stack'};
@@ -17,16 +18,15 @@ const gh='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1
 const months=[];
 for(let y=2025,m=1;;m++){if(m>12){m=1;y++;}const k=`${y}-${String(m).padStart(2,'0')}`;months.push(k);if(k===newest.slice(0,7))break;}
 const tally=list=>({total:list.length,...Object.fromEntries(families.map(f=>[f,list.filter(p=>p.group===f).length]))});
-const bars=[{label:'Earlier',year:'',...tally(papers.filter(p=>p.published<months[0]))},...months.map(k=>({label:monthOf(k),year:k.endsWith('-01')?k.slice(0,4):'',...tally(papers.filter(p=>p.published.startsWith(k)))}))];
-const BW=24,GAP=9,PT=22,PH=150,PB=40,SPLIT=18,PL=14,max=Math.max(...bars.map(b=>b.total));
-const W=PL*2+bars.length*(BW+GAP)-GAP+SPLIT,H=PT+PH+PB;
-const bx=i=>PL+i*(BW+GAP)+(i?SPLIT:0);
-const segments=bars.flatMap((b,i)=>{let y=PT+PH;return families.map(f=>{const h=b[f]/max*PH;y-=h;return h?{x:bx(i),y,h,f,title:`${b.label} ${b.year}: ${b[f]} ${groups[f]}`}:null;}).filter(Boolean);});
+const monthTally=months.map(k=>({key:k,label:monthOf(k),year:k.endsWith('-01')||k===months[0]?k.slice(0,4):'',...tally(papers.filter(p=>p.published.startsWith(k)))}));
+const scale=niceScale(Math.max(...monthTally.map(m=>m.total)));
+const ticks=Array.from({length:scale.top/scale.step+1},(_,i)=>i*scale.step);
 
 const tlYears=[...new Set(papers.map(p=>p.published.slice(0,4)))].filter(y=>y>='2025').sort().reverse();
 const monthGroups=y=>[...new Set(papers.filter(p=>p.published.startsWith(y)).map(p=>p.published.slice(0,7)))].sort().reverse().map(k=>({key:k,items:papers.filter(p=>p.published.startsWith(k))}));
 const openMonths=new Set(months.slice(-2));
 const older=papers.filter(p=>p.published<'2025');
+const groupMax=Math.max(older.length,...tlYears.flatMap(y=>monthGroups(y).map(g=>g.items.length)));
 ---
 <Layout>
 <div data-intro>
@@ -35,7 +35,7 @@ const older=papers.filter(p=>p.published<'2025');
 <div class="eyebrow"><span class="dot"></span>Open atlas · updated {fmtMonth(newest)}</div>
 <h1>Think deeper.<br/><em>Find your Aha.</em></h1>
 <p class="lede">An open, community-reviewed atlas of looped Transformers, recurrent depth, adaptive computation and latent reasoning.</p>
-<div class="hero-actions"><a class="btn btn-primary" href="#explore">Browse {papers.length} works ↓</a><a class="gh-button" href={REPO}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg>Star on GitHub<span class="gh-stars" data-stars hidden>★ <b></b></span></a><a class="btn" href={`${base}/contribute/`}>Submit a paper</a></div>
+<div class="hero-actions"><a class="btn btn-primary" href="#explore">Browse {papers.length} works ↓</a><a class="gh-button" href={REPO}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg>Star on GitHub<span class="gh-count" data-stars hidden><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .9l2.2 4.5 4.9.7-3.6 3.5.9 4.9L8 12.2l-4.4 2.3.9-4.9L.9 6.1l4.9-.7Z"/></svg><b></b></span></a><a class="btn" href={`${base}/contribute/`}>Submit a paper</a></div>
 <dl class="stats"><div><dt>Works</dt><dd>{papers.length}</dd></div><div><dt>Last 60 days</dt><dd>+{recent}</dd></div><div><dt>With code</dt><dd>{count(p=>p.code)}</dd></div><div><dt>Topics</dt><dd>{topicKeys.length}</dd></div></dl>
 </div>
 <figure class="hero-art"><canvas id="orbit" role="img" aria-label="Conceptual animation of three loops revisiting shared computation; not measured model data."></canvas><span class="orbit-label">REPEAT · REFINE</span><button type="button" class="motion-toggle" id="motion-toggle" aria-pressed="false">Pause motion</button>
@@ -47,32 +47,37 @@ const older=papers.filter(p=>p.published<'2025');
 </section>
 </div>
 
-<section id="explore" class="explore" data-panel="explore">
-<div class="toolbar">
+<div class="view-head" data-panel="timeline" hidden><div class="eyebrow"><span class="dot"></span>Timeline</div><h1>A timeline of ideas</h1><p class="muted"><span id="tl-summary">{papers.length} works by month of first publication, colored by recurrence family.</span> <button type="button" class="link-button" id="tl-clear" hidden>Clear filters</button></p></div>
+<div class="toolbar" id="explore" data-toolbar>
 <div class="toolbar-row">
 <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="q" aria-label="Search papers" placeholder="Search by name, idea or author…"/></label>
 <div class="families" role="group" aria-label="Recurrence family"><button type="button" class="seg" data-family-btn="all" aria-pressed="true">All<span>{papers.length}</span></button>{families.map(f=><button type="button" class="seg" data-family={f} data-family-btn={f} aria-pressed="false"><i class="fam-dot"></i>{short[f]}<span>{count(p=>p.group===f)}</span></button>)}</div>
-<div class="toolbar-end"><select id="sort" class="select" aria-label="Sort works"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="name">Name A–Z</option></select><div class="layout-toggle" role="group" aria-label="Layout"><button type="button" data-layout="grid" aria-pressed="true" aria-label="Card layout"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></button><button type="button" data-layout="list" aria-pressed="false" aria-label="List layout"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="2" width="14" height="2.4" rx="1.2"/><rect x="1" y="6.8" width="14" height="2.4" rx="1.2"/><rect x="1" y="11.6" width="14" height="2.4" rx="1.2"/></svg></button></div></div>
+<div class="toolbar-end" data-explore-only><select id="sort" class="select" aria-label="Sort works"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="name">Name A–Z</option></select><div class="layout-toggle" role="group" aria-label="Layout"><button type="button" data-layout="grid" aria-pressed="true" aria-label="Card layout"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></button><button type="button" data-layout="list" aria-pressed="false" aria-label="List layout"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="2" width="14" height="2.4" rx="1.2"/><rect x="1" y="6.8" width="14" height="2.4" rx="1.2"/><rect x="1" y="11.6" width="14" height="2.4" rx="1.2"/></svg></button></div></div>
 </div>
 <div class="toolbar-row chips" role="group" aria-label="Topics and resources"><span class="chips-label">Topics</span>{topicKeys.map(t=><button type="button" class="chip" data-topic={t} aria-pressed="false">{topics[t]}<span>{count(p=>p.topics?.includes(t))}</span></button>)}<span class="chip-sep" aria-hidden="true"></span><button type="button" class="chip" data-has="code" aria-pressed="false">Has code<span>{count(p=>p.code)}</span></button><button type="button" class="chip" data-has="weights" aria-pressed="false">Has weights<span>{count(p=>p.weights)}</span></button><select id="year" class="select" aria-label="Publication year"><option value="">All years</option><option value="2026">2026</option><option value="2025">2025</option><option value="older">2024 &amp; earlier</option></select></div>
 </div>
+<section class="explore" data-panel="explore">
 <div class="results-bar"><span id="results" aria-live="polite">{papers.length} works</span><button type="button" class="link-button" id="clear" hidden>Clear all filters</button></div>
 <div id="cards" class="cards">{papers.map(p=><Card paper={p}/>)}</div>
 <p id="empty" class="empty" hidden>No works match these filters. Try fewer topics or clear the search.</p>
 <div class="more"><button type="button" class="btn" id="more" hidden>Show more</button></div>
 </section>
 
-<section data-panel="timeline" hidden>
-<div class="view-head"><div class="eyebrow"><span class="dot"></span>Timeline</div><h1>A timeline of ideas</h1><p class="muted">First publications per month, colored by recurrence family. {count(p=>p.published>=months.at(-2))} works appeared in the last two months alone.</p></div>
-<figure class="chart"><svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Monthly first publications by recurrence family">
-<line x1="0" x2={W} y1={PT+PH} y2={PT+PH} stroke="var(--line-strong)"/>
-{segments.map(s=><rect class={`bar-${s.f}`} x={s.x} y={s.y} width={BW} height={s.h} rx="3"><title>{s.title}</title></rect>)}
-{bars.map((b,i)=>b.total>0&&<text class="count-label" x={bx(i)+BW/2} y={PT+PH-b.total/max*PH-6} text-anchor="middle">{b.total}</text>)}
-{bars.map((b,i)=><text x={bx(i)+BW/2} y={PT+PH+16} text-anchor="middle">{b.label}</text>)}
-{bars.map((b,i)=>b.year&&<text x={bx(i)} y={PT+PH+33} style="font-weight:600">{b.year}</text>)}
-</svg><figcaption class="chart-legend">{families.map(f=><span data-family={f}><i class="fam-dot"></i>{groups[f]}</span>)}<span>“Earlier” groups all works before 2025.</span></figcaption></figure>
-{tlYears.map(y=><section class="tl-year"><h2>{y}<span>{count(p=>p.published.startsWith(y))} works</span></h2><div>{monthGroups(y).map(g=><details class="tl-month" open={openMonths.has(g.key)}><summary><span>{names[+g.key.slice(5)-1]}</span><span class="mini-bar" aria-hidden="true">{families.map(f=>{const n=g.items.filter(p=>p.group===f).length;return n>0&&<i style={`width:${n/max*100}%;background:var(--${f})`}></i>;})}</span><span class="n">{g.items.length}</span></summary><ul class="tl-list">{g.items.map(p=><li><a href={`${base}/papers/${p.id}/`} data-family={p.group}><span class="name"><i class="fam-dot"></i><b>{p.name}</b></span><span class="tl-topics">{(p.topics||[]).map(t=>topics[t]).join(' · ')}</span><time datetime={p.published}>{fmtDay(p.published)}</time></a></li>)}</ul></details>)}</div></section>)}
-<section class="tl-year"><h2>Earlier<span>{older.length} works · 2016–2024</span></h2><div><details class="tl-month" open><summary><span>Foundations</span><span class="mini-bar" aria-hidden="true">{families.map(f=>{const n=older.filter(p=>p.group===f).length;return n>0&&<i style={`width:${n/max*100}%;background:var(--${f})`}></i>;})}</span><span class="n">{older.length}</span></summary><ul class="tl-list">{older.map(p=><li><a href={`${base}/papers/${p.id}/`} data-family={p.group}><span class="name"><i class="fam-dot"></i><b>{p.name}</b></span><span class="tl-topics">{(p.topics||[]).map(t=>topics[t]).join(' · ')}</span><time datetime={p.published}>{p.published.slice(0,4)}</time></a></li>)}</ul></details></div></section>
+<section class="timeline" data-panel="timeline" hidden>
+<figure class="chart">
+<div class="chart-body">
+<div class="chart-y" aria-hidden="true">{ticks.map(v=><span style={`bottom:${v/scale.top*100}%`}>{v}</span>)}</div>
+<div class="chart-plot">
+<div class="chart-grid" aria-hidden="true">{ticks.map(v=><i style={`bottom:${v/scale.top*100}%`}></i>)}</div>
+<div class="chart-cols">{monthTally.map((m,i)=><div class:list={['col',{'is-empty':!m.total,'is-latest':i===monthTally.length-1}]} tabindex="0" data-month={m.key} data-label={`${m.label} ${m.key.slice(0,4)}`} aria-label={`${m.label} ${m.key.slice(0,4)}: ${m.total} works`}><span class="col-n">{m.total||''}</span><div class="col-bar" style={`height:${m.total?m.total/scale.top*100+'%':'2px'}`}>{families.map(f=><i class="bar-seg" data-family={f} style={`flex-grow:${m[f]}`} hidden={!m[f]}></i>)}</div><span class="col-tip"><b>{m.label} {m.key.slice(0,4)}</b> · {m.total} works{families.map(f=><span data-family={f}><i class="fam-dot"></i>{short[f]} {m[f]}</span>)}</span></div>)}</div>
+</div>
+</div>
+<div class="chart-x" aria-hidden="true">{monthTally.map(m=><span class:list={[{q:+m.key.slice(5)%3===1}]}>{m.label}{m.year&&<b>{m.year}</b>}</span>)}</div>
+<figcaption class="chart-legend">{families.map(f=><span data-family={f}><i class="fam-dot"></i>{groups[f]}</span>)}<span class="chart-note" id="tl-earlier">+{older.length} works before 2025, listed at the end</span></figcaption>
+</figure>
+<p id="tl-empty" class="empty" hidden>No works match these filters. Try fewer topics or clear the search.</p>
+{tlYears.map(y=><section class="tl-year" data-year-block><h2>{y}<span><b data-year-count>{count(p=>p.published.startsWith(y))}</b> works</span></h2><div>{monthGroups(y).map(g=><details class="tl-month" data-month-group open={openMonths.has(g.key)}><summary><span>{names[+g.key.slice(5)-1]}</span><span class="mini-bar" aria-hidden="true">{families.map(f=><i data-family={f} style={`width:${g.items.filter(p=>p.group===f).length/groupMax*100}%`}></i>)}</span><span class="n">{g.items.length}</span></summary><ul class="tl-list">{g.items.map(p=><li data-paper={p.id}><a href={`${base}/papers/${p.id}/`} data-family={p.group}><span class="name"><i class="fam-dot"></i><b>{p.name}</b></span><span class="tl-topics">{(p.topics||[]).map(t=>topics[t]).join(' · ')}</span><time datetime={p.published}>{fmtDay(p.published)}</time></a></li>)}</ul></details>)}</div></section>)}
+<section class="tl-year" data-year-block><h2>Earlier<span><b data-year-count>{older.length}</b> works · 2016–2024</span></h2><div><details class="tl-month" data-month-group open><summary><span>Foundations</span><span class="mini-bar" aria-hidden="true">{families.map(f=><i data-family={f} style={`width:${older.filter(p=>p.group===f).length/groupMax*100}%`}></i>)}</span><span class="n">{older.length}</span></summary><ul class="tl-list">{older.map(p=><li data-paper={p.id}><a href={`${base}/papers/${p.id}/`} data-family={p.group}><span class="name"><i class="fam-dot"></i><b>{p.name}</b></span><span class="tl-topics">{(p.topics||[]).map(t=>topics[t]).join(' · ')}</span><time datetime={p.published}>{p.published.slice(0,4)}</time></a></li>)}</ul></details></div></section>
 </section>
 
 <section data-panel="compare" hidden>

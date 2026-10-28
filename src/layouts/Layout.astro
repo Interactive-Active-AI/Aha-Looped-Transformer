@@ -12,18 +12,18 @@ const gh='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1
 <body><a class="skip" href="#main">Skip to content</a>
 <div class="atlas" id="atlas">
 <header class="site-header">
-<a class="brand" href={`${base}/`}><svg width="30" height="20" viewBox="0 0 32 20" fill="none" aria-hidden="true"><path d="M16 10C12 3 3 1 3 10s9 7 13 0 13-9 13 0-9 7-13 0Z" stroke="currentColor" stroke-width="2.2"/></svg><span>Aha <b>Looped Transformer</b></span></a>
+<div class="brand-cluster"><a class="brand" href={`${base}/`}><svg width="30" height="20" viewBox="0 0 32 20" fill="none" aria-hidden="true"><path d="M16 10C12 3 3 1 3 10s9 7 13 0 13-9 13 0-9 7-13 0Z" stroke="currentColor" stroke-width="2.2"/></svg><span>Aha <b>Looped Transformer</b></span></a><a class="iaai-brand" href="https://github.com/Interactive-Active-AI" aria-label="IAAI · Interactive & Active AI"><img src={`${base}/brand/iaai.png`} width="32" height="32" alt=""/><b>IAAI</b><span>Interactive &amp; Active AI</span></a></div>
 <nav class="site-nav" aria-label="Main navigation"><a href={`${base}/`} data-view="explore">Explore</a><a href={`${base}/?view=timeline`} data-view="timeline">Timeline</a><a href={`${base}/?view=compare`} data-view="compare">Compare <span class="count" id="compare-count">0</span></a></nav>
-<div class="header-actions"><a class="gh-button" href={REPO} aria-label={`GitHub repository ${repoPath}`}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg><span class="gh-label">GitHub</span><span class="gh-stars" data-stars hidden>★ <b></b></span></a><a class="btn btn-primary" href={`${base}/contribute/`}>Submit a paper</a></div>
+<div class="header-actions"><a class="btn btn-primary" href={`${base}/contribute/`}>Submit a paper</a></div>
 </header>
 <main id="main"><slot/></main>
 <footer class="site-footer">
-<div class="repo-band"><svg width="42" height="42" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg><div><div class="eyebrow">Open source on GitHub</div><a class="repo-name" href={REPO}>{repoPath}</a><p>Every entry is a YAML file reviewed in public. Star the repository to follow new works, or open an issue to add one.</p></div><div class="repo-actions"><a class="gh-button" href={REPO}><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg>Star on GitHub<span class="gh-stars" data-stars hidden>★ <b></b></span></a><a class="btn" href={`${REPO}/issues/new?template=submit-paper.yml`}>Submit via issue</a><a class="btn" href={`${REPO}/blob/main/CONTRIBUTING.md`}>Contribute a PR</a></div></div>
+<div class="repo-band"><svg width="42" height="42" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={gh}/></svg><div><div class="eyebrow">Open source on GitHub</div><a class="repo-name" href={REPO}>{repoPath}</a><p>Every entry is a YAML file reviewed in public. Star the repository to follow new works, or open an issue to add one.</p></div><div class="repo-actions"><a class="btn" href={`${REPO}/issues/new?template=submit-paper.yml`}>Submit via issue</a><a class="btn" href={`${REPO}/blob/main/CONTRIBUTING.md`}>Contribute a PR</a></div></div>
 <div class="footer-meta"><span>Curated by <a href="https://github.com/Interactive-Active-AI">Interactive &amp; Active AI</a></span><span>Code <a href={`${REPO}/blob/main/LICENSE`}>MIT</a> · Descriptions CC BY 4.0</span></div>
 </footer>
 </div>
 <script define:vars={{repoPath}}>
-const key='aha-stars',show=n=>document.querySelectorAll('[data-stars]').forEach(el=>{el.querySelector('b').textContent=n;el.hidden=false;});
+const key='aha-stars',show=n=>document.querySelectorAll('[data-stars]').forEach(el=>{el.querySelector('b').textContent=n;el.title=n+' GitHub stars';el.hidden=false;});
 const fmt=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,'')+'k':String(n);
 try{const cached=JSON.parse(sessionStorage.getItem(key)||'null');if(cached&&Date.now()-cached.t<3600000)show(cached.n);else fetch('https://api.github.com/repos/'+repoPath).then(r=>r.ok?r.json():null).then(d=>{if(d&&Number.isFinite(d.stargazers_count)){const n=fmt(d.stargazers_count);sessionStorage.setItem(key,JSON.stringify({n,t:Date.now()}));show(n);}}).catch(()=>{});}catch{}
 </script>

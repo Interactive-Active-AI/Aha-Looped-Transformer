@@ -39,8 +39,9 @@ h1,h2,h3{color:var(--ink-strong);margin:0}
 .btn-primary{background:var(--brand-ink);border-color:var(--brand-ink);color:light-dark(#fff,#1b1c1f)}
 .gh-button{background:var(--gh);border-color:var(--gh);color:var(--gh-ink)}
 .gh-button svg{flex-shrink:0}
-.gh-count{display:inline-flex;align-items:center;gap:5px;margin-left:4px;padding-left:12px;border-left:1px solid color-mix(in srgb,var(--gh-ink) 28%,transparent);font-weight:600;font-variant-numeric:tabular-nums}
-.gh-count svg{opacity:.8}
+.gh-count{display:inline-flex;align-items:center;gap:6px;margin-left:4px;padding-left:12px;border-left:1px solid color-mix(in srgb,var(--gh-ink) 28%,transparent)}
+.gh-count b{font-weight:inherit}
+.gh-count svg{opacity:.75}
 
 /* header */
 .site-header{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;border-bottom:1px solid var(--line)}

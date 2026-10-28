@@ -1,0 +1,21 @@
+id: looped-flows
+name: Looped Flows
+title: Thinking with Looped Flows
+arxiv: "2609.11801"
+published: 2026-09-10
+authors:
+  - Ayhan Suleymanzade
+  - Chanhyuk Lee
+  - Floor Eijkelboom
+  - Nicholas M. Boffi
+  - İsmail İlkan Ceylan
+  - Jinwoo Kim
+group: core
+summary: Trains the recurrence of a looped model with local denoising objectives at progressively decreasing noise levels with shared noise, so states learn to carry useful computation forward even though gradients cover only a few updates. Inference integrates a probability flow, and finer time grids spend more compute.
+diagram: Noise → [ Denoiser + recurrent state ] × steps (decreasing noise) → solution
+depth: More compute through a finer temporal grid
+kv: Not applicable (non-autoregressive solver)
+notes: Outperforms prior looped models overall on six reasoning benchmarks, with 58.8% on ARC-AGI-1 and 12.2% on ARC-AGI-2; different initial noise gives multiple valid solutions.
+code: ""
+weights: ""
+verified: 2026-10-28

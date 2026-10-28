@@ -1,0 +1,25 @@
+id: looped-dit
+name: Looped-DiT
+title: Looped Diffusion Transformer
+arxiv: "2609.40305"
+published: 2026-09-30
+authors:
+  - Yong Xien Chng
+  - Tianyi Chen
+  - Wenwen Tong
+  - Haiwen Diao
+  - Zhongang Cai
+  - Lei Yang
+  - Ziwei Liu
+  - Lewei Lu
+  - Dahua Lin
+  - Gao Huang
+group: core
+summary: Scales text-to-image computation by repeating shared Transformer blocks within each denoising step. Deep supervision across intermediate loops and self-modulating attention fix the weak supervision and eroding local detail that make naive looping fail.
+diagram: "Each denoising step: [ Shared DiT blocks ] × r  (deep supervision)"
+depth: Fixed loops per denoising step
+kv: Not applicable (diffusion)
+notes: Beats non-looped baselines at matched parameters and compute; a 260M looped model surpasses a 6.5× larger model on several text-to-image benchmarks with 4.9× less inference compute. More loops help more than more denoising steps at a fixed budget.
+code: ""
+weights: ""
+verified: 2026-10-28

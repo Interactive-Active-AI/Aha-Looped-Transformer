@@ -1,0 +1,20 @@
+id: hybrid-latent-attention
+name: Hybrid Latent Attention
+title: Hybrid Latent Attention for Looped Language Models
+arxiv: "2610.07940"
+published: 2026-10-06
+authors:
+  - Yuhan Chen
+  - Siyuan Zhang
+  - Nan Wang
+  - Feiyang Kang
+  - Ruoxi Jia
+group: full
+summary: Shrinks the T-fold KV cache of looped models by keeping exact keys and values only for a sliding window of recent tokens and storing older tokens as compact latents that every loop's query reads directly. It is uptrained on frozen Ouro models, training only the added parameters.
+diagram: "Recent W tokens: exact KV ‖ older tokens: shared latent read by each loop"
+depth: Ouro T = 4 loops
+kv: Sliding-window exact KV plus compact per-token latents
+notes: Cache shrinks 10.7× per token, fitting 4.0–8.8× more concurrent sequences; throughput improves 2.5× at 1K and up to 7.4× at 16K context. Retains over 97% of accuracy on math, knowledge and reasoning and 96–100% on retrieval up to 16K.
+code: ""
+weights: ""
+verified: 2026-10-28

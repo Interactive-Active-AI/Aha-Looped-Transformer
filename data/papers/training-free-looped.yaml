@@ -1,0 +1,20 @@
+id: training-free-looped
+name: Training-Free Looped Transformers
+title: Training-Free Looped Transformers
+arxiv: "2605.23872"
+published: 2026-05-22
+authors:
+  - Lizhang Chen
+  - Jonathan Li
+  - Chen Liang
+  - Ni Lao
+  - Qiang Liu
+group: core
+summary: Loops a contiguous mid-stack block of a frozen checkpoint at inference with no training. Viewing a pre-norm block as a forward Euler step, it replaces one large update with smaller damped sub-steps, since naive block repetition usually hurts.
+diagram: Lower layers → [ Mid block, damped sub-steps ] × k → upper layers  (frozen weights)
+depth: Inference-time wrapper
+kv: See paper
+notes: Across seven dense, MoE and MLA+MoE families, it improves Qwen3-4B-Instruct by 2.64 points on MMLU-Pro, Qwen3-30B-A3B-Instruct by 1.14 on CommonsenseQA and Moonlight-16B-A3B by 1.20 on OpenBookQA.
+code: ""
+weights: ""
+verified: 2026-10-28

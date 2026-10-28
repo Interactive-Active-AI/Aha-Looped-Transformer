@@ -1,0 +1,17 @@
+id: lstm-ut
+name: LSTM-UT
+title: "Storing Is Not Remembering: LSTM-UT and Bounded Gated Memory for Looped Transformers"
+arxiv: "2609.19521"
+published: 2026-09-17
+authors:
+  - Aras Kavuncu
+  - Muhammad Burhan Hafez
+group: core
+summary: "Shows on cellular-automaton tasks that keeping more history is not the same as making it usable: CoTFormer's full cache can pull corrected trajectories back toward failure. LSTM-UT adds a small, bounded, gated cell state to the shared block instead."
+diagram: "[ Shared block + gated cell state ] × N"
+depth: Depth extrapolation far beyond training
+kv: Small bounded cell state rather than a cache of every step
+notes: Trained to depth 12 on Rule 30, it keeps 99.7% exact-row accuracy at depth 60 where a Block Universal Transformer gets no row right, and one checkpoint stays above 99.95% at depth 1,000. On OpenWebText2 it beats BUT and roughly matches CoTFormer.
+code: ""
+weights: ""
+verified: 2026-10-28

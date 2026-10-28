@@ -1,0 +1,18 @@
+id: depth-control-protocol
+name: Depth Control Protocol
+title: "Beyond Depth Truncation: Controlled Evaluation of Depth Utilization in Recursive Language Models"
+arxiv: "2609.19934"
+published: 2026-09-17
+authors:
+  - Ha Van Dau
+  - Thanh Tung Khuat
+  - Nguyen Thanh Dung
+group: core
+summary: Argues that the standard depth-truncation curve conflates fewer block applications, less distinct computation and an out-of-distribution readout. The Depth Control Protocol adds positive and negative controls, including running the full budget while executing only one distinct iteration, to measure whether a recurrent model really uses its depth.
+diagram: "Truncation vs controls: same applications / fewer distinct iterations / readout shift"
+depth: Evaluation methodology
+kv: See paper
+notes: The key control is only realizable in weight-shared architectures. Includes dense-transformer negative controls and a training intervention to check causality.
+code: ""
+weights: ""
+verified: 2026-10-28

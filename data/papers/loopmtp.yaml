@@ -1,0 +1,20 @@
+id: loopmtp
+name: LoopMTP
+title: "LoopMTP: A looped transformer guided by latent multi-token prediction"
+arxiv: "2608.03624"
+published: 2026-08-04
+authors:
+  - Behzad Shomali
+  - Markus Frey
+  - David Berghaus
+  - Joachim Koehler
+  - Mehdi Ali
+group: full
+summary: "Links looping to multi-token prediction: a model that loops T times should anticipate T future tokens, so the hidden state at loop t is softly aligned with the embedding of the token t steps ahead, with a gate preserving useful information across iterations."
+diagram: "[ Stack ] × T,  loop t ↔ embedding of token t steps ahead"
+depth: Fixed loops (stable up to 15)
+kv: See paper
+notes: Improves average accuracy by up to 8.1% relative over the non-looped baseline, with stable training up to 15 loops.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,17 @@
+id: cot-or-loop
+name: To CoT or To Loop?
+title: To CoT or To Loop? A Formal Comparison Between Chain-of-Thought and Looped Transformers
+arxiv: "2505.19245"
+published: 2025-05-25
+authors:
+  - Kevin Xu
+  - Issei Sato
+group: full
+summary: "A formal comparison of chain-of-thought and looped transformers: looped models efficiently simulate parallel deterministic computation over DAGs, while stochastic CoT excels at approximate inference for self-reducible compositional problems."
+diagram: "Looped: depth over a DAG  vs  CoT: sequential stochastic tokens"
+depth: Theory
+kv: See paper
+notes: Provides separations that suggest when depth-driven recursion is preferable to token-level reasoning. Theory paper.
+code: ""
+weights: ""
+verified: 2026-10-28

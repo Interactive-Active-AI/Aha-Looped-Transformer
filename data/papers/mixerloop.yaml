@@ -1,0 +1,20 @@
+id: mixerloop
+name: MixerLoop
+title: Allocating Recurrent Compute in Looped Language Models
+arxiv: "2608.18230"
+published: 2026-08-18
+authors:
+  - Ruhai Lin
+  - Yiyang Guo
+  - Rui-Jie Zhu
+  - Hao Ye
+  - Jason K. Eshraghian
+group: core
+summary: Asks what should loop. Using Iterative Transport Rank to measure the new cross-position influence each application adds, it repeats each Gated DeltaNet mixer while applying the dense FFN only once.
+diagram: "[ Mixer × r → FFN × 1 ] per layer"
+depth: Mixer-only recurrence
+kv: Recurrent state of Gated DeltaNet; see paper
+notes: At 15M, MixerLoop beats full-block looping on aggregate CORE; at 110M it keeps 41.5% of the CORE improvement while cutting recurrent-backbone projection FLOPs by 45.9%.
+code: ""
+weights: ""
+verified: 2026-10-28

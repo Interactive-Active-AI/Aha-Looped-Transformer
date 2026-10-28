@@ -1,0 +1,18 @@
+id: revit
+name: reViT
+title: "One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts"
+arxiv: "2610.12448"
+published: 2026-10-08
+authors:
+  - Adrian Bulat
+  - Yassine Ouali
+  - Georgios Tzimiropoulos
+group: full
+summary: Shows a single Transformer block applied recurrently can match a full-depth vision encoder at comparable FLOPs. Depth-specific behavior comes from expressing each depth's FFN as a convex combination of a small shared expert bank, programmed by a continuous normalized-depth coordinate.
+diagram: "[ One block, FFN = mix(experts; depth coordinate) ] × L"
+depth: Elastic depth by resampling the depth coordinate
+kv: Not applicable (vision encoder)
+notes: Trained from scratch, reViT-B/16 reaches DeiT III accuracy with about 70% fewer stored parameters; a distilled 8-expert model keeps nearly all of DINOv2's linear-probe accuracy and transfers to segmentation and depth.
+code: https://www.adrianbulat.com/universal-recurrent-vit
+weights: ""
+verified: 2026-10-28

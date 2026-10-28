@@ -1,0 +1,18 @@
+id: halting-trajectory-readout
+name: Adaptive Depth Diagnosis
+title: "Adaptive Depth in Looped Transformers: Diagnosing Learned Halting Gates and Trajectory Readouts"
+arxiv: "2607.20519"
+published: 2026-07-08
+authors:
+  - Andrei Cristian Popescu
+  - Haitz Sáez de Ocáriz Borde
+  - Pietro Liò
+group: adaptive
+summary: Separates the two jobs of a learned halting distribution, choosing which state to read and weighting per-depth losses, on synthetic tasks and Ouro checkpoints. Fixed-prior depth supervision yields difficulty-aware trajectories, and simple post-hoc confidence readouts often match learned gates.
+diagram: "[ Block ] × R → trajectory → readout (gate or confidence)"
+depth: Learned or post-hoc halting
+kv: See paper
+notes: Failures stem mainly from the trajectory induced by joint gate training rather than gate expressivity. Ouro's ponder gates are competitive but not uniformly Pareto-optimal; measured latency confirms that lower average exit depth saves time.
+code: ""
+weights: ""
+verified: 2026-10-28

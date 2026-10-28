@@ -1,0 +1,24 @@
+id: ponderlm
+name: PonderLM
+title: "PonderLM: Pretraining Language Models to Ponder in Continuous Space"
+arxiv: "2505.20674"
+published: 2025-05-27
+authors:
+  - Boyi Zeng
+  - Shixiang Song
+  - Siyuan Huang
+  - Yixuan Wang
+  - He Li
+  - Ziwei He
+  - Xinbing Wang
+  - Zhiyu Li
+  - Zhouhan Lin
+group: full
+summary: "Teaches language models to ponder in continuous space: within one token step, the model feeds back the probability-weighted sum of token embeddings and runs another forward pass, learned through ordinary self-supervised pretraining."
+diagram: Forward → expected embedding Σ pᵢ eᵢ → Forward … → token
+depth: Fixed pondering steps per token
+kv: See paper
+notes: Works on GPT-2, Pythia and LLaMA architectures; PonderPythia-2.8B surpasses Pythia-6.9B and rivals Pythia-12B on nine benchmarks.
+code: https://github.com/LUMIA-Group/PonderingLM
+weights: ""
+verified: 2026-10-28

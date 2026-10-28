@@ -1,0 +1,23 @@
+id: latentloop
+name: LatentLoop
+title: "LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation"
+arxiv: "2610.19975"
+published: 2026-10-14
+authors:
+  - Zefeng He
+  - Yunkai Chai
+  - Xiaoyang Chen
+  - Tong Zhu
+  - Zongliang Wu
+  - Yun Luo
+  - Yafu Li
+  - Yu Cheng
+group: full
+summary: Finds that in a looped MoE that applies a shared block twice, the first visit can be scaled down without harm while the second cannot. LatentLoop compresses the sequence on the first visit, keeps full resolution on the second, and spends the savings on a larger hidden size.
+diagram: "Visit 1: [ Block ] on compressed sequence → Visit 2: [ Block ] at full resolution"
+depth: Two visits with asymmetric compute
+kv: Separate attention per visit; MoE experts shared across visits
+notes: Across 15 configurations from 1.3B to 7B parameters and beyond 10^21 FLOPs it lowers validation NLL; at a fitted NLL of 1.988 the predicted compute savings are 19.0% versus vanilla MoE and 7.9% versus the looped baseline.
+code: https://github.com/lcqysl/LatentLoop
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,21 @@
+id: loopmoe
+name: LoopMoE
+title: "LoopMoE: Unifying Iterative Computation with Mixture-of-Experts for Language Modeling"
+arxiv: "2606.04438"
+published: 2026-06-03
+authors:
+  - Wenkai Chen
+  - Tianshu Li
+  - Wenyong Huang
+  - Yichun Yin
+  - Lifeng Shang
+  - Chengwei Qin
+group: full
+summary: A looped mixture-of-experts language model with IterAdaLN, a modulation conditioned on iteration index and per-token state to break weight-sharing symmetry, and a capacity-balancing strategy that restores the attention-to-FFN active-parameter ratio of tuned non-looped models.
+diagram: "[ MoE block + IterAdaLN(iteration, state) ] × R"
+depth: Fixed iterations
+kv: See paper
+notes: Strictly controlled against a vanilla MoE with identical total parameters, per-token FLOPs and active sublayer ratios, its nine-benchmark advantage grows from over 1 point at 3B to about 3 points at 9B.
+code: ""
+weights: ""
+verified: 2026-10-28

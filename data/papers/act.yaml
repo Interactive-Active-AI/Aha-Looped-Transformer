@@ -1,0 +1,16 @@
+id: act
+name: Adaptive Computation Time
+title: Adaptive Computation Time for Recurrent Neural Networks
+arxiv: "1603.08983"
+published: 2016-03-29
+authors:
+  - Alex Graves
+group: adaptive
+summary: The original algorithm that lets a recurrent network learn how many steps to take per input with a deterministic, differentiable halting mechanism and a ponder cost.
+diagram: "[ RNN step ] × N(t),  halt when cumulative probability ≥ 1 − ε"
+depth: Learned halting per input step
+kv: Not applicable (RNN)
+notes: Greatly improves synthetic tasks such as parity, logic, addition and sorting. Character-level language modeling gains are small but allocate more compute to hard transitions. Basis of Universal Transformer halting.
+code: ""
+weights: ""
+verified: 2026-10-28

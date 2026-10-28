@@ -1,0 +1,23 @@
+id: blockwise-conformal-injection
+name: Rotate the Loop
+title: "Rotate the Loop: Blockwise Conformality for Looped Transformers"
+arxiv: "2610.14030"
+published: 2026-09-30
+authors:
+  - Alexey Zemtsov
+  - Albina Klepach
+  - Vadim Lomshakov
+  - Andrei Polubarov
+  - Nikita Lyubaykin
+  - Alexander Derevyagin
+  - Vladislav Kurenkov
+  - Alexander Nikulin
+group: core
+summary: Treats whether a loop can track state as a geometric question about the linear map applied to the residual between steps. Blockwise conformal injections split the residual into groups and rotate within each, giving each group its own timescale while keeping exact geometry.
+diagram: "[ Block ] × R  with residual → blockwise rotations between steps"
+depth: Runtime-adjustable recurrent steps
+kv: See paper
+notes: Improves last-token state-tracking accuracy and language modeling where an early signal must be retrieved at the end of the sequence.
+code: ""
+weights: ""
+verified: 2026-10-28

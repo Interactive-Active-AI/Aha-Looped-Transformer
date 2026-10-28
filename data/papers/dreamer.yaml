@@ -1,0 +1,20 @@
+id: dreamer
+name: Dreamer
+title: "Depth-Recurrent Attention Mixtures: Giving Latent Reasoning the Attention it Deserves"
+arxiv: "2601.21582"
+published: 2026-01-29
+authors:
+  - Jonas Knupp
+  - Jan Hendrik Metzen
+  - Jeremias Bohn
+  - Georg Groh
+  - Kristian Kersting
+group: core
+summary: Depth-recurrent attention mixtures combine sequence attention, attention along depth and sparse expert attention, relieving the fixed hidden-size bottleneck of many-step latent reasoning and decoupling scaling dimensions in depth-recurrent models.
+diagram: "[ Sequence attention + depth attention + sparse expert attention ] × r"
+depth: Depth recurrence with attention over earlier depths
+kv: Attention over states from earlier depths
+notes: Needs 2–8× fewer training tokens for the same accuracy as FLOP-, parameter- and memory-matched baselines, and shows 2–11× more expert selection diversity than standard MoEs.
+code: ""
+weights: ""
+verified: 2026-10-28

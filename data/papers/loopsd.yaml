@@ -1,0 +1,24 @@
+id: loopsd
+name: LoOPSD
+title: "LoOPSD: On-Policy Self-Distillation with Looped Teachers"
+arxiv: "2610.18162"
+published: 2026-10-13
+authors:
+  - Wei Fan
+  - Qingyue Yang
+  - Chao-Hong Tan
+  - Qian Chen
+  - Wen Wang
+  - Xiangang Li
+  - Kejiang Chen
+  - Weiming Zhang
+  - Nenghai Yu
+group: core
+summary: Builds a stronger teacher from the same frozen weights by searching which layers to repeat, then distills that looped teacher's predictions on student-generated prefixes back into the student, alternating search and distillation over several rounds.
+diagram: Search repeated layers → looped teacher → on-policy distillation → repeat
+depth: Teacher repeats searched layers; student runs a single pass
+kv: See paper
+notes: On GSM8K with a 400-token thinking budget, Qwen3-1.7B rises from 42.30% to 79.61%, with further gains in later rounds. Evaluated on mathematical and logical reasoning tasks.
+code: ""
+weights: ""
+verified: 2026-10-28

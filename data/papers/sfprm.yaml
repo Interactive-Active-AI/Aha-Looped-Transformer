@@ -1,0 +1,21 @@
+id: sfprm
+name: SFPRM
+title: "Spherical Fixed-Point Reasoners: Adaptive Loop Halting on the Hypersphere"
+arxiv: "2610.25646"
+published: 2026-10-19
+authors:
+  - Arber Zela
+  - Artavazd Maranjyan
+  - Pol Puigdemont
+  - David Berghaus
+  - Valentyn Boreiko
+  - Volkan Cevher
+group: adaptive
+summary: Spherical Fixed-Point Reasoners move fixed-point looped reasoning onto the unit hypersphere of normalized transformers, turning input injection, damping and halting into geodesic operations that are bounded by construction.
+diagram: "nGPT block on the hypersphere: geodesic injection → damping → halting"
+depth: Adaptive halting at a fixed point
+kv: See paper
+notes: Proves fixed-point existence and convergence conditions. Reports 96.6% on Sudoku-Extreme, 87.9% on Maze-Hard and 59.1% on Mini-ARC, ahead of FPRM; these are puzzle benchmarks, not language modeling.
+code: ""
+weights: ""
+verified: 2026-10-28

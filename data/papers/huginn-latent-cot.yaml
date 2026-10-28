@@ -1,0 +1,20 @@
+id: huginn-latent-cot
+name: Decoding Huginn's Latent CoT
+title: Latent Chain-of-Thought? Decoding the Depth-Recurrent Transformer
+arxiv: "2507.02199"
+published: 2025-07-02
+authors:
+  - Wenquan Lu
+  - Yuechuan Yang
+  - Kyle Lee
+  - Yanshu Li
+  - Enqi Liu
+group: core
+summary: Probes Huginn-3.5B on arithmetic with the Logit Lens and Coda Lens to see whether interpretable latent chain-of-thought emerges across recurrent blocks.
+diagram: Prelude → [ Core ] × r (probed each step) → Coda
+depth: Analysis
+kv: See paper
+notes: Finds limited evidence of interpretable latent CoT and inconsistent probing across blocks; more recurrence gives only marginal gains, well short of explicit CoT on these tasks.
+code: https://github.com/wenquanlu/huginn-latent-cot
+weights: ""
+verified: 2026-10-28

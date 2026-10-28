@@ -1,0 +1,19 @@
+id: benice
+name: BeNice!
+title: BeNice! Closing Looping's Inference-Memory Gap via KV-Sharing
+arxiv: "2610.31633"
+published: 2026-10-22
+authors:
+  - Hayden Prairie
+  - Jacob M. Ryan
+  - Taylor Berg-Kirkpatrick
+  - Daniel Y. Fu
+group: core
+summary: Makes looped models KV-shareable so earlier recurrences can reuse the final recurrence's cache. Stochastic depth during pretraining induces contractive dynamics, and the BeNice! post-training step broadcasts the final KV cache into the first recurrence while preserving quality.
+diagram: "Pretrain with stochastic depth → post-train: final-recurrence KV broadcast to earlier recurrences"
+depth: Fixed recurrence
+kv: Final-recurrence KV cache shared across depth
+notes: Matches unshared fine-tuning perplexity and composes with MLA, Kimi delta attention and fp8/mxfp8/nvfp4 KV quantization. Throughput and p90 TTFT gains come from simulated low-memory long-context serving.
+code: ""
+weights: ""
+verified: 2026-10-28

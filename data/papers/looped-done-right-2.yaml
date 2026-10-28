@@ -1,0 +1,22 @@
+id: looped-done-right-2
+name: Looped Models Done Right II
+title: "Towards Looped Models Done Right, Part II: Rethinking at Fixed Points"
+arxiv: "2610.06833"
+published: 2026-10-05
+authors:
+  - Benhao Huang
+  - Chufan Shi
+  - Junlin Chen
+  - Shicheng Wen
+  - Zhengzhong Liu
+  - Eric Xing
+  - Xuezhe Ma
+group: core
+summary: Argues that states near fixed points make the path to them matter less, enabling truncated backprop, terminal KV sharing, faster distilled prefill and cheaper RL updates. It then improves the depth prior, learned from prediction feedback with an entropy term, and introduces orthogonal input injection.
+diagram: Prelude → [ Core + orthogonal injection ] × r (learned depth prior) → Coda
+depth: Learned depth prior during training
+kv: Terminal KV sharing near fixed points
+notes: From 100M to 1.6B, the learned prior and orthogonal injection lower perplexity relative to Huginn's prior and existing injection schemes. At 1.6B, a 3× smaller KV cache matches the downstream average of fixed-depth training with a full cache.
+code: https://github.com/ifm-ai/xllm-loop
+weights: ""
+verified: 2026-10-28

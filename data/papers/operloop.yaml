@@ -1,0 +1,23 @@
+id: operloop
+name: OperLoop
+title: Looped Transformers as Optimizers
+arxiv: "2609.37379"
+published: 2026-09-29
+authors:
+  - Yulong Huang
+  - Chen Jiang
+  - Zhanpeng Zhou
+  - Hongtao Zhang
+  - Tianyu Li
+  - Tianyu He
+  - Xiangyu Zhang
+  - Bojun Cheng
+group: core
+summary: Views the looped hidden state as a fast weight and derives loop transitions in closed form from a projection, a local objective and an optimizer update rule. This exposes mismatches in existing transitions and yields OperLoop, with explicit weight decay, adaptive step size and a delta objective.
+diagram: "[ Block ] × R  where each step = local gradient update on an implicit target"
+depth: Fixed loops
+kv: See paper
+notes: Aligning input maps of existing transitions lowers training loss and improves commonsense accuracy; OperLoop improves average generative performance over looped and non-looped baselines at matched training FLOPs.
+code: ""
+weights: ""
+verified: 2026-10-28

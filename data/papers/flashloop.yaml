@@ -1,0 +1,17 @@
+id: flashloop
+name: FlashLoop
+title: "FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates"
+arxiv: "2609.29812"
+published: 2026-09-24
+authors:
+  - Wanqi Yang
+  - Shiwei Liu
+group: full
+summary: "A training-free inference framework that removes cross-loop redundancy: later loops update only the few tokens whose states still change, attend to a sparse stable set of key columns, and store KV residuals between adjacent loops in low bit-width."
+diagram: "Loop r: sparse token updates + sparse attention + quantized KV residual vs loop r−1"
+depth: Fixed loops of the base model
+kv: Low-bit KV residuals between adjacent loops
+notes: Across several looped models it reports lossless accuracy with up to 1.64× end-to-end speedup and up to 6× KV-cache memory reduction.
+code: ""
+weights: ""
+verified: 2026-10-28

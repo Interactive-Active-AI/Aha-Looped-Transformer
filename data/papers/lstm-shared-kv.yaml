@@ -1,0 +1,16 @@
+id: lstm-shared-kv
+name: LSTM-Style Looped Transformer
+title: LSTM-Style Looped Transformers with Shared KV Caches
+arxiv: "2610.33360"
+published: 2026-10-23
+authors:
+  - Andreas Kirsch
+group: core
+summary: Studies an LSTM-style gated recurrent transformer whose recurrent core also shares a single KV cache. A consistency loss late in training aligns the cache entries seen in parallel training with those produced recursively at generation time.
+diagram: "[ LSTM-style gated core ] × R  (one shared KV cache)"
+depth: Fixed recurrence
+kv: One KV cache shared across the recurrent core; persistent cache sets drop from 15 to 4
+notes: At width 1024 it uses 40.4% fewer parameters than an untied control at nearly matched FLOPs. The consistency loss removes 81–89% of the continuation-loss penalty on FineWeb; the cost of weight tying is smallest at low token budgets.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,20 @@
+id: flexloop
+name: FlexLoop
+title: "FlexLoop: Depth-Elastic Looped Policies for Adaptive Test-Time Computation in Deep RL"
+arxiv: "2609.34488"
+published: 2026-09-28
+authors:
+  - Xun Wang
+  - Ruishuo Chen
+  - Yu Chen
+  - Zhuoran Li
+  - Longbo Huang
+group: adaptive
+summary: Finds that pretrained looped RL policies specialize to their full trained depth. FlexLoop post-trains them with the original RL objective plus adjacent-depth policy distillation, making shallower depths reliable and enabling state-wise adaptive inference.
+diagram: "[ Shared block ] × R  → distill depth d+1 into depth d"
+depth: Depth-elastic, state-wise adaptive
+kv: Not applicable (policy network)
+notes: On 30 long-horizon goal-conditioned environments it keeps full-depth performance, cuts average recurrent depth by up to 43% and gives up to 1.34× wall-clock speedup in a stress test.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,22 @@
+id: fully-looped-transformer
+name: Fully Looped Transformer
+title: Simply Stabilizing the Loop via Fully Looped Transformer
+arxiv: "2605.18797"
+published: 2026-05-11
+authors:
+  - Rao Fu
+  - Zixuan Yang
+  - Jiankun Zhang
+  - Jing Ma
+  - Hechang Chen
+  - Yu Li
+  - Yi Chang
+group: full
+summary: "Traces training instability of deep looping to gradient oscillation and residual explosion, and fixes them with two parameter-free changes: distributing inter-loop signals across all layers, and attention injection that reuses the existing attention block."
+diagram: "[ All layers, inter-loop signal at every layer ] × R  + attention injection"
+depth: Stable up to 12 loops; adjustable at inference
+kv: See paper
+notes: Trains stably to 12 iterations where baseline looped models collapse, and improves average downstream performance by up to 13.2% in milder settings.
+code: ""
+weights: ""
+verified: 2026-10-28

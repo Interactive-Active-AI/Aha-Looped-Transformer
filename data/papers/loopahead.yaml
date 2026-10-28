@@ -1,0 +1,22 @@
+id: loopahead
+name: LoopAhead
+title: "LoopAhead: Speculating Ahead for Faster Decoding in Looped Language Models"
+arxiv: "2610.21594"
+published: 2026-10-15
+authors:
+  - Zixuan Liu
+  - Nan Xue
+  - Rui Bao
+  - Yuhang Xu
+  - Xiaofeng Cao
+  - Jiangchao Yao
+  - Zhiyong Chen
+group: full
+summary: "A speculative decoding framework for looped transformers that gives different recurrent depths complementary roles: a lightweight lookahead drafter predicts several future tokens from early-loop states, deeper-loop feedback decides which draft branches to continue, and the full-depth model makes final decisions."
+diagram: Early-loop state → lookahead drafter → deeper-loop branch control → full-depth verify
+depth: Early loops draft; full depth decides
+kv: See paper
+notes: Reports up to 7.82× decoding speedup over autoregressive decoding while preserving the target model's output distribution.
+code: ""
+weights: ""
+verified: 2026-10-28

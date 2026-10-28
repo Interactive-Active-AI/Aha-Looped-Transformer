@@ -1,0 +1,16 @@
+id: per-token-fixed-point
+name: Per-Token Fixed-Point Convergence
+title: Per-Token Fixed-Point Convergence in Depth-Recurrent Transformers
+arxiv: "2607.14427"
+published: 2026-07-15
+authors:
+  - Joe Logan
+group: adaptive
+summary: "Measures what a depth-recurrent model trained with randomized recursion counts computes per token: states converge to per-token fixed points at very different speeds, and a training-free rule that halts each token once its output stabilizes beats a learned router."
+diagram: "[ Weight-tied core ] × r until output stabilizes (per token)"
+depth: Training-free per-token halting
+kv: See paper
+notes: On a 135M-class model trained on FineWeb-Edu, the median token converges by loop six while about 10% still update at loop eight. Halting on stability matches uniform depth-8 quality with 4.94 average loops; average depth is a FLOP proxy, not a measured speedup.
+code: https://github.com/jlognn/depth-recurrent-convergence
+weights: ""
+verified: 2026-10-28

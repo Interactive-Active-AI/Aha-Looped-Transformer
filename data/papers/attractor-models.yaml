@@ -1,0 +1,17 @@
+id: attractor-models
+name: Attractor Models
+title: "Solve the Loop: Attractor Models for Language and Reasoning"
+arxiv: "2605.12466"
+published: 2026-05-12
+authors:
+  - Jacob Fein-Ashley
+  - Paria Rashidinejad
+group: adaptive
+summary: A backbone proposes output embeddings and an attractor module refines them by solving for a fixed point, with gradients from implicit differentiation, so training memory stays constant in effective depth and iterations stop at convergence.
+diagram: Backbone → proposal → [ Attractor module ] solved to fixed point (implicit gradients)
+depth: Adaptive iterations until convergence
+kv: See paper
+notes: A 770M model beats a 1.3B Transformer trained on twice the tokens; a 27M model trained on about 1000 examples reaches 91.4% on Sudoku-Extreme and 93.1% on Maze-Hard. Fixed-point training can let the solver be removed at inference.
+code: https://github.com/jacobfa/Attractor
+weights: https://huggingface.co/jacobfa1/attractor-770m
+verified: 2026-10-28

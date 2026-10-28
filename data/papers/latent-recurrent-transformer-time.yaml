@@ -1,0 +1,19 @@
+id: latent-recurrent-transformer-time
+name: Trading Depth for Time
+title: Trading Depth for Time in Recurrent Transformers
+arxiv: "2609.21605"
+published: 2026-09-18
+authors:
+  - Zeyi Huang
+  - Xuehai He
+  - Yelong Shen
+  - Yong Jae Lee
+group: full
+summary: Compares spending extra compute on temporal recurrence versus physical depth. Latent Recurrent Transformers feed each token's high-level hidden state into the next, and inserting one latent thought token between vocabulary tokens adds a refinement pass through the shared backbone.
+diagram: token t → [ Backbone ] → thought step → [ Backbone ] → token t+1 (state fed forward)
+depth: One extra latent step per vocabulary token
+kv: See paper
+notes: On NanoChat MoE backbones at matched training FLOPs, it beats PonderLM-2 and overtakes a two-loop Transformer as compute grows. One thought token recovers about 89% of the gain from doubling depth with about 48% fewer parameters.
+code: ""
+weights: ""
+verified: 2026-10-28

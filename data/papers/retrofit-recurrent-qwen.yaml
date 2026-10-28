@@ -1,0 +1,16 @@
+id: retrofit-recurrent-qwen
+name: Retrofitting Recurrent Depth
+title: "Retrofitting Recurrent Depth into a Pretrained Language Model: Installation, Extrapolation, Transfer, and Retention at Two Parameter Budgets"
+arxiv: "2608.11233"
+published: 2026-07-31
+authors:
+  - Mark Shapiro
+group: core
+summary: Retrofits Qwen2.5-0.5B-Instruct into prelude, weight-tied recurrent block and coda with an identity-preserving one-loop path and a re-entry bridge, and shows it learns a reusable iterative latent procedure, either as a 6M adapter over frozen weights or a 180M full block.
+diagram: Prelude → [ Weight-tied block + re-entry bridge ] × r → Coda
+depth: One task step per loop; extrapolates to about 1.5× supervised depth
+kv: See paper
+notes: Non-inferior to the base at one loop on a preregistered ARC battery. Against a same-size scratchpad model it wins overall (84% versus 72%), retains far more beyond depth 10, and answers 7.6× faster. Single-author study on synthetic tasks.
+code: ""
+weights: https://huggingface.co/mshapiro123/recurrent-qwen2.5-0.5b-full-block
+verified: 2026-10-28

@@ -1,0 +1,22 @@
+id: stars
+name: STARS
+title: Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models
+arxiv: "2605.26733"
+published: 2026-05-26
+authors:
+  - Xiao-Wen Yang
+  - Ziyu Han
+  - Xi-Hua Zhang
+  - Wen-Da Wei
+  - Jie-Jing Shao
+  - Lan-Zhe Guo
+  - Yu-Feng Li
+group: core
+summary: Addresses the peak-then-collapse behavior of looped language models under deeper recurrence by constraining latent states to approach asymptotically stable fixed points, using efficient Jacobian spectral-radius regularization with random loop sampling.
+diagram: "[ Block ] × r  with Jacobian spectral-radius penalty"
+depth: Test-time scalable recurrence
+kv: See paper
+notes: Gives reliable test-time scaling on arithmetic tasks and on harder math reduces degradation at depth while also improving peak accuracy.
+code: ""
+weights: ""
+verified: 2026-10-28

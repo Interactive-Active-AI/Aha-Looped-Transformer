@@ -1,0 +1,18 @@
+id: shift
+name: SHIFT
+title: What Makes Looped Transformers Perform Better Than Non-Recursive Ones
+arxiv: "2510.10089"
+published: 2025-10-11
+authors:
+  - Zixuan Gong
+  - Yong Liu
+  - Jiaye Teng
+group: full
+summary: "Explains why looped transformers beat non-recursive ones on complex reasoning through loss-landscape geometry: recursion biases training toward steep V-shaped river valleys, where valley hopping speeds convergence along the river. This motivates SHIFT, a staged progressive training schedule."
+diagram: "[ Shared attention block ] × L  — staged hierarchical training"
+depth: Fixed loops
+kv: See paper
+notes: The landscape account is a conjecture supported by sample- and Hessian-level observations. SHIFT accelerates training of looped models while reaching comparable performance.
+code: ""
+weights: ""
+verified: 2026-10-28

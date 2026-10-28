@@ -1,0 +1,18 @@
+id: iso-depth-scaling
+name: Iso-Depth Scaling Laws
+title: How Much Is One Recurrence Worth? Iso-Depth Scaling Laws for Looped Language Models
+arxiv: "2604.21106"
+published: 2026-04-22
+authors:
+  - Kristian Schwethelm
+  - Daniel Rueckert
+  - Georgios Kaissis
+group: core
+summary: Measures how much one recurrence is worth in equivalent unique parameters via a joint scaling law fitted on an iso-depth sweep over recurrence counts 1–8, yielding a recurrence-equivalence exponent φ = 0.46.
+diagram: Prelude → [ Recurrent block ] × r → Coda,  N_eff = N_once + r^φ · N_rec
+depth: Recurrence r ∈ {1, 2, 4, 8}
+kv: See paper
+notes: At r = 4 a 410M looped model matches a 580M non-looped model but costs as much to train as a 1B one. Truncated backprop lowers φ to 0.38 while hyper-connections raise it to 0.65, making φ a diagnostic for genuine loop improvements.
+code: https://github.com/kschwethelm/looped-lm-scaling
+weights: ""
+verified: 2026-10-28

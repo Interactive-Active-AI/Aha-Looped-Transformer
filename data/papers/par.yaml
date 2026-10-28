@@ -1,0 +1,26 @@
+id: par
+name: PAR
+title: "PAR: Progress-Aligned Recurrence for Length Generalization in State Tracking"
+arxiv: "2610.27628"
+published: 2026-10-20
+authors:
+  - Pan Wang
+  - Yihao Hu
+  - Guangyuan Dong
+  - Yitong Lin
+  - Hang Wang
+  - Zimi Liu
+  - Zhihao Wen
+  - Jianshe Li
+  - Jiang-Ming Yang
+  - Wei Wu
+  - Yongqi Tong
+group: adaptive
+summary: Progress-Aligned Recurrence makes extra iterations useful for longer state-tracking problems by supervising the prediction at iteration k to match the state after k operations and anchoring recurrent state norms to the first iteration. A learned completion readout decides when to answer.
+diagram: Iteration k ≈ state after k operations; norm anchoring; completion readout
+depth: Iterations scale with problem length; learned stopping
+kv: See paper
+notes: A Qwen2.5-0.5B model trained on at most 32 swap-S5 moves reaches 95.5% full-state accuracy at 512 moves. Removing norm anchoring or progress-aligned targets sharply reduces extrapolation. Results cover sequential state-tracking tasks.
+code: ""
+weights: ""
+verified: 2026-10-28

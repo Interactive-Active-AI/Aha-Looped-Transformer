@@ -1,0 +1,23 @@
+id: closing-the-loop
+name: Closing the Loop
+title: "Closing the Loop: Practical Training Recipes for Looped Language Models"
+arxiv: "2610.00673"
+published: 2026-09-30
+authors:
+  - Andrei Marchenko
+  - Viacheslav Bezrukov
+  - Oleg Kashurin
+  - Inessa Fedorova
+  - Dmitry Bocharov
+  - Yuliana Shakhvalieva
+  - Maria Tikhonova
+  - Valerii Ternovskii
+group: full
+summary: "Practical recipes for looped language models: a from-scratch pipeline that cuts Ouro's 7.7T-token budget to 310B tokens, controlled comparisons against dense models, and a minimal conversion of pretrained dense models using one learned input-mixing scalar and a smoothed exit loss."
+diagram: "[ Shared block ] × R  + exit gate; dense → looped conversion via input-mixing scalar"
+depth: Learned exit gate
+kv: See paper
+notes: The 1.4B LoopLM beats a parameter-matched dense model on all 12 benchmarks with the same data (+14 GSM8K, +10 MATH, +22 DROP) and approaches a 3.9B dense model at matched inference compute. Looped Qwen3-1.7B improves over continued dense training on every benchmark.
+code: ""
+weights: ""
+verified: 2026-10-28

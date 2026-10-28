@@ -1,0 +1,20 @@
+id: tilted-bowl-compression
+name: Compressing Looped Models
+title: "A Tilted Bowl Is Not a Slippery Slope: Compressing Looped Models"
+arxiv: "2609.39277"
+published: 2026-09-30
+authors:
+  - Steven Kolawole
+  - Pearse Jim
+  - Opegbemi M. Busoye
+  - Glory Bagai
+  - Virginia Smith
+group: core
+summary: Tests the common claim that compressed looped models collapse because rounding error accumulates across loops. Across more than 30 models from five families, this holds only for loops that never settle; for settling loops, error shifts the fixed point instead of accumulating.
+diagram: Low-bit [ Block ] × r → halting head fires → 8-bit [ Block ] × few
+depth: Halting-head controller plus final high-precision loops
+kv: See paper
+notes: A single label-free measurement predicts which compressed models fail. The controller beats fixed-depth inference by up to 15 points on Sudoku-Extreme and Maze-Hard with under a third of the weight traffic.
+code: ""
+weights: ""
+verified: 2026-10-28

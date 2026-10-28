@@ -1,0 +1,16 @@
+id: thinking-deeper-not-longer
+name: Thinking Deeper, Not Longer
+title: "Thinking Deeper, Not Longer: Memory-Efficient Test-Time Reasoning with Depth-Recurrent Transformers for Compositional Generalization"
+arxiv: "2603.21676"
+published: 2026-03-23
+authors:
+  - Hung-Hsuan Chen
+group: core
+summary: A depth-recurrent Transformer that reasons by iterating a shared block instead of generating tokens, stabilized for 20+ steps by a final-output-only thinking objective, LayerScale initialization and an identity-biased gate.
+diagram: "[ Shared block + identity-biased gate ] × steps → answer"
+depth: Thinking steps matched to task complexity
+kv: Flat memory per added step (no generated tokens)
+notes: On graph reachability, nested boolean logic and relational text, accuracy climbs once thinking steps meet task complexity, with extrapolation beyond the training range on the graph task.
+code: ""
+weights: ""
+verified: 2026-10-28

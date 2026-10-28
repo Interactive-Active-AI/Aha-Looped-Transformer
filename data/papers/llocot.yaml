@@ -1,0 +1,21 @@
+id: llocot
+name: LLoCoT
+title: "From Chain-of-Thought to Loops: Non-Autoregressive Latent Reasoning via Looped Transformers"
+arxiv: "2610.11472"
+published: 2026-10-08
+authors:
+  - Gerard Grau García
+  - Arnau Padrés Masdemont
+  - Niccolò Grillo
+  - Jordi Ros-Giralt
+  - Arash Behboodi
+  - Victor Conchello Vendrell
+group: core
+summary: Replaces left-to-right latent thought generation with iterative refinement of a compact latent workspace by a shared transformer. A probabilistic head then samples latent tokens in parallel to condition an autoregressive answer decoder.
+diagram: Prompt + latent slots → [ Shared transformer ] × k → sampled latents → AR decoder
+depth: Small fixed number of refinement iterations
+kv: See paper
+notes: On HumanEval and MBPP it matches explicit-CoT SFT accuracy while cutting time to first answer token about 36× and reasoning-phase latency about 42×.
+code: ""
+weights: ""
+verified: 2026-10-28

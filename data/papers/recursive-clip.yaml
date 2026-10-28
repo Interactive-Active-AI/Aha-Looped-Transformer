@@ -1,0 +1,18 @@
+id: recursive-clip
+name: Recursive CLIP
+title: "Recursive CLIP: Vision-Language Distillation with Looped Transformer Blocks"
+arxiv: "2610.34563"
+published: 2026-10-25
+authors:
+  - Szymon Mazurek
+  - Alberto Presta
+  - Michał Byra
+group: full
+summary: Asks how much block reuse CLIP tolerates. Recursive backbones apply N blocks M times with N·M fixed at ViT-B depth, either in the vision encoder only or in both encoders, trained contrastively or by distillation from a strong ViT-B/16 teacher.
+diagram: "[ N blocks ] × M  (N · M = ViT-B depth), vision and optionally text encoder"
+depth: Fixed recursion
+kv: Not applicable (encoders)
+notes: CLIP tolerates substantial recurrent reuse, though the effect depends on encoder and task. Evaluated on zero-shot classification, retrieval, few-shot learning, grounding and concept unlearning with CC3M and CC12M training.
+code: ""
+weights: ""
+verified: 2026-10-28

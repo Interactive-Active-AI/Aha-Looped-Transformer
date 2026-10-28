@@ -1,0 +1,20 @@
+id: rlt
+name: Recurrent Looped Transformer
+title: Recurrent Looped Transformer
+arxiv: "2610.07591"
+published: 2026-10-06
+authors:
+  - Yifan Zhang
+  - Jichen Feng
+  - Shihan Qin
+  - Sun-Yuan Kung
+  - Mengdi Wang
+group: core
+summary: Splits the layers into a parallel causal encoder and a recurrent decoder that merges each token's encoder output with the previous token's final decoder state, so the computation path grows with sequence length at a fixed per-token cost.
+diagram: Causal encoder (parallel) → recurrent decoder fed by previous token's state
+depth: Grows with sequence length; fixed per token
+kv: See paper
+notes: Trained on at most 40 bits, two splits generalize parity to 256 bits in every seed; on swap-S5 at 8× training length it reaches 97% versus under 1% for a Transformer. Removing the feedback drops these tasks to chance.
+code: https://github.com/yifanzhang-pro/recurrent-looped-tranformer
+weights: ""
+verified: 2026-10-28

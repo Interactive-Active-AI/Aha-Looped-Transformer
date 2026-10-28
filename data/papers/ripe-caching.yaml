@@ -1,0 +1,18 @@
+id: ripe-caching
+name: RIPE
+title: "Prefix Keys and Values Matter Late: RIPE Caching for Self-Speculative Decoding in Looped Language Models"
+arxiv: "2610.34436"
+published: 2026-10-25
+authors:
+  - Dezhen Lu
+  - Runguo Li
+  - Zixiang Ni
+group: core
+summary: Shows that in recurrent-depth models the KV planes of late loops matter far more than early ones and converge geometrically. RIPE therefore stores only the deepest KV plane for most positions and keeps full depth only for a recent window, which suits self-speculative decoding with few-loop drafts and full-depth verification.
+diagram: "Draft: few loops → Verify: all R loops; cache = deepest plane + recent full-depth window"
+depth: "Self-speculative: draft with few loops, verify with R"
+kv: Deepest recurrent KV plane everywhere except a recent full-depth window
+notes: On Huginn-0125, a 64-position window removes 89% of tail-position error at 11.9% of the full cache memory (1024-token context). Measured self-speculative speed-ups are 2.09× with the full cache and 2.58× with the deepest plane.
+code: ""
+weights: ""
+verified: 2026-10-28

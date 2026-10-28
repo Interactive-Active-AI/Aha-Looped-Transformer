@@ -1,0 +1,17 @@
+id: wise
+name: WISE
+title: "Attention Routing Stabilizes Early: Working-Set Inference for Recurrent Language Models"
+arxiv: "2609.27373"
+published: 2026-09-23
+authors:
+  - Ke Wan
+  - Chen Chen
+group: core
+summary: Finds that attention routing in recurrent-depth models stabilizes well before hidden states do. WISE uses full attention in early recurrent steps to discover a block-structured working set, then reuses that support in later steps while keeping attention weights and refinement dynamic; no training is needed.
+diagram: "Early steps: full attention → working set; later steps: [ Core ] on reused sparse support"
+depth: Fixed recurrence in two stages
+kv: Later steps attend only to the discovered working set
+notes: Largely preserves full-attention performance on multi-hop QA, with better trade-offs at longer contexts; a sparse implementation gives up to 1.76× late-step attention speedup over FlashAttention at 4K context.
+code: https://github.com/tbn5pj/WISE_code
+weights: ""
+verified: 2026-10-28

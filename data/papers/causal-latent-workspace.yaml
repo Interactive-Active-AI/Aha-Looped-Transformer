@@ -1,0 +1,16 @@
+id: causal-latent-workspace
+name: Causal Latent Workspace
+title: Causal Latent Workspaces for Looped Transformers
+arxiv: "2610.22796"
+published: 2026-10-16
+authors:
+  - Ilia Zaznov
+group: full
+summary: "Gives a shared-depth Transformer a dedicated causal workspace: at each of four rounds, positions write gated vectors into prefix-specific latent slots and read back a content-addressed summary before the next application of the shared block, while the input embedding stays accessible."
+diagram: "[ Shared block + causal latent workspace ] × 4  (input anchored)"
+depth: Four fixed rounds
+kv: Gated prefix-specific latent slots with content-addressed reads, alongside causal self-attention
+notes: On three byte-level corpora at about 1M and 101.71M parameters, it has the best mean held-out perplexity in five of six settings against five controls, with roughly 1% gains at the larger budget. Small-scale study.
+code: https://github.com/izaznov/causal-latent-workspace-transformer
+weights: ""
+verified: 2026-10-28

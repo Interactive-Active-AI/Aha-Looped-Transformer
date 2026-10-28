@@ -1,0 +1,21 @@
+id: residualquant
+name: ResidualQuant
+title: "ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals"
+arxiv: "2610.10381"
+published: 2026-10-07
+authors:
+  - Heejun Kim
+  - Junyoung Lee
+  - SangLyul Cho
+  - Dongsu Han
+  - Insu Han
+  - Sehoon Kim
+group: full
+summary: "Exploits the high similarity of KV states across loops: it stores the final-loop KV as a reference and encodes other loops as low-precision residuals with least-squares scaling, rotations and loop-wise mixed precision."
+diagram: KV(loop R) as reference + 2-bit residuals for loops 1…R−1
+depth: Fixed loops of the base model
+kv: Final-loop KV reference plus quantized residuals (down to INT2)
+notes: Retains accuracy close to BF16 while reducing theoretical KV storage by 80.7%; on an RTX 5090, decode throughput improves up to 2.73× at fixed batch and peak throughput up to 4.15×.
+code: ""
+weights: ""
+verified: 2026-10-28

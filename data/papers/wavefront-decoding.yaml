@@ -1,0 +1,17 @@
+id: wavefront-decoding
+name: WaveFront Decoding
+title: "WaveFront Decoding: Parallelized Self-Speculative Decoding for Looped Language Models"
+arxiv: "2609.23033"
+published: 2026-09-19
+authors:
+  - Hyeongju Ha
+  - Jae-Joon Kim
+group: full
+summary: Training-free self-speculative decoding that arranges token states at different positions and depths into a diagonal wavefront, so drafting new positions at shallow depth and verifying earlier ones at full depth happen in the same batched call of the shared block.
+diagram: "Diagonal wavefront: shallow drafts ‖ mid-depth ‖ full-depth verification, one batched call"
+depth: Mixed depths per call; full depth for acceptance
+kv: Optional cross-recurrence KV sharing
+notes: Across six Spec-Bench categories, 2.42× speedup on Ouro-2.6B and 3.54× on Huginn-3.5B over autoregressive decoding, rising to 4.81× on Huginn with cross-recurrence KV sharing.
+code: https://github.com/summerbro-hhj/wavefront-decoding
+weights: ""
+verified: 2026-10-28

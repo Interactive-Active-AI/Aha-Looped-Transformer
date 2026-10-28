@@ -1,0 +1,19 @@
+id: loopus
+name: LoopUS
+title: "LoopUS: Recasting Pretrained LLMs into Looped Latent Refinement Models"
+arxiv: "2605.11011"
+published: 2026-05-10
+authors:
+  - Taekhyun Park
+  - Yongjae Lee
+  - Dohee Kim
+  - Hyerim Bae
+group: core
+summary: Looped Depth Up-Scaling converts a pretrained LLM into an encoder, a looped reasoning block and a decoder, using representation-guided block decomposition, an input-dependent selective gate against drift, random deep supervision, and a confidence head for early exit.
+diagram: Encoder layers → [ Looped reasoning block + selective gate ] × r (confidence exit) → Decoder layers
+depth: Adaptive early exit via confidence head
+kv: See paper
+notes: Improves reasoning-oriented performance without longer generated traces or recurrent pretraining from scratch; released conversions include Qwen3 and Phi-4 backbones.
+code: https://github.com/Thrillcrazyer/LoopUS
+weights: https://huggingface.co/Thrillcrazyer/Qwen3_1.7B_LoopUS
+verified: 2026-10-28

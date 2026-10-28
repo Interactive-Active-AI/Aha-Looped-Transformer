@@ -1,0 +1,22 @@
+id: right-direction-wrong-step
+name: Right Direction, Wrong Step
+title: "Right Direction, Wrong Step: Geometric Analysis of Finite-Step Failure in Looped Transformers"
+arxiv: "2609.16665"
+published: 2026-09-15
+authors:
+  - Zhihao Guo
+  - Zonghan Wu
+  - Haizhou Du
+  - Huan Huo
+  - Yilei Shao
+  - Athanasios V. Vasilakos
+  - Qingsong Wen
+group: core
+summary: Separates whether an extra loop's update direction is unhelpful or its full step simply moves too far. Along the model's own update direction, many failures are locally improving directions with harmful full displacement, analyzed with a pathwise curvature decomposition.
+diagram: state + α · update,  α ∈ (0, 1]  → reference utility
+depth: Analysis of extra iterations
+kv: See paper
+notes: A fixed quarter step turns 72.2–83.2% of selected failures into gains across four settings on math and commonsense tasks, in two model families.
+code: ""
+weights: ""
+verified: 2026-10-28

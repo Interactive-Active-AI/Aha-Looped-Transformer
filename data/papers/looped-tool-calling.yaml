@@ -1,0 +1,18 @@
+id: looped-tool-calling
+name: Looped LMs for Tool Calling
+title: Looped Language Models Improve Compositional Tool Calling
+arxiv: "2608.18171"
+published: 2026-08-17
+authors:
+  - Andrei Cristian Popescu
+  - Haitz Sáez de Ocáriz Borde
+  - Pietro Liò
+group: full
+summary: Evaluates native and retrofitted looped language models on compositional tool use, where models must coordinate several API calls and keep dependencies, comparing looped and non-looped models under matched fine-tuning while varying recurrent depth at inference.
+diagram: "[ Shared layers ] × r → multi-step API calls"
+depth: Varied inference depth; adaptive inference compared
+kv: See paper
+notes: Recurrence mostly helps compositional, dependency-aware tool use on API-Bank, BFCL and NESTful, with smaller gains on single API calls. Adaptive inference gives a better compute-performance trade-off than fixed deep recurrence.
+code: ""
+weights: ""
+verified: 2026-10-28

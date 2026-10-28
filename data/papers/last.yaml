@@ -1,0 +1,19 @@
+id: last
+name: LAST
+title: "LAST: Looped Audio Spectrogram Transformer"
+arxiv: "2610.01926"
+published: 2026-10-01
+authors:
+  - Haider Al-Tahan
+  - Sean O'Brien
+  - Anastasia Razdaibiedina
+  - N. Apurva Ratan Murty
+group: core
+summary: The Looped Audio Spectrogram Transformer processes all tokens once and then reuses the same blocks to refine only the class token over fixed audio features, making later passes cheap.
+diagram: "[ Blocks ] on all tokens → [ Same blocks ] × passes on class token only"
+depth: Fixed number of passes
+kv: Audio features fixed after the first pass
+notes: On AudioSet, ten-pass LAST reaches 0.345 mAP, 2.1% relative above a twelve-layer transformer, with 49.4% fewer parameters, 42% fewer MACs and 9.8% higher throughput. Going from two to ten passes adds only 1.2% computation.
+code: ""
+weights: ""
+verified: 2026-10-28

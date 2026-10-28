@@ -1,0 +1,25 @@
+id: retrofitted-recurrence
+name: Retrofitted Recurrence
+title: Teaching Pretrained Language Models to Think Deeper with Retrofitted Recurrence
+arxiv: "2511.07384"
+published: 2025-11-10
+authors:
+  - Sean McLeish
+  - Ang Li
+  - John Kirchenbauer
+  - Dayal Singh Kalra
+  - Brian R. Bartoldson
+  - Bhavya Kailkhura
+  - Avi Schwarzschild
+  - Jonas Geiping
+  - Tom Goldstein
+  - Micah Goldblum
+group: core
+summary: Converts pretrained non-recurrent language models such as TinyLlama, OLMo-2 and Llama-3.2 into depth-recurrent prelude–core–coda models, using a curriculum that gradually increases recurrences during training.
+diagram: Pretrained layers → Prelude → [ Recurrent core ] × r (curriculum) → Coda
+depth: Recurrence increased by curriculum; variable at test time
+kv: See paper
+notes: On mathematics, converted recurrent models beat simply post-training the original model at the same compute budget. Released checkpoints include Recurrent-OLMo and Recurrent-TinyLlama.
+code: https://github.com/mcleish7/retrofitting-recurrence
+weights: https://huggingface.co/collections/tomg-group-umd/retrofitting-recurrence
+verified: 2026-10-28

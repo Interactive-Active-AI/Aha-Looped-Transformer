@@ -1,0 +1,18 @@
+id: halting-heads
+name: Do Halting Heads Save Compute?
+title: Do Halting Heads Really Save Compute in Looped Language Models?
+arxiv: "2610.32246"
+published: 2026-10-23
+authors:
+  - Tsung-Han Wu
+  - Minsuk Heo
+  - Kenny Tan
+group: adaptive
+summary: Pretrains looped models up to 1.3B parameters to test learned halting heads. Heads trained on a mix of iterations predict early stops yet tokens run almost every iteration under the usual rule, and the commonly reported average-iterations metric overstates savings in batched generation.
+diagram: "[ Shared layers ] → halting head after each iteration"
+depth: Learned per-token halting (evaluated critically)
+kv: See paper
+notes: Scoring every iteration fixes the head only with a strong early-stop penalty. The authors recommend reporting iterations actually executed with threshold and batch size, and provide a pre-training test that bounds a head's possible gain.
+code: ""
+weights: ""
+verified: 2026-10-28

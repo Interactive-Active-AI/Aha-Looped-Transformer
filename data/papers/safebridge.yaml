@@ -1,0 +1,20 @@
+id: safebridge
+name: SafeBridge
+title: "Safe at One Loop, Risky at Another: Aligning Safety Across Recurrent Depths in Looped Language Models"
+arxiv: "2610.10625"
+published: 2026-10-07
+authors:
+  - Yi Wang
+  - Xiuyuan Qi
+  - Dongqi Han
+  - Dongsheng Li
+  - Wenjie Wang
+group: full
+summary: Evaluates jailbreak robustness of looped language models at different recurrent depths and finds that safety can differ by depth and attacks transfer across depths. SafeBridge aligns safety across depths with depth-specific control of shared layers, selective state bridging and joint supervision.
+diagram: "[ Shared layers + depth-specific control ] × R  with safety supervision at every depth"
+depth: Multiple readout depths
+kv: See paper
+notes: SFT and preference alignment alone leave depth-wise safety gaps. SafeBridge reduces matched- and cross-depth attack success with comparable over-refusal. Code and checkpoints are promised upon acceptance.
+code: ""
+weights: ""
+verified: 2026-10-28

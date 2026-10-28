@@ -1,0 +1,21 @@
+id: albert
+name: ALBERT
+title: "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations"
+arxiv: "1909.11942"
+published: 2019-09-26
+authors:
+  - Zhenzhong Lan
+  - Mingda Chen
+  - Sebastian Goodman
+  - Kevin Gimpel
+  - Piyush Sharma
+  - Radu Soricut
+group: full
+summary: Reduces BERT's parameters with factorized embeddings and cross-layer parameter sharing, so every layer reuses the same weights, plus an inter-sentence coherence loss.
+diagram: Embedding (factorized) → [ Shared encoder layer ] × L
+depth: Fixed depth with all layers shared
+kv: Not applicable (encoder)
+notes: Achieved state-of-the-art GLUE, RACE and SQuAD results with fewer parameters than BERT-large; a canonical example of full-stack weight sharing in pretrained Transformers.
+code: https://github.com/google-research/ALBERT
+weights: https://huggingface.co/albert/albert-base-v2
+verified: 2026-10-28

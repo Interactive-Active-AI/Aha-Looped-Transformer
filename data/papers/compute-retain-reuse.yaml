@@ -1,0 +1,21 @@
+id: compute-retain-reuse
+name: Compute ≠ Retain ≠ Reuse
+title: Learning to Compute Is Not Learning to Retain or Reuse in Looped Transformers
+arxiv: "2610.19768"
+published: 2026-10-14
+authors:
+  - Peilong Zhou
+  - Hongtao Zhang
+  - Yulong Huang
+  - Cangyuan Li
+  - Mingyu Chen
+  - Ying Wang
+group: core
+summary: "Separates three causes of overthinking in looped transformers on in-context Mealy-machine execution: failed computation, lost retention and non-reusable states. The computation itself is exact, but answers decay with extra loops unless training asks for retention."
+diagram: "[ Block ] × L : position k computed at loop k"
+depth: Trained to answer at loop 32; probed up to loop 64
+kv: See paper
+notes: Models keep only 22% of answers at loop 64 by default; supervising a random position keeps 99.8% and randomized loop counts help, while gradient truncation does not. Even retained states are not reusable when the answer first appears. Synthetic tasks.
+code: ""
+weights: ""
+verified: 2026-10-28

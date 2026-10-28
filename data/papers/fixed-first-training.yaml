@@ -1,0 +1,19 @@
+id: fixed-first-training
+name: Adaptive Depth as a Finishing Stage
+title: Adaptive-Depth Is a Finishing Stage
+arxiv: "2610.14252"
+published: 2026-10-09
+authors:
+  - Andrei Piterbarg
+  - Sean McLeish
+  - Dhruv Pai
+  - Benjamin Keigwin
+group: adaptive
+summary: "Introduces fixed-first training: train a looped model at one fixed depth for most of the run and vary depth only in a short final phase, instead of training across depths from the start."
+diagram: Fixed depth (most of training) → mixed depths (finishing phase)
+depth: Adaptive inference depth learned late in training
+kv: See paper
+notes: At 200M, fixed depth 2 for the first 67% cuts modeled training compute by 45% with mean NLL across depths within 0.5%. At 1B, starting at depth 4 cuts compute by 31–37% and wall-clock time by 32–39% with final NLL within 0.8%.
+code: ""
+weights: ""
+verified: 2026-10-28

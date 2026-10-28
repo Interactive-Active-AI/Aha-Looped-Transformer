@@ -1,0 +1,19 @@
+id: lev
+name: LEV
+title: "LEV: Thinking Fast and Deep with Looped Decision Models"
+arxiv: "2610.20951"
+published: 2026-10-14
+authors:
+  - Dingjie Song
+  - Zhiling Yan
+  - Yuxuan Zhang
+  - Lichao Sun
+group: adaptive
+summary: A decision model that answers typed multiple-option questions in one pass but can think deeper by rerunning its layers in a loop instead of generating text. It reads the options after every loop step, so one checkpoint answers at any depth, and a small stopper sets depth per question.
+diagram: Input + options → [ Looped LM layers ] × r (read options each step) → probabilities
+depth: On-demand depth via a learned stopper
+kv: Not applicable (single-pass decision model)
+notes: A 2.6B LEV rises from 63.2% at depth one to 76.2% at depth four on JevBench. On-demand depth saves 15–24% compute for under one point of accuracy; built on looped pretrained backbones.
+code: https://github.com/OpenLAIR/lev
+weights: https://huggingface.co/songdj/Lev-2.6B
+verified: 2026-10-28

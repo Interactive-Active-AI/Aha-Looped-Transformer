@@ -1,0 +1,20 @@
+id: t2mlr
+name: T²MLR
+title: "T^2MLR: Transformer with Temporal Middle-Layer Recurrence"
+arxiv: "2607.15178"
+published: 2026-07-16
+authors:
+  - Ziyang Cai
+  - Xingyu Zhu
+  - Yihe Dong
+  - Yinghui He
+  - Sanjeev Arora
+group: core
+summary: Temporal Middle-Layer Recurrence fuses a cached middle-layer representation from the previous token into an earlier layer at the current position, letting intermediate computation persist across decoding steps with little overhead and without looping all layers.
+diagram: "token t−1: middle layer → fused into early layer of token t"
+depth: One forward per token; recurrence across time
+kv: Cached middle-layer state from the previous token
+notes: Beats data- and parameter-matched Transformers in pretraining and multi-hop reasoning; recurrence over as little as 20% of the network often beats full-layer recurrence. Can be retrofitted into a pretrained 1.7B model with brief fine-tuning.
+code: ""
+weights: ""
+verified: 2026-10-28

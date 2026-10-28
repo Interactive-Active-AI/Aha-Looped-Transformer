@@ -1,0 +1,16 @@
+id: truncated-backprop-gradient
+name: Lost Gradient under Truncation
+title: How Much Gradient Does Truncated Backprop Lose in Looped Transformers?
+arxiv: "2610.28871"
+published: 2026-10-20
+authors:
+  - Aur Shalev Merin
+group: core
+summary: Measures exactly how much weight gradient truncated backprop discards for every truncation length, across nine looped language models including Parcae and Ouro.
+diagram: Backprop through the last k of R loops → measure discarded gradient
+depth: Analysis of truncated BPTT
+kv: See paper
+notes: The lost share is set near the output and barely changes once R is well above k; on Ouro, keeping two of four loops still loses 81% of the output gradient. The share falls during fine-tuning, and the paper could not show it predicts training cost better than simple rules.
+code: https://github.com/Aur-Shalev-Merin/lost-gradient-looped-transformers
+weights: ""
+verified: 2026-10-28

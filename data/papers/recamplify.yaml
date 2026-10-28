@@ -1,0 +1,20 @@
+id: recamplify
+name: recAMPLIFY
+title: "recAMPLIFY: Large-Scale Pretraining of Recursive Protein Language Models"
+arxiv: "2610.26747"
+published: 2026-10-19
+authors:
+  - Saurav Jha
+  - Qianli Liao
+  - Robert Vernon
+  - Sarath Chandar
+  - Quentin Fournier
+group: core
+summary: "Adapts recursive pretraining to masked protein language models: a weight-tied core refines residue-aligned states over an adjustable number of cycles. Gated Mixture Recurrence then decodes from a probability-weighted mixture of visited states with a learned residual gate, unifying halting and gating."
+diagram: Embed → [ Weight-tied core ] × cycles (gated) → mixture of visited states → decode
+depth: Adjustable cycles; learned halting via GMR
+kv: Not applicable (masked encoder)
+notes: With 155M unique parameters trained on the same 2T tokens as AMPLIFY-350M, it improves contact recovery and three of four supervised tasks, raising fold accuracy by 22.5%. GMR cuts expected depth by up to 37% with task-dependent trade-offs.
+code: ""
+weights: https://huggingface.co/chandar-lab/recamplify
+verified: 2026-10-28

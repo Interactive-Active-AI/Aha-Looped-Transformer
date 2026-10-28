@@ -1,0 +1,18 @@
+id: recurrent-depth-diffusion-sampler
+name: Diffusion-Forcing Sampler
+title: Efficient Parallel Samplers for Recurrent-Depth Models and Their Connection to Diffusion Language Models
+arxiv: "2510.14961"
+published: 2025-10-16
+authors:
+  - Jonas Geiping
+  - Xinyu Yang
+  - Guinan Su
+group: core
+summary: Connects recurrent-depth models to diffusion language models and builds a diffusion-forcing sampler that decodes a new token every forward pass while earlier tokens' latents keep being refined in parallel through recurrence.
+diagram: "Each pass: new token at depth 1 ‖ earlier tokens refined further"
+depth: Recurrence spread across positions in parallel
+kv: See paper
+notes: Applies to existing 3.5B recurrent-depth transformers such as Huginn without tuning, giving up to 5× speedup; generation is argued to be strictly more expressive than autoregressive decoding at the same time budget.
+code: https://github.com/seal-rg/recurrent-pretraining
+weights: ""
+verified: 2026-10-28

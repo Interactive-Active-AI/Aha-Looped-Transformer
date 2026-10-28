@@ -1,0 +1,21 @@
+id: elastic-latent-recurrence
+name: Elastic Latent Recurrence
+title: "One Model to Loop Them All: Elastic Latent Recurrence for Language Models"
+arxiv: "2610.12582"
+published: 2026-10-08
+authors:
+  - Faisal Ladhak
+  - Shantanu Acharya
+  - Santiago Akle Serano
+  - Simeng Sun
+  - Boris Ginsburg
+  - Krishna C Puvvada
+group: adaptive
+summary: A training recipe that removes the one-loop tax of looped language models, so one checkpoint at one loop matches a non-recurrent model of the same size and gains accuracy with each additional loop. It uses gated state updates with learned step size, mixed loop counts per update, and loop-index and budget conditioning.
+diagram: "[ Shared block, gated update ] × r  conditioned on (loop index, budget)"
+depth: "Elastic: 1 to several loops from one checkpoint"
+kv: Keeping only the last loop's KV holds memory at the one-loop level
+notes: On 4B dense and 30B-A3B MoE hybrids, one loop is within about a point of matched baselines and four loops add 7.25 and 4.75 points on a ten-task average. Post-training yields Koi-4B. Mixed depths can be introduced late in pretraining.
+code: ""
+weights: ""
+verified: 2026-10-28

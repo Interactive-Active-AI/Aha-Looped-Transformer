@@ -1,0 +1,22 @@
+id: mimir
+name: Mimir
+title: "Mimir: A Sub-2B Hierarchical Reasoning Model Trained on Permissible Data Punches Above Its Weight Class"
+arxiv: "2608.13517"
+published: 2026-08-13
+authors:
+  - Peter Schneider-Kamp
+  - Jacob Nielsen
+  - Gianluca Barmina
+  - Danial Namazifard
+  - Annemette Brok Pirchert
+  - Kenneth Enevoldsen
+  - Lukas Galke Poech
+group: full
+summary: A 1.78B language model built on the HRM-Text architecture, whose layers form a low-level and a high-level stack applied repeatedly in an interleaved schedule, trained from scratch only on permissibly licensed data.
+diagram: "[ L-stack × n ↔ H-stack ] × m  (interleaved)"
+depth: Fixed schedule; L-stack applications adjustable at inference
+kv: See paper
+notes: Mimir v1.5 reports the best sub-2B average across 20 English, Danish and math/code benchmarks, ahead of HRM-Text 1B and Ouro 1.4B/2.6B. Changing L-stack applications degrades gracefully while changing H-stack applications breaks the model.
+code: https://github.com/schneiderkamplab/HRM-Text
+weights: https://huggingface.co/danish-foundation-models/DFM-Mimir-v1.5
+verified: 2026-10-28

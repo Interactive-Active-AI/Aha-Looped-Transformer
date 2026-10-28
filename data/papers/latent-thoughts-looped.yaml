@@ -1,0 +1,20 @@
+id: latent-thoughts-looped
+name: Reasoning with Latent Thoughts
+title: "Reasoning with Latent Thoughts: On the Power of Looped Transformers"
+arxiv: "2502.17416"
+published: 2025-02-24
+authors:
+  - Nikunj Saunshi
+  - Nishanth Dikkala
+  - Zhiyuan Li
+  - Sanjiv Kumar
+  - Sashank J. Reddi
+group: full
+summary: "Argues that many reasoning problems need depth rather than parameters: a k-layer transformer looped L times nearly matches a kL-layer model on synthetic reasoning, backed by theory that iterative algorithms map onto looped models."
+diagram: "[ k layers ] × L  ≈  kL-layer model"
+depth: Fixed loops L
+kv: See paper
+notes: "The benefit carries to language modeling: looped models compete with or beat deeper non-looped models on downstream reasoning, and scaling tracks effective depth. Also connects looping to chain-of-thought."
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,20 @@
+id: loopspec
+name: LoopSpec
+title: "LoopSpec: Pipelined Self-Speculative Decoding for Looped Transformers"
+arxiv: "2609.17184"
+published: 2026-09-15
+authors:
+  - SangLyul Cho
+  - Langqing Cui
+  - Sehoon Kim
+  - Dongsu Han
+  - Insu Han
+group: full
+summary: "Training-free pipelined self-speculative decoding for looped transformers: drafts from early recurrent states overlap with verification of the current token, and a selective second proposal from a deeper depth improves draft accuracy while keeping decoding lossless."
+diagram: Early-depth draft (t+1) ‖ full-depth verify (t); optional deeper second proposal
+depth: Closed-form optimal proposal depths
+kv: See paper
+notes: Lossless under greedy and sampling; up to 6.83× inference speedup across several looped transformers on reasoning and coding benchmarks.
+code: ""
+weights: ""
+verified: 2026-10-28

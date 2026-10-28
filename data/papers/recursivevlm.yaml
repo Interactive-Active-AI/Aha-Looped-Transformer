@@ -1,0 +1,23 @@
+id: recursivevlm
+name: RecursiveVLM
+title: "Looping Back to Move Forward: Recursive Transformers for Efficient and Flexible Large Multimodal Models"
+arxiv: "2602.09080"
+published: 2026-02-09
+authors:
+  - Ruihan Xu
+  - Yuting Gao
+  - Lan Wang
+  - Jianing Li
+  - Weihao Chen
+  - Qingpei Guo
+  - Ming Yang
+  - Shiliang Zhang
+group: full
+summary: A recursive Transformer for large multimodal models with a Recursive Connector that fuses intermediate hidden states with modality-specific projections across steps, and a Monotonic Recursion Loss that makes quality improve with recursion depth.
+diagram: "[ LMM backbone ] × r  via Recursive Connector (vision / language projections)"
+depth: On-demand recursion depth
+kv: See paper
+notes: Reports +3% over standard Transformers and +7% over vanilla recursive baselines, with few loops on constrained devices and more loops when compute allows.
+code: ""
+weights: ""
+verified: 2026-10-28

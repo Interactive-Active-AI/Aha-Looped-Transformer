@@ -1,0 +1,18 @@
+id: polar
+name: PoLar
+title: Skip a Layer or Loop It? Learning Program-of-Layers in LLMs
+arxiv: "2606.06574"
+published: 2026-06-04
+authors:
+  - Ziyue Li
+  - Yang Li
+  - Tianyi Zhou
+group: adaptive
+summary: Finds that pretrained LLM layers can be skipped or repeated to form a per-input program-of-layers without training, and learns a lightweight network that predicts such execution programs for each input.
+diagram: Input → program predictor → sequence of skipped / repeated pretrained layers
+depth: Per-input layer program (skip or loop)
+kv: See paper
+notes: On mathematical reasoning benchmarks it improves accuracy over standard inference and prior dynamic-depth methods, often with fewer executed layers, and gains persist out of distribution.
+code: https://github.com/tianyi-lab/PoLar
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,16 @@
+id: score
+name: SCORE
+title: "SCORE: Replacing Layer Stacking with Contractive Recurrent Depth"
+arxiv: "2603.10544"
+published: 2026-03-11
+authors:
+  - Guillaume Godin
+group: full
+summary: Replaces layer stacking with a single shared block applied iteratively through a contractive, ODE-inspired update h ← (1 − dt) · h + dt · F(h), using fixed discrete steps and ordinary backpropagation.
+diagram: "[ Single block ] × T:  h ← (1 − dt) h + dt F(h)"
+depth: Fixed number of discrete iterations
+kv: See paper
+notes: Evaluated on graph networks, MLPs and nanoGPT; generally speeds convergence and reduces parameters through sharing. Simple Euler steps give the best cost-performance trade-off.
+code: ""
+weights: ""
+verified: 2026-10-28

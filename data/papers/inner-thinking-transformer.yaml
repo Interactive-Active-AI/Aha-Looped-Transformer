@@ -1,0 +1,25 @@
+id: inner-thinking-transformer
+name: Inner Thinking Transformer
+title: "Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking"
+arxiv: "2502.13842"
+published: 2025-02-19
+authors:
+  - Yilong Chen
+  - Junyuan Shang
+  - Zhenyu Zhang
+  - Yanxi Xie
+  - Jiawei Sheng
+  - Tingwen Liu
+  - Shuohuan Wang
+  - Yu Sun
+  - Hua Wu
+  - Haifeng Wang
+group: adaptive
+summary: "Treats layer computation as implicit thinking steps: Adaptive Token Routing sends critical tokens through extra iterations, Residual Thinking Connections refine them, and Thinking Step Encoding marks each phase."
+diagram: Token → router → [ Layer ] × rᵢ with residual thinking connections
+depth: Adaptive token routing; elastic at inference
+kv: See paper
+notes: From 162M to 466M parameters, a 162M ITT reaches 96.5% of a 466M Transformer's performance and cuts training data by 43.2%, beating Transformer and loop variants on 11 benchmarks.
+code: ""
+weights: ""
+verified: 2026-10-28

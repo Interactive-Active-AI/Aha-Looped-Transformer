@@ -1,0 +1,17 @@
+id: loopicl
+name: LoopICL
+title: "LoopICL: Looping a single transformer block to solve tabular tasks"
+arxiv: "2609.36108"
+published: 2026-09-28
+authors:
+  - Amir Rezaei Balef
+  - Katharina Eggensperger
+group: full
+summary: A tabular foundation model built from a single looped block with coupled cell and row streams refined by within-column and cross-column attention. Varying loop counts in pretraining and a learned exit gate let users trade inference cost for accuracy.
+diagram: "Table → [ Single block: cell stream ↔ row stream ] × r (exit gate) → predictions"
+depth: Variable loops with a learned exit gate
+kv: Not applicable (in-context tabular model)
+notes: Competitive with TabICLv2 on TabArena and TALENT at the same FLOPs while using nearly 90% fewer parameters.
+code: ""
+weights: ""
+verified: 2026-10-28

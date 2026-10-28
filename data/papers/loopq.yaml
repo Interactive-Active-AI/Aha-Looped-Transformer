@@ -1,0 +1,19 @@
+id: loopq
+name: LoopQ
+title: "LoopQ: Quantization for Looped Language Models"
+arxiv: "2605.16343"
+published: 2026-05-08
+authors:
+  - Rui Fang
+  - Hsi-Wen Chen
+  - Chia-Ming Cheng
+  - Ming-Syan Chen
+group: full
+summary: A loop-aware post-training quantization framework that keeps one shared quantized backbone while adding loop-aware activation scaling, selective transformations, cross-loop state alignment and trajectory-aware calibration to limit recursive error.
+diagram: Shared W4A4 backbone × R  + loop-aware scaling and cross-loop alignment
+depth: Fixed loops of the base model
+kv: See paper
+notes: Under W4A4, reports a 67.8% average relative improvement in five-task accuracy across four backbones and about 75% relative perplexity reduction versus the strongest static PTQ baseline.
+code: ""
+weights: ""
+verified: 2026-10-28

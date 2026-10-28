@@ -1,0 +1,20 @@
+id: monitoring-looped-lms
+name: Monitoring Latent Reasoning
+title: Monitoring latent reasoning in looped language models
+arxiv: "2610.18127"
+published: 2026-10-13
+authors:
+  - Pawel Olszowiec
+  - Paulina Tomaszewska
+  - Maciej Żelaszczyk
+  - Michal Byra
+  - Neo Christopher Chung
+group: full
+summary: An interpretability-based inspection protocol with five lenses applied to eight looped language models from four families, asking whether iterations actually improve capability and whether models stay stable under prompt perturbation.
+diagram: Carry loop (prompt only in state) ‖ Re-read loop (prompt re-supplied each iteration)
+depth: Analysis of released models
+kv: See paper
+notes: The key axis is whether the prompt lives only in the looped state (Ouro, LoopUS) or is re-read every iteration (Parcae, Huginn, Rec-OLMo). Findings are framed around safety and efficient use.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,18 @@
+id: how-loops-route
+name: Shared Weights, Selected Computations
+title: "Shared Weights, Selected Computations: How Looped Transformers Route What Each Loop Does"
+arxiv: "2609.39892"
+published: 2026-09-30
+authors:
+  - Jiaju Wu
+  - Yi Hu
+  - Muhan Zhang
+group: core
+summary: Asks whether each loop of a looped transformer repeats the same operation. On graph walks, loops can advance by varying steps, and a learned linear map on the entering hidden state can steer a frozen loop toward different transitions, with attention routing as the causal pathway.
+diagram: Hidden state → J (learned linear) → frozen [ Shared layers ] → selected transition
+depth: Fixed loops; analysis
+kv: See paper
+notes: Changing intermediate supervision during training changes which transitions can be induced, suggesting the steering selects computations learned by the backbone rather than creating new ones.
+code: https://github.com/wjjpku/howloop
+weights: ""
+verified: 2026-10-28

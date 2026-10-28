@@ -1,0 +1,19 @@
+id: looped-udlm
+name: Looped UDLM
+title: Looped Uniform Diffusion Language Models
+arxiv: "2610.30066"
+published: 2026-10-21
+authors:
+  - Saiteja Utpala
+  - Chieh-Hsin Lai
+  - Yuki Mitsufuji
+  - Praneeth Vepakomma
+group: core
+summary: Applies selective looping, which repeats a few early layers inside each denoising step, to uniform diffusion language models without changing their objective or sampler.
+diagram: "Each denoising step: [ Early layers ] × k → remaining layers"
+depth: Loop count sampled during training; chosen at inference
+kv: Not an autoregressive cache setting; see paper
+notes: Reaches a non-looped UDLM's validation NLL with up to 2.8× (OpenWebText) and 3.3× (FineWeb-Edu) fewer training FLOPs. Sampling small loop counts more often during training uses 12% fewer loops downstream without hurting accuracy.
+code: ""
+weights: ""
+verified: 2026-10-28

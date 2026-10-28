@@ -1,0 +1,19 @@
+id: t-loopformer
+name: T-LoopFormer
+title: "T-LoopFormer: Token-Level Elastic-Depth Looped Transformers with Dynamic Routing"
+arxiv: "2609.15160"
+published: 2026-09-14
+authors:
+  - Mingqian Yu
+  - Wenpeng Zhang
+  - Shaobo Cui
+  - Peilin Zhao
+group: adaptive
+summary: "Token-level elastic depth for looped transformers: a token-choice router lets each token pick its number of loop iterations from its hidden state, and a recursion-wise KV cache keeps a separate cache per loop for active tokens."
+diagram: Token → router → [ Shared block ] × rᵢ  (per-token depth)
+depth: Token-choice routing
+kv: Recursion-wise KV cache per loop
+notes: Uses LoopFormer as a baseline. Reports robust language modeling and zero-shot reasoning with the lowest decoding latency among compared models.
+code: https://github.com/YuMingQian1234/T-LoopFormer
+weights: ""
+verified: 2026-10-28

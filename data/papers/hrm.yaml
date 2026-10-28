@@ -1,0 +1,24 @@
+id: hrm
+name: Hierarchical Reasoning Model
+title: Hierarchical Reasoning Model
+arxiv: "2506.21734"
+published: 2025-06-26
+authors:
+  - Guan Wang
+  - Jin Li
+  - Yuhao Sun
+  - Xing Chen
+  - Changling Liu
+  - Yue Wu
+  - Meng Lu
+  - Sen Song
+  - Yasin Abbasi Yadkori
+group: core
+summary: "A brain-inspired recurrent architecture with two interdependent modules: a slow high-level module for abstract planning and a fast low-level module for detailed computation, solving sequential reasoning tasks in one forward pass without intermediate supervision."
+diagram: "[ L-module × T → H-module update ] × N"
+depth: Nested two-timescale recurrence
+kv: Not applicable (puzzle solver)
+notes: With 27M parameters and about 1000 training examples, reports near-perfect results on hard Sudoku and large mazes and strong ARC performance without pretraining or CoT data. Later analyses (for example, Dissecting HRM and TRM) question how much the hierarchy itself contributes.
+code: https://github.com/sapientinc/HRM
+weights: ""
+verified: 2026-10-28

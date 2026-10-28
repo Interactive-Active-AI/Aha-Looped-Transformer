@@ -1,0 +1,22 @@
+id: looped-prediction-transformer
+name: Looped Prediction Transformer
+title: The Surprising Effectiveness of Shared Memory in Looped Transformers
+arxiv: "2610.02383"
+published: 2026-10-01
+authors:
+  - Giovanni Monea
+  - Keshav Ramji
+  - Yousef El-Kurdi
+  - Luis A. Lastras
+  - Yoav Artzi
+  - Nathan Godey
+  - Ramón Fernandez Astudillo
+group: full
+summary: Pretrains looped models in which only the first recursion writes a KV cache and later recursions read it while keeping a short local window, so memory does not grow with loops. Sharing memory improves rather than hurts quality.
+diagram: Recursion 1 writes shared KV → recursions 2…R read it + short local window
+depth: Fixed recursions (five in the main results)
+kv: Shared first-recursion cache plus a short per-recursion window
+notes: From 150M to 1B, the hybrid variant with five recursions lowers FineWeb-Edu perplexity by 1.12–1.82 versus a same-size Transformer while using 76–79% less context memory. Later recursions mostly attend to the shared memory, which also acts as a gradient highway.
+code: ""
+weights: ""
+verified: 2026-10-28

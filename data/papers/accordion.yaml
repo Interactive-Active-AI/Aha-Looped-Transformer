@@ -1,0 +1,20 @@
+id: accordion
+name: Accordion
+title: "Accordion: Elastic-Depth Inference via Fixed-Prefix Layer Looping"
+arxiv: "2610.32492"
+published: 2026-10-23
+authors:
+  - Yudong Zhang
+  - Wei Ding
+  - Kaili Zheng
+  - Yuchen Ding
+  - Zhenyu Zhang
+group: adaptive
+summary: A mixture-of-experts model that serves five inference budgets through fixed-prefix layer looping, with the smallest budget equal to the unlooped model. Pretraining samples one budget per micro-batch, and SFT and RL with budget-matched multi-teacher distillation preserve every budget.
+diagram: Unlooped path → fixed-prefix layer looping for budgets 1…5
+depth: Five predefined execution paths chosen at inference
+kv: See paper
+notes: After 3.6T pretraining tokens, the deepest budget raises Accordion-6B-A0.5B's macro-average over 37 tasks by 3.01 points; the middle budget captures 89% of the gain with half the extra layer executions.
+code: ""
+weights: ""
+verified: 2026-10-28

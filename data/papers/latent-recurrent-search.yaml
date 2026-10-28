@@ -1,0 +1,17 @@
+id: latent-recurrent-search
+name: Latent Recurrent Search
+title: "Not All Thinking is Created Equal: Latent Reasoning Discovers a Recurrent Search Algorithm for Depth Generalization"
+arxiv: "2609.35643"
+published: 2026-09-28
+authors:
+  - Huzi Cheng
+  - Zhewei Zhang
+group: core
+summary: Compares vanilla, chain-of-thought, pause-token and two latent-reasoning variants of one backbone trained on extended multi-hop reasoning. Only the latent variants generalize to longer hops, and circuit analysis finds a sparse recurrent forward-search circuit propagating reachability across steps.
+diagram: Retrieve relations (attention) → update reachability (MLP + residual) × steps → match
+depth: Recurrent latent steps beyond the training depth
+kv: See paper
+notes: "Strong in-distribution accuracy does not imply depth generalization: CoT and pause-token models rely on local graph features. Results are on the synthetic ProsQA-Ext task."
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,22 @@
+id: uploop
+name: UpLoop
+title: "UpLoop: Upcycling Large Language Models with Gated Loop"
+arxiv: "2610.25004"
+published: 2026-10-18
+authors:
+  - Tieyuan Chen
+  - Huabin Liu
+  - Yingtao Zhang
+  - Shijie Li
+  - Tengyu Pan
+  - Weiyao Lin
+  - Jianguo Li
+group: core
+summary: A post-training recipe that upcycles a pretrained LLM into a looped one by looping selected layers locally rather than the whole stack, with hidden-wise gates on attention and MLP residuals so later loops refine instead of rewrite.
+diagram: "Selected layer: [ gated attention + gated MLP ] × R"
+depth: R = 3 main setting; native and extrapolated R = 4
+kv: See paper
+notes: Starting from Qwen3-4B Base with SFT, R = 3 improves the 20-benchmark average by 6.17%. The authors report breaking the common saturation at two loops.
+code: ""
+weights: ""
+verified: 2026-10-28

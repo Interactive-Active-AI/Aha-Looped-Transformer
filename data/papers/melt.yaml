@@ -1,0 +1,21 @@
+id: melt
+name: MELT
+title: "Memory-Efficient Looped Transformer: Decoupling Compute from Memory in Looped Language Models"
+arxiv: "2605.07721"
+published: 2026-05-08
+authors:
+  - Victor Conchello Vendrell
+  - Arnau Padres Masdemont
+  - Niccolò Grillo
+  - Jordi Ros-Giralt
+  - Arash Behboodi
+  - Fabio Valerio Massoli
+group: full
+summary: The Memory-Efficient Looped Transformer keeps one KV cache per layer shared across reasoning loops and updated by a learnable gate, decoupling reasoning depth from memory. It is obtained from Ouro by chunk-wise two-phase post-training with interpolation and attention-aligned distillation.
+diagram: "[ Layer ] × R  with one gated KV cache per layer across loops"
+depth: Fixed reasoning loops
+kv: Single gated KV cache per layer shared across loops
+notes: MELT models fine-tuned from Ouro outperform standard LLMs of similar size at a comparable memory footprint, far below Ouro's.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,17 @@
+id: readout-blind-spot
+name: Readout Blind Spot
+title: "Dense Supervision Is Not Enough: The Readout Blind Spot in Looped Language Models"
+arxiv: "2606.24898"
+published: 2026-06-12
+authors:
+  - Rituraj Sharma
+  - Tu Vu
+group: full
+summary: Shows that dense per-loop cross-entropy only controls state variables visible to the readout. Scale-invariant readouts such as RMSNorm hide radial scale from the loss while pre-norm residual recurrence keeps growing it, so early exits work but recurrent scale goes unchecked.
+diagram: "[ Block ] × R → RMSNorm readout (scale hidden) per loop"
+depth: Variable inference depth
+kv: See paper
+notes: In 44M and 129M looped models without inter-loop normalization, hidden-state norms reach thousands or tens of thousands; scale-visible readouts, norm penalties or scale-removing recurrence keep them in the tens and lower perplexity at matched depth.
+code: ""
+weights: ""
+verified: 2026-10-28

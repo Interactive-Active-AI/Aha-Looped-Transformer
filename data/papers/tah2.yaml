@@ -1,0 +1,22 @@
+id: tah2
+name: TaH2
+title: Improving Test-Time Scaling with Adaptive Looped Transformers
+arxiv: "2609.35748"
+published: 2026-09-28
+authors:
+  - Yichen You
+  - Tianyu Fu
+  - Aosong Feng
+  - Xingtai Lv
+  - Xuefei Ning
+  - Ning Ding
+  - Yu Wang
+group: adaptive
+summary: Studies whether looping improves test-time scaling as outputs grow longer and finds fixed-depth looping wastes iterations on tokens that do not benefit. TaH2 post-trains the backbone with an iteration decider supervised by online lookahead labels indicating whether another iteration improves the prediction.
+diagram: "Token → [ Shared layers ] → decider: iterate again? → … → output"
+depth: Token-level adaptive iterations up to a maximum depth
+kv: See paper
+notes: On AIME it improves the accuracy-compute slope by 53% over the non-looped baseline and exceeds its peak accuracy by about 3.4 points at matched compute. Gains over the baseline grow from +2.8 at depth 2 to +3.9 at depth 8.
+code: https://github.com/thu-nics/TaH
+weights: https://huggingface.co/nics-efc/TaH2-1.7B-Standard
+verified: 2026-10-28

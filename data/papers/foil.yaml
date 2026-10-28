@@ -1,0 +1,24 @@
+id: foil
+name: Foil
+title: "How to Loop MoE: Flatten the Experts, Untie the Attention"
+arxiv: "2609.35751"
+published: 2026-09-28
+authors:
+  - Shouren Wang
+  - Chuang Ma
+  - Mohsen Hariri
+  - Debargha Ganguly
+  - Wang Yang
+  - Xiaoqing Tong
+  - Qianying Liu
+  - Xiaotian Han
+  - Vipin Chaudhary
+group: full
+summary: "Answers how to loop a mixture-of-experts model at fixed expert parameters and compute: flatten the experts by halving expert layers, doubling experts per layer and doubling passes, and untie attention so each pass has its own attention while experts and routers stay shared."
+diagram: "[ Untied attention + shared wide MoE ] × 2k  (flattened from k layers)"
+depth: More passes over fewer, wider expert layers
+kv: Per-pass attention parameters
+notes: At 100B tokens, loss improves monotonically with flattening; the most flattened model ends 0.012 nat below the looped baseline at equal parameters and compute. Untying attention gives more balanced, confident routing.
+code: https://github.com/SR-A-W/how-to-loop-moe
+weights: https://huggingface.co/ShourenWSR/how-to-loop-moe
+verified: 2026-10-28

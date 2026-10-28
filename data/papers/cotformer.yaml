@@ -1,0 +1,18 @@
+id: cotformer
+name: CoTFormer
+title: "CoTFormer: A Chain-of-Thought Driven Architecture with Budget-Adaptive Computation Cost at Inference"
+arxiv: "2310.10845"
+published: 2023-10-16
+authors:
+  - Amirkeivan Mohtashami
+  - Matteo Pagliardini
+  - Martin Jaggi
+group: adaptive
+summary: Observes that chain-of-thought resembles reapplying a model several times, except that later passes attend to earlier passes' tokens. CoTFormer mimics this at the token level and pairs it with token-wise variable depth chosen by a compute-adaptive router.
+diagram: "[ Model ] × r with attention to earlier passes' tokens; router picks rᵢ"
+depth: Budget-adaptive per-token depth
+kv: Keeps KV from every earlier pass
+notes: Reaches accuracy close to much larger models and lowers computation through adaptive allocation. A later study (LSTM-UT) finds its full cache can hurt extrapolation on cellular-automaton tasks.
+code: https://github.com/epfml/CoTFormer
+weights: ""
+verified: 2026-10-28

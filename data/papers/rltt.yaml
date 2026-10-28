@@ -1,0 +1,17 @@
+id: rltt
+name: RLTT
+title: "Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models"
+arxiv: "2602.10520"
+published: 2026-02-11
+authors:
+  - Jonathan Williams
+  - Esin Tureci
+group: full
+summary: Reward Latent Thought Trajectories distributes RL reward across the full latent reasoning trajectory of a looped model instead of only the final latent state, as a drop-in replacement for GRPO.
+diagram: "[ Shared stack ] × R → reward assigned across all latent steps"
+depth: Fixed loops of the base model
+kv: See paper
+notes: On Ouro-1.4B/2.6B-Thinking it improves mean accuracy on MATH-500, AIME24/26 and BeyondAIME by 5.8% and 10.9% over GRPO, and transfers to non-math reasoning despite math-only training.
+code: https://github.com/jonwill8/RLTT
+weights: ""
+verified: 2026-10-28

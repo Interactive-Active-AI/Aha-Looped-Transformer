@@ -1,0 +1,19 @@
+id: loop-agreement
+name: Agreement, Not Normalisation
+title: Agreement rather than normalisation keeps depth reusable in looped language models
+arxiv: "2610.31943"
+published: 2026-10-22
+authors:
+  - Ivan Viakhirev
+  - Kirill Borodin
+  - Maxim Abramov
+  - Grach Mkrtchian
+group: full
+summary: Asks what keeps extra loop steps usable beyond the trained budget. Removing Ouro's loop-boundary normalisation breaks the released models without norm blow-up, yet small models trained without it extrapolate better, suggesting that agreement between the training and inference loop is what matters.
+diagram: "[ Block ] × R  with or without loop-boundary normalisation"
+depth: Extrapolation beyond the trained loop budget
+kv: See paper
+notes: The damage concentrates in the readout and last block layer. At matched overshoot of the trained budget, the advantage of looped over stacked depth vanishes on one synthetic task and shrinks on the other.
+code: ""
+weights: ""
+verified: 2026-10-28

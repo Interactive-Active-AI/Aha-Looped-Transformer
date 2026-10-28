@@ -1,0 +1,20 @@
+id: loopy
+name: Loopy
+title: "Loopy: Low-Bit Quantization Framework for Looped Language Models"
+arxiv: "2610.05265"
+published: 2026-10-04
+authors:
+  - Zeyu Li
+  - Yipu Zhang
+  - Jintao Cheng
+  - Xin Li
+  - Wei Zhnag
+group: full
+summary: A post-training quantization framework that selects shared-core low-bit representations by their final prediction loss at the target deployment depth, because the ranking of quantization configurations changes with recurrent depth. Calibration windows are allocated progressively to promising candidates using forward passes only.
+diagram: Candidate rotations / scalings → evaluate at target depth R → shared low-bit core
+depth: Quantization tuned for a target deployment depth
+kv: See paper
+notes: State of the art among compared baselines in eight settings; on Ouro-1.4B under W4A4 it lowers LAMBADA perplexity by 36.5% relative to SpinQuant.
+code: ""
+weights: ""
+verified: 2026-10-28

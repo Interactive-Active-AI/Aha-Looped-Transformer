@@ -1,0 +1,22 @@
+id: recursive-reasoning-limits
+name: What Limits Recursive Reasoning
+title: "What Limits Recursive Reasoning Models: Optimization, Architecture and Test-Time Scaling"
+arxiv: "2609.39967"
+published: 2026-09-30
+authors:
+  - Yuliana Shakhvalieva
+  - Dmitrii Kharchev
+  - Viacheslav Bezrukov
+  - Inessa Fedorova
+  - Dmitry Bocharov
+  - Ivan Oseledets
+  - Valerii Ternovskii
+group: core
+summary: "Puts HRM, TRM and URM-style recursive reasoners into one experimental pipeline across six algorithmic domains to separate the effects of architecture, gradient propagation and training procedure. A simple recipe emerges: an intermediate gradient horizon, large physical batches and controlled recurrent-state updates, with no explicit hierarchy needed."
+diagram: "[ Small shared block ] × N  refining a latent state"
+depth: Many recurrent steps with an intermediate gradient horizon
+kv: Not applicable (non-autoregressive solver); see paper
+notes: The resulting 13.6M-parameter model raises Arithmetic OOD accuracy to 71.2% from 36.2%, reaches 98.41% on Sudoku and 59.5% pass@2 on ARC-AGI-1.
+code: ""
+weights: ""
+verified: 2026-10-28

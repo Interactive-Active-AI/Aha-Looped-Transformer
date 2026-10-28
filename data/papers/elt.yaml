@@ -1,0 +1,21 @@
+id: elt
+name: ELT
+title: "ELT: Elastic Looped Transformers for Visual Generation"
+arxiv: "2604.09168"
+published: 2026-04-10
+authors:
+  - Sahil Goyal
+  - Swayam Agrawal
+  - Gautham Govind Anil
+  - Prateek Jain
+  - Sujoy Paul
+  - Aditya Kusupati
+group: adaptive
+summary: Elastic Looped Transformers for image and video generation use weight-shared blocks and Intra-Loop Self Distillation, distilling intermediate-loop students from the maximum-loop teacher in one training step, to obtain a family of any-time models from a single run.
+diagram: "[ Shared generative block ] × r,  r ∈ {1 … R} distilled from r = R"
+depth: Any-time inference at chosen loop count
+kv: Not applicable (generative visual model)
+notes: With 4× fewer parameters at iso-inference compute, reaches FID 2.0 on class-conditional ImageNet 256×256 and FVD 72.8 on UCF-101.
+code: ""
+weights: ""
+verified: 2026-10-28

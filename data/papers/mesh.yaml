@@ -1,0 +1,26 @@
+id: mesh
+name: MeSH
+title: "MeSH: Memory-as-State-Highways for Recursive Transformers"
+arxiv: "2510.07739"
+published: 2025-10-09
+authors:
+  - Chengting Yu
+  - Xiaobo Shu
+  - Yadao Wang
+  - Yizhen Zhang
+  - Haoyi Wu
+  - Jiaang Li
+  - Rujiao Long
+  - Ziheng Chen
+  - Yuchi Xu
+  - Wenbo Su
+  - Bo Zheng
+group: core
+summary: Memory-as-State-Highways externalizes state management of recursive transformers into an explicit memory buffer with lightweight routers, addressing undifferentiated computation across iterations and overload of a single hidden state.
+diagram: "[ Recursive core ] × r  ↔ memory buffer (read / write routers)"
+depth: Fixed iterations
+kv: Explicit memory buffer across iterations
+notes: On Pythia 160M–6.9B it beats recursive baselines and, at 1.4B, outperforms the larger non-recursive model by 1.06 points with 33% fewer non-embedding parameters.
+code: https://github.com/LivingFutureLab/MeSH/
+weights: ""
+verified: 2026-10-28

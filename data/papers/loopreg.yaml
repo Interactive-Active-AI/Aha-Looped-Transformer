@@ -1,0 +1,35 @@
+id: loopreg
+name: LoopREG
+title: "LoopREG: Representation Supervision Enables Test-Time Recurrent Depth in Diffusion Transformers"
+arxiv: "2610.17877"
+published: 2026-10-13
+authors:
+  - Zipeng Wang
+  - Anping Xiong
+  - Jing Zhang
+  - Xiaoya Zhu
+  - Yi Jiang
+  - Yanbing Xiao
+  - Zige Zeng
+  - Zezhou Chen
+  - Xiang Liu
+  - Huan Hu
+  - Ping Chen
+  - Kai Wang
+  - Zhaoxiang Liu
+  - Shiguo Lian
+  - Ye LV
+  - Fang Zhao
+  - Huanlin Gao
+  - Zhengrui Huang
+  - Bo Shen
+  - Yuren You
+group: core
+summary: A recurrent diffusion Transformer that repeatedly applies a shared block at a state aligned to a pretrained visual encoder after the final recurrent visit, so inference can extend the same operator to additional visits.
+diagram: "[ Shared DiT block ] × visits → representation alignment (training)"
+depth: Extra inference visits beyond training
+kv: Not applicable (diffusion)
+notes: On ImageNet 256×256, SiT-B/2 FID drops from 15.08 to 4.91 at 400K steps versus the REG baseline; one extra inference visit on a two-visit checkpoint improves FID from 14.71 to 5.34. Holds for SiT-L/2 and SiT-XL/2.
+code: ""
+weights: ""
+verified: 2026-10-28

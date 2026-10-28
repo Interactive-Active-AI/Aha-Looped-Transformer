@@ -1,0 +1,34 @@
+id: loopcoder-v2
+name: LoopCoder-v2
+title: "LoopCoder-v2: Only Loop Once for Efficient Test-Time Computation Scaling"
+arxiv: "2606.18023"
+published: 2026-06-16
+authors:
+  - Jian Yang
+  - Shawn Guo
+  - Wei Zhang
+  - Tianyu Zheng
+  - Yaxin Du
+  - Haau-Sing Li
+  - Jiajun Wu
+  - Yue Song
+  - Yan Xing
+  - Qingsong Cai
+  - Zelong Huang
+  - Chuan Hao
+  - Ran Tao
+  - Xianglong Liu
+  - Wayne Xin Zhao
+  - Mingjie Tang
+  - Weifeng Lv
+  - Ming Zhou
+  - Bryan Dai
+group: full
+summary: Trains a family of 7B Parallel Loop Transformer coders with different loop counts from scratch on 18T tokens to study loop-count selection as a gain–cost trade-off between extra refinement and the positional mismatch introduced by cross-loop position offsets.
+diagram: "PLT: [ Stack ] × 2 with cross-loop position offsets + shared-KV gated sliding window"
+depth: Two loops best; three or more regress
+kv: Shared KV with gated sliding-window attention (PLT)
+notes: The two-loop model raises SWE-bench Verified from 43.0 to 64.4 and Multi-SWE from 14.0 to 31.0 over the non-looped baseline. Loop 2 provides the main refinement while later loops oscillate.
+code: ""
+weights: https://huggingface.co/Multilingual-Multimodal-NLP/LoopCoder-V2
+verified: 2026-10-28

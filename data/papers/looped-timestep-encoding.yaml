@@ -1,0 +1,17 @@
+id: looped-timestep-encoding
+name: Timestep Encoding for Loops
+title: "On Expressive Power of Looped Transformers: Theoretical Analysis and Enhancement via Timestep Encoding"
+arxiv: "2410.01405"
+published: 2024-10-02
+authors:
+  - Kevin Xu
+  - Issei Sato
+group: full
+summary: Establishes approximation rates of looped transformers for sequence-to-sequence functions via a modulus of continuity, revealing a looped-specific limitation that per-loop scaling parameters conditioned on timestep encoding can remove.
+diagram: "[ Block, scaled by timestep encoding(t) ] × T"
+depth: Fixed loops with timestep conditioning
+kv: See paper
+notes: Experiments show more loops improve performance, with further gains from timestep encoding.
+code: ""
+weights: ""
+verified: 2026-10-28

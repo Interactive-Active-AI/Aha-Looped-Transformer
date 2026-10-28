@@ -1,0 +1,21 @@
+id: programmable-computers
+name: Looped Transformers as Programmable Computers
+title: Looped Transformers as Programmable Computers
+arxiv: "2301.13196"
+published: 2023-01-30
+authors:
+  - Angeliki Giannou
+  - Shashank Rajput
+  - Jy-yong Sohn
+  - Kangwook Lee
+  - Jason D. Lee
+  - Dimitris Papailiopoulos
+group: full
+summary: Programs a fixed-weight transformer and places it in a loop so the input sequence acts as a punchcard of instructions and memory, emulating a small instruction-set computer with a 13-layer looped encoder.
+diagram: Punchcard input → [ 13-layer programmed transformer ] × steps
+depth: Loop until the program halts
+kv: Not applicable (constructive encoder)
+notes: "A constructive theory result: the looped transformer emulates a calculator, a basic linear-algebra library and in-context learning via backpropagation. Weights are hand-constructed, not trained."
+code: ""
+weights: ""
+verified: 2026-10-28

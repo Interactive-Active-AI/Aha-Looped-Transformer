@@ -1,0 +1,27 @@
+id: plt
+name: Parallel Loop Transformer
+title: Parallel Loop Transformer for Efficient Test-Time Computation Scaling
+arxiv: "2510.24824"
+published: 2025-10-28
+authors:
+  - Bohong Wu
+  - Mengzhao Chen
+  - Xiang Luo
+  - Shen Yan
+  - Qifan Yu
+  - Fan Xia
+  - Tianqi Zhang
+  - Hongrui Zhan
+  - Zheng Zhong
+  - Xun Zhou
+  - Siyuan Qiao
+  - Xingyan Bin
+group: full
+summary: Removes the sequential latency of looping with Cross-Loop Parallelism, which computes different loops for different tokens in the same pass, and controls memory by sharing the first loop's KV cache with later loops combined through gated sliding-window attention.
+diagram: "Token t: loop 1 ‖ token t−1: loop 2 ‖ … in one pass; shared KV + gated SWA"
+depth: Fixed loops executed in parallel across tokens
+kv: First-loop KV shared across loops plus gated sliding-window attention
+notes: Reports looped-model accuracy with almost no extra latency or memory over a standard transformer. LoopCoder-v2 later trains 7B PLT coders and finds two loops optimal.
+code: ""
+weights: ""
+verified: 2026-10-28

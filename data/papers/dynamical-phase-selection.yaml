@@ -1,0 +1,16 @@
+id: dynamical-phase-selection
+name: Dynamical Phase Selection
+title: Dynamical phase selection controls compute scaling in looped transformers
+arxiv: "2608.26556"
+published: 2026-08-27
+authors:
+  - Gunn Kim
+group: core
+summary: Shows that looped networks with the same architecture, objective and accuracy can land in different dynamical phases depending on initialization, and that the bifurcation type of each phase, such as a saddle-node fold or a Neimark–Sacker transition, sets how test-time compute scales.
+diagram: Weight-tied map iterated → fold phase vs Neimark–Sacker phase
+depth: Test-time iterations governed by critical slowing down
+kv: See paper
+notes: In the fold phase a normal-form reduction predicts relaxation time from local derivatives and implies a workload tail P(τ > N) ~ N⁻²; in the Neimark–Sacker phase this law disappears. Theory with small-scale experiments.
+code: ""
+weights: ""
+verified: 2026-10-28

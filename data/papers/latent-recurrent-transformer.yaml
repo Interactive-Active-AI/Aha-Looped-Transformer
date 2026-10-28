@@ -1,0 +1,26 @@
+id: latent-recurrent-transformer
+name: Latent Recurrent Transformer
+title: "Latent Recurrent Transformer: Architecture Exploration, Training Strategies, and Scaling Behavior"
+arxiv: "2605.26797"
+published: 2026-05-26
+authors:
+  - Zeyi Huang
+  - Xuehai He
+  - LiLiang Ren
+  - Yiping Wang
+  - Baolin Peng
+  - Hao Cheng
+  - Shuohang Wang
+  - Pengcheng He
+  - Jianfeng Gao
+  - Yong Jae Lee
+  - Yelong Shen
+group: core
+summary: Reuses a high-level hidden state from the previous token as recurrent memory for the next token, adding a cross-token, cross-layer pathway while keeping standard attention, KV cache and one forward per token. Interleaved parallel training avoids sequential unrolling during pretraining.
+diagram: "token t−1: high-level state → input of token t (one forward per token)"
+depth: Recurrence across tokens
+kv: Standard KV cache interface
+notes: On 1.3B and 2.1B nanochat-style backbones it improves BPB and CORE at matched effective compute, beats two-forward PonderLM-2 and matches a three-loop Transformer in BPB with 9% latency overhead.
+code: ""
+weights: ""
+verified: 2026-10-28

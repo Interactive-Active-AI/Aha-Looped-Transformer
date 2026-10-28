@@ -1,0 +1,19 @@
+id: loop-think-generalize
+name: Loop, Think & Generalize
+title: "Loop, Think, & Generalize: Implicit Reasoning in Recurrent-Depth Transformers"
+arxiv: "2604.07822"
+published: 2026-04-09
+authors:
+  - Harsh Kohli
+  - Srinivasan Parthasarathy
+  - Huan Sun
+  - Yuekun Yao
+group: core
+summary: Studies implicit multi-hop reasoning in recurrent-depth transformers trained from scratch, covering systematic generalization over never-composed facts and depth extrapolation from up to 5-hop training to deeper compositions.
+diagram: "[ Shared layers ] × r  — more iterations for more hops"
+depth: Scaling inference-time recurrence for deeper reasoning
+kv: See paper
+notes: Systematic generalization emerges through a three-stage grokking process; depth extrapolation is unlocked by more inference-time iterations, where vanilla transformers fail at both.
+code: ""
+weights: ""
+verified: 2026-10-28

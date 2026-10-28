@@ -1,0 +1,20 @@
+id: looplook
+name: LoopLook
+title: "Loop to Look Better: Learning Adaptive Depth for Question-Guided Perception in Vision-Language Models"
+arxiv: "2610.30824"
+published: 2026-10-22
+authors:
+  - Wencheng Ye
+  - Anning Hu
+  - Hongye Fang
+  - Tianyi Wang
+  - Junchi Yan
+group: adaptive
+summary: Adds adaptive recurrent perception to pretrained vision-language models by revisiting a middle-to-late window of the vision encoder with the question injected at each loop. A learned stopper sets the depth and a token-wise Mixture-of-Looks blends features from different loops.
+diagram: "Vision encoder: [ mid-late window + question ] × r (learned stop) → Mixture-of-Looks → LLM"
+depth: Learned stopping per input
+kv: Not applicable (encoder-side)
+notes: Across four backbones and eight benchmarks, gains reach 8.6% on MMStar and 8.1% on HallusionBench, while time to first token rises only 5.1–6.5%.
+code: ""
+weights: ""
+verified: 2026-10-28

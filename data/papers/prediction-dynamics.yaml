@@ -1,0 +1,17 @@
+id: prediction-dynamics
+name: Prediction Dynamics
+title: Prediction Dynamics in Depth-Recurrent Language Models
+arxiv: "2609.21383"
+published: 2026-09-18
+authors:
+  - Xinyue Luo
+  - Fei Yu
+group: core
+summary: Explains why intermediate answers of depth-recurrent models can already match the endpoint while scores keep changing, with a margin characterization that separates common translation, direction relative to the winner, and pairing of competitor updates with score gaps.
+diagram: Latent update per step → score changes decomposed (common vs contrast)
+depth: Analysis of finite-depth answer preservation
+kv: See paper
+notes: On Huginn-3.5B and Ouro-1.4B, accounting for direction and pairing lowers the earliest qualifying depth by a further 22.5–34.4% of total depth. Retrospective analysis of completed trajectories.
+code: ""
+weights: ""
+verified: 2026-10-28

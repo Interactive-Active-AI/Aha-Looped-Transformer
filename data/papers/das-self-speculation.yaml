@@ -1,0 +1,24 @@
+id: das-self-speculation
+name: Depth-Asynchronous Self-Speculation
+title: "Shallow Queries, Mature Values: Depth-Asynchronous Self-Speculation for Looped Transformers"
+arxiv: "2609.34538"
+published: 2026-09-28
+authors:
+  - Guanghao Li
+  - Zihan Su
+  - Hao Yu
+  - Jinyang Jiang
+  - Tao Ren
+  - Zehao Li
+  - Feng Lu
+  - Ming Tang
+  - Chun Yuan
+group: core
+summary: Observes that queries and keys reach their final-depth form earlier than values. DAS lets shallow draft queries read full-depth prefix values without extra recurrence, and DAS-Wave adds parallel refinement, progressive block growth and an independent full-depth verifier.
+diagram: Shallow draft queries → mature full-depth prefix values → full-depth verifier
+depth: Draft at early depth, verify at full depth
+kv: Draft reads full-depth prefix values (Mature-V)
+notes: Across four recurrent-model checkpoints on math and code, DAS-Wave reaches 4.00–6.96× mean throughput speedup over full-depth autoregressive decoding in the same stack.
+code: ""
+weights: ""
+verified: 2026-10-28

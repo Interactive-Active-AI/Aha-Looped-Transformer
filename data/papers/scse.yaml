@@ -1,0 +1,21 @@
+id: scse
+name: SCSE
+title: Looped Transformers with Source-Centered State Evolution
+arxiv: "2607.27656"
+published: 2026-07-30
+authors:
+  - Bum Jun Kim
+  - Kohei Hayashi
+  - Shunsuke Kamiya
+  - Masanori Koyama
+  - Yusuke Iwasawa
+  - Yutaka Matsuo
+group: core
+summary: "Source-Centered State Evolution reconciles input conditioning with shared recurrence: inputs enter through a learned anchor and initial deviation, zero deviation maps to zero, and the anchor is an exact fixed point, removing the forcing bias of additive input injection."
+diagram: state = anchor(x) + deviation;  [ Block ] × R on deviation (zero ↦ zero)
+depth: Trained and extrapolated recurrent depth
+kv: See paper
+notes: Improves the controlled recurrent quality frontier on WikiText-2/103, web pretraining, held-out transfer and LAMBADA; ablations credit the learned anchor and anchor invariance.
+code: ""
+weights: ""
+verified: 2026-10-28

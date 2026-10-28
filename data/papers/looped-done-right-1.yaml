@@ -1,0 +1,22 @@
+id: looped-done-right-1
+name: Looped Models Done Right I
+title: "Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design"
+arxiv: "2610.23036"
+published: 2026-10-16
+authors:
+  - Benhao Huang
+  - Chufan Shi
+  - Junlin Chen
+  - Shicheng Wen
+  - Zhengzhong Liu
+  - Eric Xing
+  - Xuezhe Ma
+group: core
+summary: "Disentangles three design axes of looped language models trained from scratch at matched parameters, logical depth and tokens: where recurrence sits, how input is injected, and how recurrent state is organized. The prelude–recurrent–coda sandwich and input injection come out ahead, favoring the Huginn-style design over Ouro."
+diagram: Prelude → [ Recurrent block ] × R (input injection) → Coda
+depth: Fixed, matched logical depth
+kv: See paper
+notes: At 730M parameters and 336B tokens the full Huginn design beats Ouro on all ten benchmarks, and the advantage transfers to an 8B-A0.8B MoE trained on 500B tokens. Separate H/L states and random state initialization give mixed or negative returns.
+code: https://github.com/ifm-ai/xllm-loop
+weights: ""
+verified: 2026-10-28

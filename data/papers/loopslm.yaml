@@ -1,0 +1,23 @@
+id: loopslm
+name: LoopSLM
+title: "Thinking in Depth, Speaking Directly: Recurrent Latent Reasoning for Paralinguistically Grounded Spoken Dialogue"
+arxiv: "2609.37818"
+published: 2026-09-29
+authors:
+  - Shengbo Cai
+  - Yuxiang Wang
+  - Jingran Xie
+  - Zhisheng Zhang
+  - Shun Lei
+  - Di Cao
+  - Teddy Sun
+  - Zhiyong Wu
+group: core
+summary: A spoken dialogue model that reuses a decoder block for latent reasoning with acoustic grounding at every pass, trained in two stages that separate learning to reason from learning to respond so it can reply directly without chain-of-thought.
+diagram: Speech features → [ Decoder block + acoustic grounding ] × r → reply
+depth: Fixed latent passes
+kv: See paper
+notes: On EchoMind it beats Qwen2.5-Omni-7B; versus CoT-SFT it gains over 20 points in reasoning accuracy with 64.5% fewer tokens at half the latency.
+code: ""
+weights: ""
+verified: 2026-10-28

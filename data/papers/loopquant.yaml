@@ -1,0 +1,21 @@
+id: loopquant
+name: LoopQuant
+title: "LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers"
+arxiv: "2610.16368"
+published: 2026-10-12
+authors:
+  - Zhixiong Zhao
+  - Zukang Xu
+  - Xing Hu
+  - Lifeng Liu
+  - Guangyu Sun
+  - Dawei Yang
+group: full
+summary: A loop-aware post-training quantization framework for looped language models. It canonicalizes activation distributions across loops while keeping weights shared, allocates activation precision per loop under a fixed bit budget, and calibrates the quantized model along its own low-bit recursive trajectory.
+diagram: "[ Shared block ] × R  with per-loop activation precision"
+depth: Fixed loops of the base model
+kv: See paper
+notes: On Ouro-2.6B, W4A4 LoopQuant beats all W4A8 baselines, cuts model memory by 65.3% with 3.4% extra storage over naive INT4, and decodes 1.7× faster than BF16.
+code: https://github.com/Kishon-zzx/LoopQuant
+weights: ""
+verified: 2026-10-28

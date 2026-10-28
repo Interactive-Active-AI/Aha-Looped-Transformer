@@ -1,0 +1,22 @@
+id: brt
+name: Block Recursive Transformers
+title: Block Recursive Transformers for Structured Parameter Sharing
+arxiv: "2610.24998"
+published: 2026-10-18
+authors:
+  - Josep Marques
+  - Hyunyoung A. Cho
+  - Youngeun Kim
+  - Youjia Zhang
+  - Aecheon Jung
+  - Kyuhong Shim
+  - Sungeun Hong
+group: full
+summary: Argues that how shared layers are organized matters. BRT splits the stack into contiguous blocks and recurses each block before moving to the next, an intermediate topology between per-layer repetition and looping the entire stack.
+diagram: "[ Block 1 ] × r → [ Block 2 ] × r → … → [ Block n ] × r"
+depth: Static per-block recursion
+kv: See paper
+notes: Improves validation NLL and downstream accuracy over static recursive sharing in decoder-only models up to 1.7B, with additional encoder-decoder and encoder-only studies; no routing modules or extra objectives.
+code: https://aim-skku.github.io/BRT/
+weights: ""
+verified: 2026-10-28

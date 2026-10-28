@@ -1,0 +1,18 @@
+id: gated-recurrent-transformer
+name: Gated Recurrent Transformer
+title: "Gated Recurrent Transformers: Expressive Depth through Recurrent Modulation"
+arxiv: "2608.15062"
+published: 2026-08-15
+authors:
+  - Amr Hegazy
+  - Amr Alanwar
+  - Mostafa Elhoushi
+group: core
+summary: A prelude–core–coda recurrent-depth transformer whose shared core update is modulated by a lightweight projection and an elementwise update gate conditioned on the hidden state, the prelude output and per-step noise, letting a few layers specialize across recurrences.
+diagram: Prelude → [ Core + GRU-style update gate ] × R → Coda
+depth: Recurrence count R with resampled noise
+kv: See paper
+notes: At iso-FLOPs, a 3-layer model matches a 12-layer GPT-2 Small and leads MoR and heavy-tail depth sampling in all nine scale-by-budget cells. At iso-parameters, deeper recurrence reaches 2.76 validation loss versus 2.84.
+code: https://github.com/Amr-Hegazy1/gated-recurrent-transformer
+weights: https://huggingface.co/Amr-Hegazy/grt-large-isoparam
+verified: 2026-10-28

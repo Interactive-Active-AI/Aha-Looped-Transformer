@@ -1,0 +1,17 @@
+id: cross-loop-query-handoff
+name: Cross-Loop Query Handoff
+title: "Cross-Loop Query Handoff: How Later Loops Redirect Two-Hop Retrieval in the Ouro Looped Language Models"
+arxiv: "2610.34639"
+published: 2026-10-25
+authors:
+  - Ziyu Mu
+  - Zehua Wang
+group: full
+summary: A mechanistic study of how later loops in Ouro repair two-hop retrieval. Transplanting loop-3 attention queries into loop 1 rescues most questions that loop 1 got wrong, while late keys and values help far less, pointing to queries as the carrier of the later-loop correction.
+diagram: Loop-3 queries → transplanted into Loop 1 (same layer, head, position)
+depth: Analysis of released Ouro-1.4B and Ouro-2.6B
+kv: Late keys and values rescue far fewer cases than late queries
+notes: On synthetic two-hop scenes, late queries rescue 90% and 97% of loop-1 failures. The effect is smaller on natural questions and replicates only in Ouro-2.6B; the paper does not locate where the bridge entity is computed.
+code: https://github.com/Muuzzziiy/cql-handoff
+weights: ""
+verified: 2026-10-28

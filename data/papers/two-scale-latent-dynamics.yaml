@@ -1,0 +1,18 @@
+id: two-scale-latent-dynamics
+name: Two-Scale Latent Dynamics
+title: Two-Scale Latent Dynamics for Recurrent-Depth Transformers
+arxiv: "2509.23314"
+published: 2025-09-27
+authors:
+  - Francesco Pappone
+  - Donato Crisostomi
+  - Emanuele Rodolà
+group: adaptive
+summary: Describes recurrent-depth iterates as small refinements within a looped block and larger drift across blocks; loop steps grow smaller and more mutually orthogonal over training. This motivates an early exit based on the second-order difference of step size.
+diagram: "[ Looped block ] × r → exit when second-order step-size difference is small"
+depth: Early exit from latent geometry
+kv: See paper
+notes: The second-order exit beats Huginn's KL-divergence exit and a first-order variant in performance, stability and time efficiency.
+code: ""
+weights: ""
+verified: 2026-10-28

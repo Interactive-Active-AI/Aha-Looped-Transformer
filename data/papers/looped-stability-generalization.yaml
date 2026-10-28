@@ -1,0 +1,16 @@
+id: looped-stability-generalization
+name: Stability and Generalization
+title: Stability and Generalization in Looped Transformers
+arxiv: "2604.15259"
+published: 2026-04-16
+authors:
+  - Asher Labovich
+group: core
+summary: A fixed-point framework that analyzes looped architectures along reachability, input-dependence and geometry, proving that looped networks without recall cannot achieve strong input dependence, while recall with outer normalization gives reachable, smooth, trainable fixed points.
+diagram: "[ Single layer + recall + outer norm ] × r → fixed point"
+depth: Test-time iterations on harder problems
+kv: See paper
+notes: Single-layer looped transformers on chess, Sudoku and prefix sums follow the framework's predictions; a new internal-recall placement is competitive and much better on Sudoku once outer normalization is used.
+code: ""
+weights: ""
+verified: 2026-10-28

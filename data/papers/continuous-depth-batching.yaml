@@ -1,0 +1,18 @@
+id: continuous-depth-batching
+name: Continuous Depth Batching
+title: Depth-adaptive Inference of Looped Language Models via Continuous Depth Batching
+arxiv: "2608.09444"
+published: 2026-08-10
+authors:
+  - Kristian Schwethelm
+  - Daniel Rueckert
+  - Georgios Kaissis
+group: adaptive
+summary: "The first efficient serving method for depth-adaptive looped models: new batches are formed between loop steps, looped and non-looped parts are scheduled separately, looped KV caches are managed, and early exits are predicted so batches can be prepared asynchronously."
+diagram: "Loop step k: batch of tokens still looping ‖ exited tokens → non-looped tail"
+depth: Per-token adaptive depth at serving time
+kv: Looped KV-cache management across exits
+notes: Realizes up to 99% of the estimated maximum speedup on Ouro 1.4B and Huginn 3.5B. Fully looped architectures suit adaptive inference best, since large non-looped parts complicate scheduling.
+code: https://github.com/kschwethelm/continuous-depth-batching
+weights: ""
+verified: 2026-10-28

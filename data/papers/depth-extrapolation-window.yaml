@@ -1,0 +1,19 @@
+id: depth-extrapolation-window
+name: Learning to Extrapolate in Depth
+title: Learning to Extrapolate in Depth with Looped Transformers
+arxiv: "2610.14456"
+published: 2026-10-10
+authors:
+  - Huitao Yang
+  - Jianhao Huang
+  - Zixuan Wang
+  - Baharan Mirzasoleiman
+group: core
+summary: A theoretical and empirical study of how far a looped block trained at depth K can be run deeper, using all-pairs graph connectivity. Training converges to an update governed by one effective parameter, which yields a finite extrapolation window with explicit endpoints.
+diagram: "[ Block ] × K at training → × K′ at test (within a certified window)"
+depth: Test depth chosen from the training distribution
+kv: See paper
+notes: Too few test loops under-propagate and too many create false connections. The certified depth gain grows exponentially as training depth outpaces training hardness. Graph-connectivity setting.
+code: ""
+weights: ""
+verified: 2026-10-28

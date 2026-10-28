@@ -1,0 +1,19 @@
+id: looped-length-generalization
+name: Looped Transformers for Length Generalization
+title: Looped Transformers for Length Generalization
+arxiv: "2409.15647"
+published: 2024-09-24
+authors:
+  - Ying Fan
+  - Yilun Du
+  - Kannan Ramchandran
+  - Kangwook Lee
+group: adaptive
+summary: Shows that looped transformers with an adaptive number of steps generalize to unseen input lengths on tasks with known iterative solutions built from repeated RASP-L operations, using a dedicated training algorithm.
+diagram: "[ Looped block ] × n(input length)"
+depth: Steps scale with input length
+kv: See paper
+notes: Learns highly length-generalizable solutions on tasks such as parity and addition where standard transformers fail to extrapolate.
+code: https://github.com/UW-Madison-Lee-Lab/looped-tf
+weights: ""
+verified: 2026-10-28

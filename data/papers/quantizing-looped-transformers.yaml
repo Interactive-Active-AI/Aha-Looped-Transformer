@@ -1,0 +1,16 @@
+id: quantizing-looped-transformers
+name: Quantizing Looped Transformers
+title: "Quantizing Looped Transformers: Feedback Exposure and Calibration Blindness"
+arxiv: "2609.30820"
+published: 2026-09-25
+authors:
+  - Nux Li
+group: core
+summary: "Identifies two failure modes of post-training quantization in looped models: feedback exposure, where a quantized non-residual layer such as the loop-entry adapter perturbs the state and the error is fed back, and calibration blindness, where one-step calibration ignores directions used later in the recurrence."
+diagram: Prelude → adapter → [ Core ] × R → Coda  (where quantization error enters)
+depth: Fixed recurrence
+kv: See paper
+notes: On Huginn-3.5B, INT4 fails mainly at the loop-entry adapter. Across nine checkpoints from seven looped architectures, accumulating the GPTQ Hessian across recurrence steps beats one-step GPTQ and RTN everywhere and recovers bf16-level accuracy on Huginn.
+code: ""
+weights: ""
+verified: 2026-10-28

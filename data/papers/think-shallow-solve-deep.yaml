@@ -1,0 +1,21 @@
+id: think-shallow-solve-deep
+name: Think Shallow, Solve Deep
+title: "Think Shallow, Solve Deep: Controlling Recurrent Dynamics for Reliable Test-Time Depth"
+arxiv: "2608.18222"
+published: 2026-08-18
+authors:
+  - Ivan Viakhirev
+  - Kirill Borodin
+  - Amirah Almutairi
+  - Serguei Barannikov
+  - Maxim Abramov
+  - Grach Mkrtchian
+group: core
+summary: Shows that a trained recurrent operator's finite-time dynamical regime, estimated as settling, marginal or drifting, predicts whether extra test-time iterations help, preserve or hurt answers, and gives a sufficient condition for depth safety.
+diagram: "[ Operator ] × r  → regime: settling / marginal / drifting"
+depth: Test-time depth beyond training
+kv: See paper
+notes: Settling operators do not degrade with depth, and on Sudoku accuracy rises from 0.19 to 0.34 past the training horizon. A terminal fixed-point objective controls the regime; Huginn-3.5B falls in the non-settling family.
+code: ""
+weights: ""
+verified: 2026-10-28

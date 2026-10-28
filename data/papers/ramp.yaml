@@ -1,0 +1,17 @@
+id: ramp
+name: RAMP
+title: "RAMP: Recurrent Adaptive Mixed Precision for Efficient Prefill in Recurrent-Depth Language Models"
+arxiv: "2610.13041"
+published: 2026-10-09
+authors:
+  - Ke Wan
+  - Chen Chen
+group: core
+summary: Shows that quantization errors injected early in recurrent depth are attenuated by later steps. RAMP therefore runs early refinement in low-precision weights and activations and restores high precision for the terminal steps, speeding up long-context prefill.
+diagram: "[ Core ] × r low precision → [ Core ] × r′ high precision"
+depth: Fixed recurrence; precision varies with depth
+kv: See paper
+notes: Preserves near-full-precision prefill quality up to 4K context, with up to 1.16× end-to-end first-prefill speedup (13.9% lower latency) on an H100.
+code: ""
+weights: ""
+verified: 2026-10-28

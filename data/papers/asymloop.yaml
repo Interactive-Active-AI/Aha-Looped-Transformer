@@ -1,0 +1,24 @@
+id: asymloop
+name: AsymLoop
+title: "Asymmetric Looped Transformers: Fixed Global Representations for an Iterative Decoder"
+arxiv: "2610.28489"
+published: 2026-10-20
+authors:
+  - Cheng Liang
+  - Tengfei Zhang
+  - Wenjie DU
+  - Jianyu Wu
+  - Changlian Ma
+  - Shuchen Pu
+  - Ya Zhang
+  - Yanfeng Wang
+  - Zhouhan Lin
+group: core
+summary: "Separates context building from iterative refinement: a single-pass causal encoder writes fixed per-layer global KV caches, and a weight-tied recurrent decoder attends jointly to them and to local KV from its evolving state."
+diagram: Causal encoder (once, Global KV) → [ Weight-tied decoder, Local KV ] × R
+depth: Fixed recurrence at matched effective depth
+kv: Fixed global KV from the encoder plus local KV per iteration, under one softmax
+notes: From 60M to 1B on FineWeb-Edu it beats Full Loop at matched effective depth and tokens; at 1B the seven-task zero-shot average rises from 49.58% to 50.85%. Benefits extend to an OLMo-style backbone and MoE.
+code: ""
+weights: ""
+verified: 2026-10-28

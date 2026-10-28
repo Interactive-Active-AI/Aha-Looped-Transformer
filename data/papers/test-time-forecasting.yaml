@@ -1,0 +1,19 @@
+id: test-time-forecasting
+name: Test-Time Forecasting
+title: "Test-Time Forecasting: Recurrent Depth Enables In-Context Dynamics Prediction"
+arxiv: "2610.19552"
+published: 2026-10-14
+authors:
+  - Jeffrey B. Lai
+  - John Quinn
+  - Anthony Bao
+  - William Gilpin
+group: core
+summary: Links linear attention to dynamic mode decomposition to show that looped transformers can emulate propagators of dynamical systems in context, and builds a framework in which a one-step forecaster uses gradient-descent iterations as recurrent depth.
+diagram: Context trajectory → [ Looped block ≈ GD step ] × r → one-step forecast → rollout
+depth: Recurrent depth as optimization iterations
+kv: See paper
+notes: Lightweight models trained on ODEs and PDEs for one-step prediction generalize to out-of-distribution dynamics during autoregressive rollout.
+code: ""
+weights: ""
+verified: 2026-10-28

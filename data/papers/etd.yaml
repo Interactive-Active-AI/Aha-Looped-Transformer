@@ -1,0 +1,18 @@
+id: etd
+name: Encode–Think–Decode
+title: "Encode, Think, Decode: Scaling test-time reasoning with recursive latent thoughts"
+arxiv: "2510.07358"
+published: 2025-10-08
+authors:
+  - Yeskendir Koishekenov
+  - Aldo Lipani
+  - Nicola Cancedda
+group: core
+summary: Mid-trains a base model to iterate over a small subset of reasoning-relevant layers, chosen from interpretability evidence, while keeping architecture, parameter count, hyperparameters and data unchanged.
+diagram: Encode layers → [ Think layers ] × k → Decode layers
+depth: Fixed iterations; adaptive per-token depth explored
+kv: See paper
+notes: On OLMo-2 1B Base, iterating the selected layers gives +28.4% relative on GSM8K and +36% on MATH, with gains across 17 reasoning benchmarks.
+code: ""
+weights: ""
+verified: 2026-10-28

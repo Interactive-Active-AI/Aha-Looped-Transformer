@@ -1,0 +1,21 @@
+id: recurtrace
+name: RecurTrace
+title: "RecurTrace: Adaptive Latent Reasoning with Loop-Time Memory"
+arxiv: "2609.03379"
+published: 2026-09-03
+authors:
+  - Yuxiang Wang
+  - Kunyu Feng
+  - Yingda Shen
+  - Haoning Xu
+  - Junyu Wang
+  - Zhizheng Wu
+group: adaptive
+summary: "Improves middle-layer latent recurrence in two ways: Loop Memory Attention lets each looped layer attend to its own states from earlier iterations along the loop-time axis, and a halting head trained with oracle labels decides when extra depth still reduces loss."
+diagram: Lower layers → [ Middle block + loop-memory attention ] × r (halting head) → upper layers
+depth: Learned halting from oracle supervision
+kv: Each looped layer attends to its own earlier-iteration states
+notes: On MathQA with the same looped backbone it reaches 56.9% with 2.0 loops on average, 2.2 points above the best fixed depth at matched compute, while ACT and PonderNet collapse to one loop. Gains over same-budget fine-tuning grow from 0.6B to 8B.
+code: ""
+weights: ""
+verified: 2026-10-28

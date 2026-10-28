@@ -1,0 +1,18 @@
+id: loop-scaling-laws-moe
+name: Loop Scaling Laws
+title: Scaling Laws for Looped Mixture of Experts
+arxiv: "2609.40316"
+published: 2026-09-30
+authors:
+  - Yanbei Chen
+  - Anirudh Goyal
+  - Raghuraman Krishnamoorthi
+group: full
+summary: The first scaling law that models recurrence and MoE sparsity jointly with model size and data, through a bounded, sparsity-conditional mapping from loops to effective parameters. It recovers dense and MoE laws as special cases and guides looped MoE design.
+diagram: "[ MoE block ] × R  → effective parameters (sparsity-conditional)"
+depth: Law-derived recurrence
+kv: See paper
+notes: Sparsity gives about 3× active-parameter efficiency and recurrence about 2× total-parameter efficiency on reasoning. At trillion-token scale and matched training compute, a looped MoE matches a roughly 2× larger non-looped MoE on reasoning benchmarks.
+code: ""
+weights: ""
+verified: 2026-10-28

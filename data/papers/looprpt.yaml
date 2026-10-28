@@ -1,0 +1,25 @@
+id: looprpt
+name: LoopRPT
+title: "LoopRPT: Reinforcement Pre-Training for Looped Language Models"
+arxiv: "2603.19714"
+published: 2026-03-20
+authors:
+  - Guo Tang
+  - Shixin Jiang
+  - Heng Chang
+  - Zihan Zhang
+  - Nuo Chen
+  - Yuhan Li
+  - Huiming Fan
+  - Jia Li
+  - Ming Liu
+  - Bing Qin
+group: full
+summary: Reinforcement pre-training for looped language models that reframes next-token prediction as next-token reasoning and assigns rewards directly to latent steps using an EMA teacher reference and noisy latent rollouts.
+diagram: "[ Shared stack ] × R  with RL signals on latent steps"
+depth: Compresses reasoning into fewer iterations
+kv: See paper
+notes: Instantiated on Ouro at several scales; improves per-step representation quality, gives Pareto gains in accuracy versus computation, with large gains on hard tokens.
+code: ""
+weights: ""
+verified: 2026-10-28

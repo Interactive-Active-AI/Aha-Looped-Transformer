@@ -1,0 +1,26 @@
+id: mor-mllm
+name: MoR-MLLM
+title: "MoR-MLLM: Mixture of Recursions for Efficient Multimodal Large Language Models"
+arxiv: "2610.08830"
+published: 2026-09-27
+authors:
+  - Pengcheng Zheng
+  - Chaoning Zhang
+  - Jiaxin Yan
+  - Sihan Cao
+  - Jianwei Zhang
+  - Xudong Wang
+  - Jiaquan Zhang
+  - Jewon Lee
+  - Tae-Ho Kim
+  - Yang Yang
+  - Heng Tao Shen
+group: adaptive
+summary: Applies Mixture-of-Recursions to multimodal LLMs so each token picks its recursion depth, spending more on visually or linguistically hard tokens. A three-stage tuning schedule and entropy-regularized routing loss stabilize recursive sparsity.
+diagram: Visual + text tokens → router → [ Shared block ] × rᵢ
+depth: Per-token recursion depth
+kv: See paper
+notes: Reduces training memory and computation relative to recent tiny MLLMs while retaining strong performance on vision-language tasks.
+code: ""
+weights: ""
+verified: 2026-10-28

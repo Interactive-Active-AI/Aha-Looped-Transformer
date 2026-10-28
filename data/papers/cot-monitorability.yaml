@@ -1,0 +1,18 @@
+id: cot-monitorability
+name: CoT Monitorability of LoopLMs
+title: On the Chain-of-Thought Monitorability of Looped Language Models
+arxiv: "2610.02741"
+published: 2026-10-02
+authors:
+  - Han Wang
+  - Ishwar B Balappanawar
+  - Huan Zhang
+group: full
+summary: The first systematic evaluation of whether looped language models remain chain-of-thought monitorable, varying loop depth within a family and comparing against non-looped models matched by size, layer count or effective depth.
+diagram: "[ Shared layers ] × R → visible CoT → monitor"
+depth: Varied loop depth
+kv: See paper
+notes: Deeper loops reduce monitorability on some MonitorBench tasks under stress tests, not fully explained by difficulty or length. Cross-model comparisons find no evidence that looped models are systematically less monitorable.
+code: ""
+weights: ""
+verified: 2026-10-28

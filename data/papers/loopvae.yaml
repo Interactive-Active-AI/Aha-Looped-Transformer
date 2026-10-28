@@ -1,0 +1,16 @@
+id: loopvae
+name: LoopVAE
+title: "LoopVAE: Recurrent Depth Across Scales for Visual Tokenization"
+arxiv: "2609.11516"
+published: 2026-09-10
+authors:
+  - Zhiying Lu
+group: core
+summary: Reuses a scale- and loop-conditioned core within and across spatial scales of a hierarchical visual tokenizer, keeping only resolution-changing transitions independent.
+diagram: "[ 4-block core (scale, loop conditioned) ] × 28 applications, transitions untied"
+depth: Fixed recurrence across scales
+kv: Not applicable (tokenizer)
+notes: The 29M convolutional model reaches 0.28 rFID and 32.54 dB PSNR on ImageNet-256 with about 65% fewer parameters than 84M reference VAEs. Fewer stored weights mean more arithmetic and longer runtime in tested settings.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,17 @@
+id: adaloop
+name: AdaLoop
+title: "AdaLoop: Adaptive-Depth Latent Reasoning for Audio Language Models"
+arxiv: "2610.06949"
+published: 2026-10-03
+authors:
+  - Lee Seung-woo
+  - Bowen Qi
+group: adaptive
+summary: "A lightweight plug-in for audio language models: a shared transformer block iterates over the audio representation under question guidance, and a learned halting mechanism exits once the representation is ready, so perception-heavy questions get more steps."
+diagram: Audio encoder → [ Shared block + question ] × r (halting) → LLM
+depth: Learned halting per audio–question pair
+kv: Not applicable (encoder-side)
+notes: Adds under 3% parameters without modifying encoder or LM; raises average accuracy by 2.9–3.8 points across three models on MMSU, MMAU-Pro and MMAR.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,19 @@
+id: chase
+name: CHASE
+title: "CHASE: Cache-Hole-Adapted Skip Exit for Looped State-Space Language Models"
+arxiv: "2607.10110"
+published: 2026-07-11
+authors:
+  - Zhenxuan Yu
+  - Takeshi Kojima
+  - Yutaka Matsuo
+  - Yusuke Iwasawa
+group: adaptive
+summary: Extends looping to state-space language models with Looped Mamba and looped hybrid Mamba-Transformer blocks, and adapts Ouro-style exit gates. Because early exits leave the recurrent SSM state without deeper updates, a cache-hole adaptation aligns continued training with skipped-state inference.
+diagram: "[ Shared Mamba / hybrid block ] × R  + exit gate (cache-hole adapted)"
+depth: Threshold-controlled early exit
+kv: SSM state with skipped deeper updates
+notes: Looped Mamba beats parameter-matched baselines on controlled reasoning tasks; in pretraining it stays competitive downstream with fewer parameters, though deeper non-looped models keep a perplexity edge at strict iso-FLOPs. Adapted exits keep perplexity near full computation.
+code: ""
+weights: ""
+verified: 2026-10-28

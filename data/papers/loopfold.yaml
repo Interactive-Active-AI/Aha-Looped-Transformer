@@ -1,0 +1,25 @@
+id: loopfold
+name: LoopFold
+title: "LoopFold: Parallelizing Recurrent Depth in Looped Transformers"
+arxiv: "2610.35556"
+published: 2026-10-26
+authors:
+  - Feichen Song
+  - Boyi Zeng
+  - Yiqin Hao
+  - Shixiang Song
+  - He Li
+  - Yizhou Yang
+  - Zitong Wang
+  - Yifan Liu
+  - Ziwei He
+  - Zhouhan Lin
+group: full
+summary: Cuts the sequential latency of deep looped models by folding several recurrent depths into one parallel batch for the same prefix. A lightweight predictor guesses the inputs of later loops so they can start early, and a corrector refines them once earlier loops finish; everything is trained with the ordinary next-token loss.
+diagram: Prefix → [ Loop 1 ‖ predicted Loops 2…k ] → Corrector → Next token
+depth: Fixed loop count executed in fewer sequential stages
+kv: See paper
+notes: With 1.4B models, deeper LoopFold settings raise the eight-task zero-shot average from 53.41% to 56.38%, where vanilla looping and PLT gain little. The 46% decoding-latency reduction versus a nine-loop model uses five sequential stages plus extra parallel compute.
+code: ""
+weights: ""
+verified: 2026-10-28

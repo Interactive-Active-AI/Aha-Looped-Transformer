@@ -1,0 +1,21 @@
+id: loopmdm
+name: LoopMDM
+title: Looped Diffusion Language Models
+arxiv: "2605.26106"
+published: 2026-05-25
+authors:
+  - Sanghyun Lee
+  - Chunsan Hong
+  - Seungryong Kim
+  - Jonghyun Lee
+  - Jongho Park
+  - Dongmin Park
+group: core
+summary: Shows that selectively looping the early-middle layers of masked diffusion language models improves both training efficiency and final quality, and that varying the loop count at inference gives flexible compute scaling.
+diagram: "Each denoising step: early layers → [ Early-middle layers ] × k → remaining layers"
+depth: Loop count adjustable during sampling
+kv: Not an autoregressive cache setting
+notes: Matches same-size MDMs with up to 3.3× fewer training FLOPs and gains up to 8.5 points on GSM8K; it also beats deeper non-looped MDMs at similar per-step compute. Code and weights were announced for release.
+code: ""
+weights: ""
+verified: 2026-10-28

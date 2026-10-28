@@ -1,0 +1,31 @@
+id: loopvl
+name: LoopVL
+title: "LoopVL: Recurrent Visual Intelligence"
+arxiv: "2609.38426"
+published: 2026-09-29
+authors:
+  - Zhe Qian
+  - Ziyang Gong
+  - Zhongxing Xu
+  - Hehan Li
+  - Zhonghua Wang
+  - Hanmeng Liu
+  - Liwei Qian
+  - Xin Pei
+  - Peizhi Xu
+  - Fei Luo
+  - Mingxuan Wang
+  - Xue Yang
+  - Shiwei liu
+  - Yanbiao Ma
+  - Junchi Yan
+  - Jungong Han
+group: full
+summary: Extends looped transformers to vision-language models trained from scratch, combining Module-Loop and Model-Loop computation to iteratively update a unified vision-language state through shared modules.
+diagram: "[ Shared modules (Module-Loop) ] within [ Model-Loop ] × r  over a vision-language state"
+depth: Fixed loops
+kv: See paper
+notes: Trained through language pretraining, multimodal training and post-training, it outperforms several similar-size and larger non-recurrent models on multimodal understanding and visual reasoning, with visible shifts in visual attention across loops.
+code: https://github.com/Tier-Flow/LoopVL
+weights: https://huggingface.co/TierFlow/LoopVL
+verified: 2026-10-28

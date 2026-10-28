@@ -1,0 +1,18 @@
+id: one-model-two-paths
+name: One Model, Two Paths
+title: "One Model, Two Paths: Balancing Single-Pass and Looped Performance in Language Models"
+arxiv: "2610.33517"
+published: 2026-10-24
+authors:
+  - Jiarun Shen
+  - Lei Zhao
+  - Xiao Li
+group: core
+summary: Adapts a pretrained model so it can run either a single pass or a looped pass that reuses its middle layers. Joint weighted losses on both outputs, plus guidance from the frozen original model, stop looped training from degrading single-pass quality.
+diagram: "Pretrained stack: single pass ‖ [ Middle layers ] × 2"
+depth: "Two inference modes: single-pass or looped"
+kv: See paper
+notes: Most of the benefit comes from tuning the single-pass loss weight. With validation-selected weights, single-pass quality stays within a preset tolerance of ordinary continued training while looped predictions improve.
+code: ""
+weights: ""
+verified: 2026-10-28

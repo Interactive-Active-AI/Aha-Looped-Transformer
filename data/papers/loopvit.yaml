@@ -1,0 +1,21 @@
+id: loopvit
+name: Loop-ViT
+title: "LoopViT: Scaling Visual ARC with Looped Transformers"
+arxiv: "2602.02156"
+published: 2026-02-02
+authors:
+  - Wen-Jie Shu
+  - Xuerui Qiu
+  - Rui-Jie Zhu
+  - Harold Haodong Chen
+  - Yexin Liu
+  - Harry Yang
+group: adaptive
+summary: A recursive vision architecture for ARC-AGI that iterates a weight-tied hybrid block of local convolutions and global attention as a latent chain of thought, with a parameter-free dynamic exit when predictive entropy shows the state has settled.
+diagram: Grid → [ Weight-tied conv + attention block ] × r (entropy exit) → output grid
+depth: Parameter-free entropy-based dynamic exit
+kv: Not applicable (vision model)
+notes: An 18M model reaches 65.8% on ARC-AGI-1, outperforming 73M-parameter ensembles.
+code: https://github.com/WenjieShu/LoopViT
+weights: ""
+verified: 2026-10-28

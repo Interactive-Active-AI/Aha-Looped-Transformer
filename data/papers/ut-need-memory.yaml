@@ -1,0 +1,16 @@
+id: ut-need-memory
+name: Universal Transformers Need Memory
+title: "Universal Transformers Need Memory: Depth-State Trade-offs in Adaptive Recursive Reasoning"
+arxiv: "2604.21999"
+published: 2026-04-23
+authors:
+  - Grigory Sapunov
+group: adaptive
+summary: Studies learned memory tokens as a scratchpad for a single-block Universal Transformer with ACT on Sudoku-Extreme, finding them necessary and showing that memory size and ponder depth substitute for each other at fixed accuracy.
+diagram: "[ Single block + memory tokens ] × r (ACT halting)"
+depth: Adaptive Computation Time
+kv: Learned memory tokens
+notes: No configuration without memory tokens works; 8–32 tokens reach 57.4% exact match. Identifies an ACT router initialization trap and fixes it with a negative bias ('deep start'); ACT then has far lower seed variance than fixed depth.
+code: https://github.com/che-shr-cat/utm-jax
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,18 @@
+id: pondernet
+name: PonderNet
+title: "PonderNet: Learning to Ponder"
+arxiv: "2107.05407"
+published: 2021-07-12
+authors:
+  - Andrea Banino
+  - Jan Balaguer
+  - Charles Blundell
+group: adaptive
+summary: Learns end-to-end how many computational steps to take, modeling halting as a probabilistic process and trading off prediction accuracy, computational cost and generalization.
+diagram: "[ Step function ] × n,  halt with learned probability λₙ"
+depth: Learned probabilistic halting
+kv: Not applicable
+notes: Improves over earlier adaptive computation methods on a synthetic task, succeeds at extrapolation tests, and matches state of the art on a QA dataset with less compute.
+code: ""
+weights: ""
+verified: 2026-10-28

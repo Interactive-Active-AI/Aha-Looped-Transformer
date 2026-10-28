@@ -1,0 +1,21 @@
+id: taps
+name: TAPS
+title: Scheduling Recursive Reasoning in Looped Transformers
+arxiv: "2609.36653"
+published: 2026-09-29
+authors:
+  - Boyuan Wang
+  - Chengyao Yu
+  - Jiaxi Ren
+  - Hongxin Wei
+  - Bingyi Jing
+  - Yuxin Tao
+group: adaptive
+summary: Adapts the scale of each recurrent update online. The Trajectory Adaptive Progress-Fluctuation Scheduler decomposes sensitivity of the terminal loss into persistent progress and fluctuation terms and adjusts the step size accordingly, at inference without retraining or also during training.
+diagram: state ← state + η_t · update,  η_t from progress vs fluctuation
+depth: Fixed loops with adaptive update scale
+kv: See paper
+notes: Improves terminal accuracy on structured reasoning tasks across several recurrent architectures; when used in training, reaches baseline accuracy with up to 1.56× wall-clock speedup. Provides sufficient conditions for fewer loops to a target quality.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,20 @@
+id: loopopd
+name: LoopOPD
+title: "Recurrent Self-Improvement: Dynamic Cross-Loop On-Policy Distillation for Looped Language Models"
+arxiv: "2610.10623"
+published: 2026-10-07
+authors:
+  - Yi Wang
+  - Rui Qian
+  - Yu Li
+  - Haoyang Yao
+  - Wenjie Wang
+group: full
+summary: Uses a looped model's own terminal loop as a compute-privileged teacher for an intermediate-loop student on student-generated rollouts. The dynamic variant keeps refreshing the teacher as shared weights update, giving recurrent self-improvement without an external teacher.
+diagram: Terminal-loop policy (teacher) → intermediate-loop policy (student), on-policy
+depth: Supervision flows from deeper to shallower loops
+kv: See paper
+notes: On Ouro-Thinking models, LoopOPD improves mathematical reasoning and the dynamic variant adds further gains; training only on math also helps general reasoning and code. Code and checkpoints are promised upon acceptance.
+code: ""
+weights: ""
+verified: 2026-10-28

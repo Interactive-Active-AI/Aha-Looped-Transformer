@@ -1,0 +1,17 @@
+id: jacobian-lens-looped
+name: Jacobian Lens on Looped Models
+title: "Looped Transformers under the Jacobian Lens: Does the Global Workspace Survive Recurrence?"
+arxiv: "2609.01924"
+published: 2026-09-01
+authors:
+  - Wenlong Wang
+  - Fergal Reid
+group: full
+summary: Extends the Jacobian lens to iterated architectures to test whether a global-workspace-like band of verbalisable, causally potent representations survives recurrence, comparing Ouro-2.6B, Huginn-0125 and an untied Qwen baseline.
+diagram: Virtual unrolling adapter → Jacobian lens over iterated layers
+depth: Analysis of released models
+kv: See paper
+notes: "A workspace forms in the iterated part of both models, but access differs: Ouro rebuilds the content every loop, so writes must span all remaining loops, while Huginn carries it across all sixteen recurrences yet interventions act within about two recurrences."
+code: ""
+weights: ""
+verified: 2026-10-28

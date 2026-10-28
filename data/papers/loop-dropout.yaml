@@ -1,0 +1,23 @@
+id: loop-dropout
+name: Loop Dropout
+title: "Loop Dropout: Regularizing Shared Updates in Looped Language Models"
+arxiv: "2609.34218"
+published: 2026-09-28
+authors:
+  - Zirui Zhu
+  - Hailun Xu
+  - Xuanlei Zhao
+  - Yong Liu
+  - Yingxuan Ren
+  - Kanchan Sarkar
+  - Kun Xu
+  - Yang You
+group: full
+summary: Finds that standard LoRA on looped models mostly adapts late loops. Loop Dropout randomly masks adapter applications per loop during training and rescales by inverse survival probability, so the shared update stays strong and effective at every loop.
+diagram: "[ Block + LoRA (randomly masked, rescaled) ] × R"
+depth: All loops active at inference
+kv: See paper
+notes: Improves mathematical reasoning across sizes, ranks and recipes, extending to instruction tuning and code. Inference uses standard LoRA at all loops with no extra parameters or compute.
+code: https://github.com/NUS-HPC-AI-Lab/loop-dropout
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,18 @@
+id: hyperloop
+name: Hyperloop Transformer
+title: Hyperloop Transformers
+arxiv: "2604.21254"
+published: 2026-04-23
+authors:
+  - Abbas Zeitoun
+  - Lucas Torroba-Hennigen
+  - Yoon Kim
+group: core
+summary: Organizes a looped Transformer into begin, middle and end blocks, loops only the middle block, and adds hyper-connections after each loop to expand the residual stream into matrix-valued streams at minimal extra cost.
+diagram: Begin block → [ Middle block ] × R (hyper-connections after each loop) → End block
+depth: Fixed recurrence
+kv: See paper
+notes: Performs well against depth-matched Transformer and mHC baselines with about 50% fewer parameters, and the advantage persists after post-training weight quantization.
+code: ""
+weights: ""
+verified: 2026-10-28

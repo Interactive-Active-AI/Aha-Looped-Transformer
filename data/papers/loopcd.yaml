@@ -1,0 +1,23 @@
+id: loopcd
+name: LoopCD
+title: Decoding Looped Transformers Better for (Almost) Free
+arxiv: "2610.02185"
+published: 2026-10-01
+authors:
+  - Weihao Liu
+  - Huangjie Zheng
+  - Tianrong Chen
+  - Rohit Dilip
+  - Richard He Bai
+  - Yizhu Jiao
+  - Yuyang Wang
+  - Ruixiang Zhang
+group: full
+summary: Training-free contrastive decoding that contrasts a looped model's final prediction with an earlier recurrent pass, which serves as a built-in weak model. It works in logit space with one extra output pass or in hidden-state space with no extra output cost.
+diagram: Final-loop prediction − λ · earlier-loop prediction → token
+depth: Full depth, or about half the loops with guidance
+kv: See paper
+notes: Raises Ouro-2.6B-Thinking's AIME 2024 pass@1 from 61.88% to 73.33% and Huginn's HumanEval pass@1 from 22.56% to 31.71%. With guidance, halving the loops matches or beats unguided full depth, saving 22.5–48.2% forward FLOPs.
+code: ""
+weights: ""
+verified: 2026-10-28

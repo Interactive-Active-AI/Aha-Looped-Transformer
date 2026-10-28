@@ -1,0 +1,21 @@
+id: denoising-recursion-models
+name: Denoising Recursion Models
+title: "One Step Forward and K Steps Back: Better Reasoning with Denoising Recursion Models"
+arxiv: "2604.18839"
+published: 2026-04-20
+authors:
+  - Chris Cameron
+  - Wangzheng Wang
+  - Nikita Ivanov
+  - Ashmita Bhattacharyya
+  - Didier Chételat
+  - Yingxue Zhang
+group: core
+summary: Corrupts target solutions with noise like diffusion models but trains a looped refiner to undo the corruption over multiple recursive steps rather than one, giving a curriculum of intermediate states that better matches test-time refinement.
+diagram: Noisy solution → [ Shared block ] × K steps → clean solution
+depth: Multi-step recursive denoising
+kv: Not applicable (non-autoregressive solver)
+notes: Outperforms the Tiny Recursion Model on ARC-AGI, encouraging non-greedy, forward-looking generation.
+code: ""
+weights: ""
+verified: 2026-10-28

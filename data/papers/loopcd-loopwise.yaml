@@ -1,0 +1,18 @@
+id: loopcd-loopwise
+name: Loop-wise Contrastive Decoding
+title: "LoopCD: Loop-wise Contrastive Decoding for Improving Reasoning in Looped Language Models"
+arxiv: "2609.24196"
+published: 2026-09-21
+authors:
+  - Byeongho Yu
+  - Junhyuk So
+  - Eunhyeok Park
+group: full
+summary: Links reasoning errors in looped language models to loop instability that produces uncertain hard tokens, and contrasts logits from earlier iterations with the final iteration at decoding time to refine them, with no training and negligible overhead.
+diagram: logits(final loop) contrasted with logits(earlier loop) → sampling distribution
+depth: Fixed loops of the base model
+kv: See paper
+notes: Reports improved reasoning across recent representative looped models and tasks. Distinct from the similarly named LoopCD of Liu et al. (2610.02185).
+code: ""
+weights: ""
+verified: 2026-10-28

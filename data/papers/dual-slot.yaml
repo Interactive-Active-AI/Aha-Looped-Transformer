@@ -1,0 +1,25 @@
+id: dual-slot
+name: Dual-Slot
+title: "Dual-Slot: From Serial Loops to Parallel Slots in Language Models"
+arxiv: "2610.25086"
+published: 2026-10-18
+authors:
+  - Yiqin Hao
+  - Zitong Wang
+  - Boyi Zeng
+  - He Li
+  - Shixiang Song
+  - Feichen Song
+  - Yifan Liu
+  - Ran Tao
+  - Bryan Dai
+  - Zhouhan Lin
+group: full
+summary: Reorganizes serial looped computation into parallel latent and prediction slots. The prediction slot uses the previous token's deep latent state, while the latent slot prepares the state for the next step, replacing two sequential invocations with one paired call.
+diagram: "Token t: prediction slot (deep latent of t−1) ‖ latent slot (state for t+1)"
+depth: One paired invocation per token
+kv: See paper
+notes: On Qwen-style 1B dense models, Pile perplexity drops from 7.25 to 7.00 and the five-shot average rises 2.26 points. Training uses a few Jacobi iterations; decoding keeps 93.1–96.5% of vanilla throughput for the dense model.
+code: ""
+weights: ""
+verified: 2026-10-28

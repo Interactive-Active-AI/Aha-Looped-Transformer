@@ -1,0 +1,18 @@
+id: deq
+name: Deep Equilibrium Models
+title: Deep Equilibrium Models
+arxiv: "1909.01377"
+published: 2019-09-03
+authors:
+  - Shaojie Bai
+  - J. Zico Kolter
+  - Vladlen Koltun
+group: full
+summary: Directly solves for the fixed point that a weight-tied layer would reach if iterated infinitely, using root-finding forward and implicit differentiation backward, so memory is constant in effective depth.
+diagram: z* = f(z*, x) solved by root-finding; implicit backward
+depth: Iterate to equilibrium
+kv: Constant training memory regardless of depth
+notes: Applied to Transformers and trellis networks, it matches or improves language modeling on WikiText-103 with up to 88% lower memory.
+code: https://github.com/locuslab/deq
+weights: ""
+verified: 2026-10-28

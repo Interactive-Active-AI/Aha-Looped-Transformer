@@ -1,0 +1,18 @@
+id: recurrent-vlm-retrofit
+name: Retrofitted Recurrent VLMs
+title: Retrofitting Recurrent Vision-Language Models from Pretrained Backbones
+arxiv: "2610.22075"
+published: 2026-10-15
+authors:
+  - Madhav Iyengar
+  - Andreas Geiger
+  - Hilde Kühne
+group: core
+summary: Retrofits depth recurrence into a pretrained vision-language model by pruning language-backbone layers and looping a subset of the rest, with a linear adapter merging each loop's output with earlier token representations. A three-stage recovery with distillation from the original model restores quality.
+diagram: Early layers → [ Looped subset + linear adapter ] × r → late layers
+depth: Fixed recurrence
+kv: See paper
+notes: On TinyLLaVA-1.4B, without new vision-language data, it outperforms the unpruned baseline trained on the same recovery data while storing 23.3% fewer language parameters, with gains mainly on reasoning-oriented benchmarks.
+code: https://madhavesdios.github.io/recurrent-vlms
+weights: ""
+verified: 2026-10-28

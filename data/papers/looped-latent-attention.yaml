@@ -1,0 +1,17 @@
+id: looped-latent-attention
+name: Looped Latent Attention
+title: "Looped Latent Attention: Cross-Loop KV Compression for Looped Transformers"
+arxiv: "2607.15456"
+published: 2026-07-16
+authors:
+  - James O' Neill
+  - Fergal Reid
+group: full
+summary: Shows the loop-indexed KV cache of looped models traces a short low-rank trajectory per token, layer and head. Looped Latent Attention is a post-training codec that stores compact K/V latents and reconstructs loop-specific K/V only when attention reads them.
+diagram: Per-head latent across loops → reconstruct K/V for loop r on read
+depth: Fixed loops of the base model
+kv: Compressed cross-loop K/V latents (SVD-initialized, distilled)
+notes: At matched cache budget it beats MLA-style head compression, cross-layer sharing, KV quantization and final-loop reuse. On one H200, Ouro-1.4B batch capacity at 4K context rises from 32 to 768 sequences at 21.3× compression; transfers to Huginn-3.5B.
+code: ""
+weights: ""
+verified: 2026-10-28

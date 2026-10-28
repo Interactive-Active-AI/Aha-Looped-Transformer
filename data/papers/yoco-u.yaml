@@ -1,0 +1,21 @@
+id: yoco-u
+name: Universal YOCO
+title: Universal YOCO for Efficient Depth Scaling
+arxiv: "2604.01220"
+published: 2026-04-01
+authors:
+  - Yutao Sun
+  - Li Dong
+  - Tianzhu Ye
+  - Shaohan Huang
+  - Jianyong Wang
+  - Furu Wei
+group: core
+summary: "Combines the YOCO decoder-decoder design with recursion: a Universal Self-Decoder iterates with shared parameters, but only over shallow efficient-attention layers, while YOCO's constant global KV cache and linear prefill stay intact."
+diagram: "[ Self-decoder (efficient attention) ] × r → cross-decoder over one global KV cache"
+depth: Partial recursion in the self-decoder
+kv: Constant global KV cache (YOCO)
+notes: Remains competitive on general and long-context benchmarks with better token utility and scaling than either YOCO or recursion alone.
+code: ""
+weights: ""
+verified: 2026-10-28

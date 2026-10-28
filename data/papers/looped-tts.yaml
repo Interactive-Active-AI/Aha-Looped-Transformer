@@ -1,0 +1,19 @@
+id: looped-tts
+name: Looped Flow-Matching TTS
+title: "Depth through recurrence: Looped transformers for flow-matching TTS"
+arxiv: "2609.29768"
+published: 2026-09-24
+authors:
+  - Jiabao Ai
+  - Peng Han
+  - Yuchen Song
+  - Zhengjun Yue
+group: core
+summary: Studies how to organize depth through recurrence in flow-matching text-to-speech by varying the amount, order and placement of weight reuse across seven layouts with the same number of block calls.
+diagram: "18 block calls: e.g. each of 9 blocks × 2 consecutively, or 6 blocks cycled × 3"
+depth: Fixed executed depth
+kv: Not applicable (flow matching)
+notes: Repeating each of nine blocks twice keeps competitive intelligibility, speaker similarity and quality at 32 steps with 47.1% fewer parameters. Layout rankings change with the sampling budget; middle placement is most consistent.
+code: ""
+weights: ""
+verified: 2026-10-28

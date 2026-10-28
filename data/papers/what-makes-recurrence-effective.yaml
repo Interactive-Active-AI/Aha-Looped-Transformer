@@ -1,0 +1,19 @@
+id: what-makes-recurrence-effective
+name: What Makes Recurrence Effective
+title: What Makes Recurrence Effective in Looped Language Models?
+arxiv: "2609.36636"
+published: 2026-09-29
+authors:
+  - Xinlin Zhuang
+  - Siyuan Wang
+  - Imran Razzak
+  - Weiyang Liu
+group: core
+summary: Controlled experiments on when recurrence helps, where to place it, and how to condition it, across inference budgets below, within and beyond the training horizon. It proposes channel-wise history-state injection with timestep conditioning as a cheap, more robust alternative to initial-state injection.
+diagram: Input layers → [ Recurrent block ] × r (history-state injection + timestep) → output layers
+depth: Variable inference budget
+kv: See paper
+notes: Extra recurrence can improve reasoning beyond the training horizon while degrading knowledge. Effective depth alone does not predict behavior, and non-recurrent output layers improve robustness to under-unrolling.
+code: https://spherelab.ai/looplm/
+weights: ""
+verified: 2026-10-28

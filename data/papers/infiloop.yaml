@@ -1,0 +1,21 @@
+id: infiloop
+name: InfiLoop
+title: Scaling to Tens of Thousands of Test-Time Iterations with Loop-Native Attention Residuals
+arxiv: "2610.11570"
+published: 2026-10-08
+authors:
+  - Pengxiang Li
+  - Dilxat Muhtar
+  - Di He
+  - Guinan Su
+  - Lu Yin
+  - Shiwei Liu
+group: core
+summary: Identifies latent overthinking, where noisy updates overwrite correct intermediate deductions, and introduces a loop-native residual connection that keeps a constant-memory running summary of past recurrent states using content-based weighting and learned temporal decay.
+diagram: "[ Recursive block ] × N  + loop-native residual aggregation"
+depth: Test-time looping up to tens of thousands of steps
+kv: Constant-size streaming aggregation memory over recurrent states
+notes: A 7M-parameter model reaches 97.9% exact accuracy on Sudoku-Extreme and 13.6% pass@2 on ARC-AGI-2, and keeps improving on Sudoku-Extreme beyond 20,000 effective steps.
+code: https://github.com/pixeli99/InfiLoop
+weights: https://huggingface.co/pengxiang/InfiLoop-Sudoku
+verified: 2026-10-28

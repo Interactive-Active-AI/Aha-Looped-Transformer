@@ -1,0 +1,18 @@
+id: scalerlt
+name: ScaleRLT
+title: "ScaleRLT: Exact Log-Probabilities and Fast Deferred Rollouts for Reinforcement Learning on Looped Transformers"
+arxiv: "2610.34427"
+published: 2026-10-25
+authors:
+  - Dezhen Lu
+  - Zixiang Ni
+  - Runguo Li
+group: full
+summary: Makes on-policy RL practical for looped language models such as Ouro. Rollouts defer and batch the deeper loops, and the learner uses a hybrid log-probability whose value replays the rollout schedule exactly while its gradient comes from a dense pass, removing the floating-point mismatch between sampler and learner.
+diagram: "Rollout: deferred deep loops → Learner: dense gradient + exact scheduled replay"
+depth: Ouro-style fixed loops; mixed-depth or native readout
+kv: One-wave KV admission with CUDA graphs
+notes: Replay is bit-exact in all reported FP32 and bf16 cells. Deferral raises single-GPU rollout throughput 1.47–1.56× and a two-node GRPO update is 2.71× faster. The GSM8K gains come from 100-update runs in the authors' setup.
+code: ""
+weights: ""
+verified: 2026-10-28

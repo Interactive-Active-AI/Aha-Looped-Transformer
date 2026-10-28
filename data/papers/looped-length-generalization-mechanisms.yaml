@@ -1,0 +1,18 @@
+id: looped-length-generalization-mechanisms
+name: Beyond the Training Horizon
+title: "Beyond the Training Horizon: Mechanisms and Limits of Length Generalization in Looped Transformers"
+arxiv: "2609.33144"
+published: 2026-09-27
+authors:
+  - Jia Liang
+  - Xi Jin
+  - Liangming Pan
+group: core
+summary: A mechanistic comparison of two recurrence-training schemes for looped transformers on polynomial iteration, finite-state composition and knowledge-graph traversal, revealing distinct mechanisms and why both fail at greater depths.
+diagram: "[ Block ] × R  — matched vs decoupled recurrence training"
+depth: Length generalization beyond trained depth
+kv: See paper
+notes: Recurrent states encode both content and its computational status, and transferable residual directions causally control whether information can be used in later steps. Length generalization need not rely on faithful step-by-step reasoning.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,21 @@
+id: loom
+name: LOOM
+title: "Looping Beyond Twice: A Scalable Recipe for Looped Mixture-of-Experts"
+arxiv: "2610.01153"
+published: 2026-10-01
+authors:
+  - Di He
+  - Pengxiang Li
+  - Da Chang
+  - Qingyan Meng
+  - Lu Yin
+  - Shiwei Liu
+group: full
+summary: "Diagnoses why looped MoE models stop improving after two loops: variance growth across iterations and expert-selection collapse. LOOM scales residual updates, re-injects the input embedding every loop, gives each loop its own router, and adds a looping residual that carries earlier outputs forward."
+diagram: "[ MoE block, per-loop router ] × R  + input re-injection + looping residual"
+depth: Stable scaling to 9–12 loops
+kv: See paper
+notes: Across 100M–1.7B models; under near-iso-FLOP the 700M model is best at 5 loops (perplexity 18.36 → 16.54). Without FLOP matching, the 1.7B model trained on 60B tokens peaks at 9 loops (perplexity 9.62 → 7.77).
+code: https://github.com/hed-ucas/LOOM
+weights: ""
+verified: 2026-10-28

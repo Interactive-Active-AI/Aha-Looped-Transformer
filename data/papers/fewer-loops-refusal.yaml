@@ -1,0 +1,20 @@
+id: fewer-loops-refusal
+name: Fewer Loops, Less Refusal
+title: Running Fewer Loops Removes Refusal Behaviour in Recurrent-Depth Language Models
+arxiv: "2610.15218"
+published: 2026-10-10
+authors:
+  - Seyedarmin Azizi
+  - Erfan Baghaei Potraghloo
+  - Arya Fayyazi
+  - Saeid Shokoufa
+  - Massoud Pedram
+group: full
+summary: "Shows that running a recurrent-depth model with fewer loops than trained, a tempting deployment shortcut, erodes safety much faster than capability: harmfulness is still detected internally, but the refusal that should follow is missing."
+diagram: "[ Shared block ] × r  with r < trained depth"
+depth: Inference-time loop reduction
+kv: See paper
+notes: At half depth, Ouro-1.4B-Thinking keeps 89% of its GSM8K accuracy while harmful-help rate rises 5.3×. Early-exit rules and per-request depth do not repair it; training at randomly chosen depths does, including on Huginn-0125 across 1–32 loops.
+code: ""
+weights: ""
+verified: 2026-10-28

@@ -1,0 +1,25 @@
+id: stateloop
+name: StateLoop
+title: "StateLoop: Persistent State for Looped Transformers"
+arxiv: "2610.35544"
+published: 2026-10-26
+authors:
+  - Feichen Song
+  - Boyi Zeng
+  - He Li
+  - Shixiang Song
+  - Yiqin Hao
+  - Zitong Wang
+  - Yizhou Yang
+  - Yifan Liu
+  - Ziwei He
+  - Zhouhan Lin
+group: full
+summary: Adds one persistent state per token that survives across loop iterations. A learned gate decides how much of the old state to keep and how much of the new backbone output to absorb, and the state is projected back into the stream for later iterations and the final prediction.
+diagram: "[ Backbone ] × R  +  gated persistent state per token"
+depth: Fixed trained loop count
+kv: One extra gated state vector per token; attention cache see paper
+notes: Lowers Pile perplexity and improves the eight-task zero-shot average over a vanilla looped baseline. The perplexity advantage grows with trained loop depth.
+code: ""
+weights: ""
+verified: 2026-10-28

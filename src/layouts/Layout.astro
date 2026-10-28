@@ -22,9 +22,4 @@ const gh='M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1
 <div class="footer-meta"><span>Curated by <a href="https://github.com/Interactive-Active-AI">Interactive &amp; Active AI</a></span><span>Code <a href={`${REPO}/blob/main/LICENSE`}>MIT</a> · Descriptions CC BY 4.0</span></div>
 </footer>
 </div>
-<script define:vars={{repoPath}}>
-const key='aha-stars',show=n=>document.querySelectorAll('[data-stars]').forEach(el=>{el.querySelector('b').textContent=n;el.title=n+' GitHub stars';el.hidden=false;});
-const fmt=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,'')+'k':String(n);
-try{const cached=JSON.parse(sessionStorage.getItem(key)||'null');if(cached&&Date.now()-cached.t<3600000)show(cached.n);else fetch('https://api.github.com/repos/'+repoPath).then(r=>r.ok?r.json():null).then(d=>{if(d&&Number.isFinite(d.stargazers_count)){const n=fmt(d.stargazers_count);sessionStorage.setItem(key,JSON.stringify({n,t:Date.now()}));show(n);}}).catch(()=>{});}catch{}
-</script>
 </body></html>
